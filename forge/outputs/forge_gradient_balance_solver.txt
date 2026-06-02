@@ -1,0 +1,50 @@
+FORGE_GRADIENT_BALANCE_SOLVER
+source = pasted Replit transcript, local Termius file only, no app interface
+mode = non_operational_normalized_balance_audit
+gradient_count = 25
+closure_axes = ['radial_force_residual', 'power_residual', 'entropy_margin', 'charge_residual', 'phase_residual', 'material_residual', 'diagnostic_coverage']
+objective_score = 0.0019114020499568433
+BALANCE_VECTOR name value pass_rule
+radial_force_residual 0.00026586914062507426 abs(x)<0.005
+power_residual 0.00047180175781281336 abs(x)<0.005
+entropy_margin 0.86456396484375 x>=0
+charge_residual 0.0005999755859375667 abs(x)<0.005
+phase_residual 0.00022979736328139488 abs(x)<0.005
+material_residual 0.0001921081542968356 abs(x)<0.005
+diagnostic_coverage 0.9997283020019532 x>=0.995
+ACTIVATION_VECTOR gradient normalized_activation
+Thermal 0.203704833984375
+Electromagnetic 0.791644287109375
+PlasmaDensity 0.514544677734375
+Pressure 0.29951782226562496
+MagneticTopology 0.30226440429687496
+ChargeDensity 0.7847015380859375
+PhaseCoherence 0.28227539062499996
+FrequencySpectral 0.301910400390625
+MaterialComposition 0.31424255371093746
+EntropyDissipation 0.28996582031249996
+MechanicalStress 0.3695220947265625
+RadiationDiagnostic 0.4319305419921875
+Cryogenic 0.36369628906249996
+AlphaIonization 0.19091796875
+BetaElectronBeam 0.366046142578125
+NeutronTransmutation 0.326800537109375
+GammaDefect 0.27647705078125
+SynchrotronXray 0.4115936279296875
+VacuumAtmosphere 0.2805816650390625
+CentrifugalSeparation 0.3422393798828125
+MagneticResonance 0.348529052734375
+OpticalPhotonic 0.383349609375
+AcousticPhononic 0.4070465087890625
+NeutronOpticalMatterWave 0.2333984375
+HeavyIonCosmicRayAnalog 0.273516845703125
+PASS_force_closure = True
+PASS_power_closure = True
+PASS_entropy_nonnegative = True
+PASS_charge_closure = True
+PASS_phase_lock = True
+PASS_material_closure = True
+PASS_diagnostic_coverage = True
+FINAL_PASS_FORGE_GRADIENT_BALANCE = True
+INTERPRETATION_BOUNDARY = normalized ledger only; replace coefficients with measured calibration data before any physical claim
+elapsed_seconds = 7.856508493423462
