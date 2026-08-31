@@ -1,5 +1,7 @@
 # Chronometrics registry
 
+Author: James Lockwood
+
 A runnable transcription of the chronomagnetics chronometric registry:
 one exact triangle (`a,b,c = 144,138,116`) seeds a Brocard phase, a
 q-screen constant with an exact leakage defect, a frozen log-time phase
