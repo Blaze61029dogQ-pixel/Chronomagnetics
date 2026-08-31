@@ -11,6 +11,7 @@ from . import constants as C
 from . import spectral as S
 from . import bright_ridge as BR
 from . import dark_bright as DB
+from . import geophysics as GEO
 
 mp.mp.dps = 50
 
@@ -90,6 +91,10 @@ def main() -> None:
     print("\n7. Iso-gap lock direction                    [FROZEN, transcribed only]")
     print(f"   delta_B_gate / delta_chi ~= {C.ISO_GAP_SLOPE}  (from source audit; "
           f"not independently re-derived here)")
+    for name, value in C.ISO_GAP_SENSITIVITY.items():
+        print(f"   {name:16s} = {value}")
+    print(f"   source G_16 finite-diff (their grid): {C.G_16_SOURCE_OBSERVED}  "
+          f"error vs target = {C.G_16_SOURCE_ERROR}  [transcribed, REJECTED]")
 
     print("\n8. Dark-to-Bright Chronometric Separation                 -- NEW BLOCK")
     sep = DB.compute()
@@ -110,6 +115,39 @@ def main() -> None:
     print(f"   R_DB            = {sep.r_db}")
     interp = "AFTER" if sep.delta_kappa_db > 0 else "BEFORE"
     print(f"   -> bright ridge occurs {interp} the null branch in log-time.")
+
+    print("\n9. Geophysical Bridge (demo anchor T_0=t_c=86400 s)      -- NEW BLOCK")
+    print("   BRIDGE constants only -- not intrinsic to the chronometric core.")
+    anchor = GEO.demo_anchor()
+    _check("omega_Delta(0) rad/s", anchor['omega_Delta_0'],
+           mp.mpf('0.00022785506951689880757308707788870502643258866893786'),
+           mp.mpf('1e-30'))
+    _check("f_Delta(0) Hz", anchor['f_Delta_0'],
+           mp.mpf('0.000036264260622161885375960409652101815946858886539'),
+           mp.mpf('1e-30'))
+    _check("chronometric period (s)", anchor['period_s'],
+           mp.mpf('27575.358847627464325521210381950118212927261673427923'),
+           mp.mpf('1e-25'))
+    _check("t_null under anchor (s)", anchor['t_null_s'],
+           mp.mpf('4783.397824165065181485423031021510880519811906534826'),
+           mp.mpf('1e-25'))
+    _check("t_bright under anchor (s)", anchor['t_bright_s'],
+           mp.mpf('4919.669876568780094259769432458505649277292614408140'),
+           mp.mpf('1e-25'))
+    _check("dark-to-bright delay (s)", anchor['delay_s'],
+           mp.mpf('136.27205240371491277434640143699476875748070787331437'),
+           mp.mpf('1e-25'))
+    print(f"   chronometric period  = {anchor['period_hours']} hours")
+    print(f"   u_B(B_0=50uT)        = {anchor['u_B']} J/m^3")
+    print(f"   delta_u_B (1 nT)     = {anchor['delta_u_B_1nT']} J/m^3")
+    print(f"   delta_u_B (50 nT)    = {anchor['delta_u_B_50nT']} J/m^3")
+    for sigma, depth_km in anchor['skin_depths_km'].items():
+        print(f"   skin depth (sigma={sigma} S/m) = {depth_km} km")
+    print(f"   E_phi amplitude (r=100km, dB=1 nT)  = {anchor['e_phi_1nT_V_per_m']} V/m")
+    print(f"   E_phi amplitude (r=100km, dB=50 nT) = {anchor['e_phi_50nT_V_per_m']} V/m")
+    print("   Status: PROXY / demo constants. Testing this against real")
+    print("   magnetometer/Kp/Dst/solar-wind data (M1 vs M0, lambda_Delta")
+    print("   frozen, t_c pre-anchored) is the next step, not done here.")
 
     print("\n" + "=" * 78)
     print("BOUNDARY STATEMENT")

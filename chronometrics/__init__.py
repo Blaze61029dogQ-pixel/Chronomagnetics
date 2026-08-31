@@ -19,4 +19,4 @@ internal chronometric object only. See `chronometrics/report.py` for a
 full printed accounting, including which status tag each constant carries.
 """
 
-from . import constants, spectral, bright_ridge, dark_bright  # noqa: F401
+from . import constants, spectral, bright_ridge, dark_bright, geophysics  # noqa: F401

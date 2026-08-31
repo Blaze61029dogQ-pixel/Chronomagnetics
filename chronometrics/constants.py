@@ -180,7 +180,28 @@ D_DEFECT = Fraction(1399, 221658140)        # (1/4)*delta_q_squared
 # ---------------------------------------------------------------------------
 ISO_GAP_SLOPE = Fraction(-20, 7)            # delta_B_gate / delta_chi
 
+# Full local-sensitivity expansion of G_12 around the frozen operator, as
+# audited in the source registry. These six partial derivatives are
+# transcribed reference data only -- reproducing them requires the general
+# (A_main, kshift, sigma, chi, B_gate, D_defect) parameterization of the
+# operator used by that audit, which the source documents describe but do
+# not fully specify, so they are not independently re-derived here.
+ISO_GAP_SENSITIVITY = {
+    'dG_12/dA_main': mp.mpf('-0.11168628871091268'),
+    'dG_12/dkshift': mp.mpf('0.09144109839909209'),
+    'dG_12/dsigma': mp.mpf('-0.9095510828115216'),
+    'dG_12/dchi': mp.mpf('0.029415649739359395'),
+    'dG_12/dB_gate': mp.mpf('0.010295303776199916'),
+    'dG_12/dD_defect': mp.mpf('-0.000002644641421412075'),
+}
+
 # ---------------------------------------------------------------------------
 # 11. Rejected lead: gap-16 target                                [REJECTED]
 # ---------------------------------------------------------------------------
 G_16_TARGET = 6 * (LAMBDA_DELTA - 1)        # = 6102/2705, rejected by audit
+
+# Source audit's own finite-difference result for G_16 = E_16 - E_15 (their
+# grid/implementation, not ours -- see chronometrics.spectral for an
+# independent re-solve). Transcribed reference data only.
+G_16_SOURCE_OBSERVED = mp.mpf('2.2596107085491894')
+G_16_SOURCE_ERROR = mp.mpf('0.0037881577173961567')
