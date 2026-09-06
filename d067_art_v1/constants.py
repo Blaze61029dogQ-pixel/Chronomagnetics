@@ -14,8 +14,23 @@ import math
 H_PLANCK = 6.62607015e-34          # J s
 C_LIGHT = 299792458.0              # m/s
 
-# Peak photopic luminous efficacy, defined exactly at 555 nm (SI/CGPM).
-LUMINOUS_EFFICACY_555NM = 683.0    # lm/W
+# --- Exact SI photometric definition (2019 SI / CGPM) ----------------------
+# The SI defines the luminous efficacy of monochromatic radiation of
+# frequency 540e12 Hz to be exactly K_cd = 683 lm/W. It does NOT define
+# 683 lm/W "at 555 nm" -- 555 nm is only the conventionally rounded
+# wavelength people associate with that frequency. The exact defining
+# wavelength must be *derived*, not assumed, from the exact SI speed of
+# light and must not be rounded internally.
+K_CD = 683.0                        # lm/W, exact SI luminous efficacy at NU_CD_HZ
+NU_CD_HZ = 540e12                   # Hz, exact SI defining frequency (540 THz)
+LAMBDA_CD_M = C_LIGHT / NU_CD_HZ     # exact SI defining wavelength, UNROUNDED
+                                     # = 149896229/270000 nm ~= 555.1712185185... nm
+
+# Engineering/design reference wavelength used throughout the monograph's
+# Sec. 20 worked numbers (photon rate, idealized lumen equivalent). This is
+# a conventional APPROXIMATION of LAMBDA_CD_M chosen for engineering
+# convenience -- it is NOT the SI-exact photometric defining wavelength.
+REFERENCE_WAVELENGTH_M = 555e-9     # m (~555 nm approximate reference)
 
 # --- Appendix C: D067 physical reference parameters ------------------------
 # "Current reduced-order engineering targets" for the physically
@@ -55,8 +70,7 @@ PIEZO_SAFETY_FACTOR = 2.01643731830532191
 HALF_POWER_BANDWIDTH_HZ = 3.06168876413914859
 EFFECTIVE_Q = 5.99644740572118309e+01
 
-REFERENCE_WAVELENGTH_M = 555e-9                 # 555 nm reference
-PHOTON_RATE_HZ = 1.23712829446936031e+14        # s^-1 at 555 nm
+PHOTON_RATE_HZ = 1.23712829446936031e+14        # s^-1 at REFERENCE_WAVELENGTH_M (~555 nm)
 PHOTOPIC_LUMEN_EQUIVALENT = 3.02426046907565763e-02  # idealized monochromatic lm
 
 # --- Section 16: robustness (Appendix D manufacturing corners) -------------

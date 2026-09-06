@@ -58,9 +58,12 @@ against real magnetometer/Kp/Dst/solar-wind data.
   rather than hard-coding agreement. The independent spectral solve
   lands within a few percent of the documented gaps, not on top of them;
   that gap is reported honestly rather than tuned away, since the exact
-  finite-difference scheme and grid used in the original audit (run
-  under the name "Termius" in the source material) is not fully
-  specified in the source documents.
+  finite-difference scheme and grid used in the original audit is not
+  fully specified in the source documents. (The source material names
+  "Termius" -- a terminal emulator used to run the original session, not
+  a numerical method -- as the environment the audit ran in; the actual
+  computational configuration -- grid size, dtype, tolerance, package
+  versions -- was not archived and cannot be reconstructed here.)
 - The **iso-gap lock direction** (`delta_B_gate ~= -(20/7) delta_chi`)
   and its full 6-term sensitivity vector are transcribed, not re-derived,
   since they depend on a general `(A_main, kshift, sigma, chi, B_gate,

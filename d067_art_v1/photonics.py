@@ -1,12 +1,15 @@
 """Optical-power to photon-rate and idealized luminous-flux conversions (Sec. 20).
 
-The 555 nm luminous-flux conversion is an idealized monochromatic
-reference at the peak of the photopic luminosity function, not a
-prediction of an actual broadband LED spectrum (Appendix F).
+The luminous-flux conversion below is an idealized monochromatic reference
+using the exact SI luminous efficacy K_cd (683 lm/W, defined at exactly
+540e12 Hz) evaluated at the ~555 nm engineering reference wavelength, not
+a prediction of an actual broadband LED spectrum (Appendix F). K_cd is not
+"defined at 555 nm"; see constants.py for the exact SI definition and the
+derived (unrounded) defining wavelength LAMBDA_CD_M.
 """
 from __future__ import annotations
 
-from .constants import C_LIGHT, H_PLANCK, LUMINOUS_EFFICACY_555NM
+from .constants import C_LIGHT, H_PLANCK, K_CD
 
 
 def photon_energy(wavelength_m: float) -> float:
@@ -20,9 +23,11 @@ def photon_rate(optical_power_w: float, wavelength_m: float) -> float:
 
 
 def idealized_photopic_lumens(optical_power_w: float) -> float:
-    """Idealized monochromatic photopic-equivalent lumens at 555 nm (Sec. 20).
+    """Idealized monochromatic photopic-equivalent lumens at ~555 nm (Sec. 20).
 
-    Uses the exact peak photopic luminous efficacy (683 lm/W at 555 nm),
-    not an actual broadband LED luminous efficacy.
+    Uses the exact SI luminous efficacy K_cd = 683 lm/W (defined at exactly
+    540e12 Hz, not "at 555 nm"), applied here as an idealization at the
+    ~555 nm engineering reference wavelength -- not an actual broadband LED
+    luminous efficacy.
     """
-    return optical_power_w * LUMINOUS_EFFICACY_555NM
+    return optical_power_w * K_CD

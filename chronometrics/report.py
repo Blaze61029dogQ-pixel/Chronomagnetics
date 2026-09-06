@@ -12,6 +12,7 @@ from . import spectral as S
 from . import bright_ridge as BR
 from . import dark_bright as DB
 from . import geophysics as GEO
+from validation import ValidationError
 
 mp.mp.dps = 50
 
@@ -22,7 +23,9 @@ def _check(label: str, computed, reference, tol, hard: bool = True) -> None:
     tag = "OK  " if ok else ("FAIL" if hard else "WARN")
     print(f"  [{tag}] {label}: computed={computed}  reference={reference}  |diff|={diff}")
     if hard and not ok:
-        raise AssertionError(f"{label} did not reproduce the documented value")
+        raise ValidationError(
+            f"{label}: computed={computed!r}, reference={reference!r}, tolerance={tol!r}"
+        )
 
 
 def main() -> None:
