@@ -14,6 +14,8 @@ from fractions import Fraction
 
 import mpmath as mp
 
+from validation import ValidationError
+
 mp.mp.dps = 50
 
 # ---------------------------------------------------------------------------
@@ -27,13 +29,22 @@ AREA_SQ = (SEMIPERIMETER
            * (SEMIPERIMETER - A_SIDE)
            * (SEMIPERIMETER - B_SIDE)
            * (SEMIPERIMETER - C_SIDE))                     # Heron's formula
-assert AREA_SQ == 55414535, "Heron area-squared identity broke"
+if AREA_SQ != 55414535:
+    raise ValidationError(
+        f"Heron area-squared identity broke: computed={AREA_SQ!r}, reference=55414535"
+    )
 AREA_DELTA = mp.sqrt(int(AREA_SQ))                          # sqrt(55414535)
 
 SUM_SQUARES = A_SIDE ** 2 + B_SIDE ** 2 + C_SIDE ** 2       # 53236
-assert SUM_SQUARES == 53236
+if SUM_SQUARES != 53236:
+    raise ValidationError(
+        f"triangle sum-of-squares identity broke: computed={SUM_SQUARES!r}, reference=53236"
+    )
 THIRTEEN_309 = Fraction(SUM_SQUARES, 4)                     # 13309
-assert THIRTEEN_309 == 13309
+if THIRTEEN_309 != 13309:
+    raise ValidationError(
+        f"THIRTEEN_309 identity broke: computed={THIRTEEN_309!r}, reference=13309"
+    )
 
 
 def triangle_vertices():
@@ -47,18 +58,30 @@ def triangle_vertices():
 # 2. Brocard phase seed (triangle-derived)                            [EXACT]
 # ---------------------------------------------------------------------------
 # tan(beta_Delta) = 4*Area / (a^2+b^2+c^2) = Area / 13309
-assert THIRTEEN_309 ** 2 + AREA_SQ == 232544016
+_lhs_beta = THIRTEEN_309 ** 2 + AREA_SQ
+if _lhs_beta != 232544016:
+    raise ValidationError(
+        f"Brocard phase seed identity broke: computed={_lhs_beta!r}, reference=232544016"
+    )
 BETA_DELTA = mp.atan(AREA_DELTA / int(THIRTEEN_309))
 
 # ---------------------------------------------------------------------------
 # 3. q-screen constant and exact leakage defect                      [EXACT]
 # ---------------------------------------------------------------------------
 Q_DELTA_NUMER = 7444
-assert Q_DELTA_NUMER ** 2 == 55413136
+_q_delta_numer_sq = Q_DELTA_NUMER ** 2
+if _q_delta_numer_sq != 55413136:
+    raise ValidationError(
+        f"q-screen numerator identity broke: computed={_q_delta_numer_sq!r}, reference=55413136"
+    )
 Q_DELTA = Q_DELTA_NUMER / AREA_DELTA
 Q_DELTA_SQ = Fraction(Q_DELTA_NUMER ** 2, int(AREA_SQ))     # 55413136/55414535
 DELTA_Q_SQUARED = 1 - Q_DELTA_SQ                            # 1399/55414535
-assert DELTA_Q_SQUARED == Fraction(1399, 55414535)
+if DELTA_Q_SQUARED != Fraction(1399, 55414535):
+    raise ValidationError(
+        f"exact leakage defect broke: computed={DELTA_Q_SQUARED!r}, "
+        f"reference={Fraction(1399, 55414535)!r}"
+    )
 
 
 def Z_Delta_of_theta(theta) -> mp.mpf:
@@ -109,7 +132,11 @@ def kappa_null(n: int = 0) -> mp.mpf:
 SIGMA_KAPPA = Fraction(3, 40)
 CHI = Fraction(7, 20)
 MU = Fraction(1, 2)
-assert CHI * MU == Fraction(7, 40)         # product-invariant lock
+if CHI * MU != Fraction(7, 40):            # product-invariant lock
+    raise ValidationError(
+        f"gate-triplet product-invariant lock broke: computed={CHI * MU!r}, "
+        f"reference={Fraction(7, 40)!r}"
+    )
 M_HARMONIC = 7
 
 _W_REC_COEFF = mp.mpf(800) / 9             # 1/(2*sigma_kappa^2)
