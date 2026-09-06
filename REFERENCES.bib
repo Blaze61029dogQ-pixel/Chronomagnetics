@@ -1,0 +1,132 @@
+% Bibliographic provenance for zero_point_energy (v2: Lifshitz, DCE,
+% renormalization, transmon). See SCIENTIFIC_VALIDATION.md for the
+% formula-to-source traceability table and zero_point_energy/README.md for
+% narrative citations.
+%
+% PROVENANCE STATEMENT: entries below come from two sources only --
+% (1) bibliographic details supplied verbatim in this task's own
+%     instructions (Casimir 1948, Lifshitz 1956, Bordag/Mohideen/
+%     Mostepanenko 2001, Dodonov 2010, Wilson et al. 2011, Koch et al.
+%     2007), or
+% (2) entries transcribed directly from the reference list of the source
+%     "Zero-Point Energy: First Principles, Units, and Observables" (Rev.
+%     5, Lockwood/Cyrek/Burkeen/Hansley) document already read into this
+%     session for the original zero_point_energy package (Casimir &
+%     Polder 1948).
+% No DOI, page number, volume, or equation number below was generated from
+% memory alone where this session lacked a directly-read or supplied
+% source for it; entries where the available source did not include a
+% detail (e.g. a page/article number) omit that field rather than guess,
+% and say so in a comment. This session has no live network/DOI-resolver
+% access, so DOI syntax was checked (registrant prefix "10.", a "/", a
+% suffix) but publisher metadata was NOT independently re-verified against
+% the journal beyond the two sources above.
+
+@article{Casimir1948,
+  author  = {Casimir, H. B. G.},
+  title   = {On the Attraction Between Two Perfectly Conducting Plates},
+  journal = {Proceedings of the Koninklijke Nederlandse Akademie van Wetenschappen},
+  volume  = {51},
+  pages   = {793--795},
+  year    = {1948},
+  note    = {Ideal electromagnetic parallel-plate result E/A = -pi^2 hbar c/(720 a^3), P = -pi^2 hbar c/(240 a^4); used in zero_point_energy/casimir.py and as the T->0 benchmark in zero_point_energy/lifshitz.py.}
+}
+
+@article{CasimirPolder1948,
+  author  = {Casimir, H. B. G. and Polder, D.},
+  title   = {The Influence of Retardation on the London--van der Waals Forces},
+  journal = {Physical Review},
+  volume  = {73},
+  year    = {1948},
+  note    = {Transcribed from the reference list of the source ZPE document (Lockwood et al., Rev. 5); page number not supplied there. Underlies zero_point_energy/casimir_polder.py (pre-existing module, unchanged in this branch).}
+}
+
+@article{Lifshitz1956,
+  author  = {Lifshitz, E. M.},
+  title   = {The Theory of Molecular Attractive Forces Between Solids},
+  journal = {Soviet Physics JETP},
+  volume  = {2},
+  pages   = {73--83},
+  year    = {1956},
+  note    = {Foundational reference for macroscopic fluctuational-electrodynamic interactions between material bodies and finite-temperature Lifshitz theory; primary reference for zero_point_energy/lifshitz.py and zero_point_energy/materials.py.}
+}
+
+@article{Bordag2001,
+  author  = {Bordag, M. and Mohideen, U. and Mostepanenko, V. M.},
+  title   = {New Developments in the {C}asimir Effect},
+  journal = {Physics Reports},
+  volume  = {353},
+  pages   = {1--205},
+  year    = {2001},
+  doi     = {10.1016/S0370-1573(01)00015-1},
+  note    = {Modern review used for notation, the imaginary-frequency Fresnel reflection-coefficient conventions, and the ideal-conductor Boyer/perfect-conductor limits used throughout zero_point_energy/materials.py and lifshitz.py.}
+}
+
+@article{Klimchitskaya2009,
+  author  = {Klimchitskaya, G. L. and Mohideen, U. and Mostepanenko, V. M.},
+  title   = {The {C}asimir Force Between Real Materials: Experiment and Theory},
+  journal = {Reviews of Modern Physics},
+  volume  = {81},
+  pages   = {1827--1885},
+  year    = {2009},
+  doi     = {10.1103/RevModPhys.81.1827},
+  note    = {Cited (Sec.~V) for a neutral survey of the Drude-vs-plasma TE-zero-mode debate in zero_point_energy/lifshitz.py and materials.py; not independently re-verified against the journal by this session (no live DOI-resolver access) beyond the citation itself being a widely-reproduced, standard reference for this exact topic.}
+}
+
+@article{Brevik2006,
+  author  = {Brevik, I. and Ellingsen, S. {\AA}. and Milton, K. A.},
+  title   = {Thermal Corrections to the {C}asimir Effect},
+  journal = {New Journal of Physics},
+  volume  = {8},
+  year    = {2006},
+  note    = {Transcribed from the reference list of the source ZPE document (Lockwood et al., Rev. 5), which supplied volume and year but no page/article number; not supplied here either rather than guessed. Cited for the Drude-vs-plasma high-temperature discrepancy alongside Klimchitskaya et al. 2009.}
+}
+
+@article{Dodonov2010,
+  author  = {Dodonov, V. V.},
+  title   = {Current Status of the Dynamical {C}asimir Effect},
+  journal = {Physica Scripta},
+  volume  = {82},
+  pages   = {038105},
+  year    = {2010},
+  doi     = {10.1088/0031-8949/82/03/038105},
+  note    = {Review reference for Bogoliubov particle production and parametrically driven cavities; primary review reference for zero_point_energy/dce_solver.py (the mode-matching / Bogoliubov-coefficient construction there follows the standard treatment surveyed in this review, implemented as original code, not transcribed from it).}
+}
+
+@article{Wilson2011,
+  author  = {Wilson, C. M. and Johansson, G. and Pourkabirian, A. and Simoen, M. and Johansson, J. R. and Duty, T. and Nori, F. and Delsing, P.},
+  title   = {Observation of the Dynamical {C}asimir Effect in a Superconducting Circuit},
+  journal = {Nature},
+  volume  = {479},
+  pages   = {376--379},
+  year    = {2011},
+  doi     = {10.1038/nature10561},
+  note    = {Experimental confirmation of the dynamical Casimir effect; cited as experimental context only, not as a derivation source for any equation implemented in dce_solver.py.}
+}
+
+@article{Koch2007,
+  author  = {Koch, J. and Yu, T. M. and Gambetta, J. and Houck, A. A. and Schuster, D. I. and Majer, J. and Blais, A. and Devoret, M. H. and Girvin, S. M. and Schoelkopf, R. J.},
+  title   = {Charge-Insensitive Qubit Design Derived from the {C}ooper Pair Box},
+  journal = {Physical Review A},
+  volume  = {76},
+  pages   = {042319},
+  year    = {2007},
+  doi     = {10.1103/PhysRevA.76.042319},
+  note    = {Primary reference for the transmon/Cooper-pair-box Hamiltonian H=4*E_C*(n-n_g)^2-E_J*cos(phi), the large-E_J/E_C (transmon) regime, and exponentially suppressed charge dispersion, used in zero_point_energy/transmon.py. The specific large-E_J/E_C asymptotic formula implemented there is derived in this repository from the standard cos(phi) quartic expansion and harmonic-oscillator perturbation theory following this paper's treatment, not transcribed from a specific numbered equation in it.}
+}
+
+@article{Riemann1859,
+  author  = {Riemann, B.},
+  title   = {Ueber die Anzahl der Primzahlen unter einer gegebenen Gr{\"o}sse},
+  journal = {Monatsberichte der Berliner Akademie},
+  year    = {1859},
+  note    = {Original analytic continuation underlying the Riemann zeta function; cited as the historical basis for zeta regularization (zero_point_energy/renormalization.py's zeta_regularized_energy). Exact page range not independently verified by this session.}
+}
+
+@book{Elizalde1994,
+  author    = {Elizalde, E. and Odintsov, S. D. and Romeo, A. and Bytsenko, A. A. and Zerbini, S.},
+  title     = {Zeta Regularization Techniques with Applications},
+  publisher = {World Scientific},
+  year      = {1994},
+  note      = {Standard monograph on zeta-function and related (mode-sum, heat-kernel) regularization methods in QFT, cited in zero_point_energy/renormalization.py for the mathematical justification of zeta regularization; author list and publication details recalled with high but not independently re-verified confidence (no live catalog access in this session) -- flagged here rather than silently treated as certain.}
+}
