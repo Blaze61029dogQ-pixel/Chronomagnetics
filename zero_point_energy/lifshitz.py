@@ -333,6 +333,8 @@ def pressure(
     """
     if a <= 0:
         raise ValueError(f"separation a must be > 0, got {a!r}")
+    if relative_step <= 0:
+        raise ValueError(f"relative_step must be > 0, got {relative_step!r}")
     h = relative_step * a
     f_plus = free_energy_fn(a + h, **kwargs).free_energy_per_area
     f_minus = free_energy_fn(a - h, **kwargs).free_energy_per_area

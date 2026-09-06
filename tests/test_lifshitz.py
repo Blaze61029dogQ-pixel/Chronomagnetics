@@ -263,6 +263,16 @@ def test_rejects_nonpositive_separation():
         zero_temperature_free_energy_per_area(-1e-6, pc)
 
 
+def test_pressure_rejects_nonpositive_relative_step():
+    """Found during the Phase-15 audit: relative_step=0 would otherwise
+    divide by zero in the central-difference step h=relative_step*a."""
+    pc = PerfectConductor()
+    with pytest.raises(ValueError):
+        pressure(zero_temperature_free_energy_per_area, 1e-6, relative_step=0.0, material1=pc)
+    with pytest.raises(ValueError):
+        pressure(zero_temperature_free_energy_per_area, 1e-6, relative_step=-1e-4, material1=pc)
+
+
 def test_rejects_nonpositive_temperature_for_finite_temperature_call():
     pc = PerfectConductor()
     with pytest.raises(ValueError):
