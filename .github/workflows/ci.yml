@@ -1,0 +1,46 @@
+name: CI
+
+"on":
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install runtime dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install development/test dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Compile-check all Python files
+        run: python -m compileall -q .
+
+      - name: zero_point_energy report (mainstream QFT self-check)
+        run: python -m zero_point_energy.report
+
+      - name: zero_point_energy report under python -O (assert-stripped mode)
+        run: python -O -m zero_point_energy.report
+
+      - name: d067_art_v1 report (D067 internal consistency self-check)
+        run: python -m d067_art_v1.report
+
+      - name: chronometrics report (chronometric registry self-check)
+        run: python -m chronometrics.report
+
+      - name: pytest
+        run: python -m pytest -vv
