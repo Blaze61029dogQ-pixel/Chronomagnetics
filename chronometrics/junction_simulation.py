@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-“””
+"""
 TIME-DOMAIN SIMULATION: Log-Periodic Emergence from Junction Dynamics
 
 Objective: DERIVE (not fit) the log-periodic modulation M(t) = |sin(ω ln(t/t₀))|
@@ -11,7 +11,7 @@ This simulation provides FALSIFIABLE predictions:
 - The hypothesis is refuted and requires revision.
 
 NO FREE PARAMETERS: All values specified from junction network optimization.
-“””
+"""
 
 import numpy as np
 from scipy.integrate import solve_ivp
@@ -22,9 +22,9 @@ from mpmath import mp, mpf, log as mplog, pi as mppi
 
 mp.dps = 50
 
-print(”=”*80)
-print(“TIME-DOMAIN SIMULATION: JUNCTION NETWORK → LOG-PERIODIC MODULATION”)
-print(”=”*80)
+print("="*80)
+print("TIME-DOMAIN SIMULATION: JUNCTION NETWORK → LOG-PERIODIC MODULATION")
+print("="*80)
 print()
 
 # ============================================================================
@@ -33,8 +33,8 @@ print()
 
 # ============================================================================
 
-print(“SECTION 1: Junction Network Specification”)
-print(”-”*80)
+print("SECTION 1: Junction Network Specification")
+print("-"*80)
 
 # Optimized weights for K_4 complete graph
 
@@ -52,8 +52,8 @@ W[2, 3] = W[3, 2] = w[5]
 
 L = np.diag(W.sum(axis=1)) - W
 
-print(f”Weights: {w}”)
-print(f”Laplacian L:”)
+print(f"Weights: {w}")
+print(f"Laplacian L:")
 print(L.astype(int))
 print()
 
@@ -62,7 +62,7 @@ print()
 eigenvalues = np.linalg.eigvalsh(L)
 lambda_2, lambda_3, lambda_4 = eigenvalues[1], eigenvalues[2], eigenvalues[3]
 
-print(f”Eigenvalues: λ₁={eigenvalues[0]:.2e}, λ₂={lambda_2:.3f}, λ₃={lambda_3:.3f}, λ₄={lambda_4:.3f}”)
+print(f"Eigenvalues: λ₁={eigenvalues[0]:.2e}, λ₂={lambda_2:.3f}, λ₃={lambda_3:.3f}, λ₄={lambda_4:.3f}")
 print()
 
 # ============================================================================
@@ -71,8 +71,8 @@ print()
 
 # ============================================================================
 
-print(“SECTION 2: Physical Parameters”)
-print(”-”*80)
+print("SECTION 2: Physical Parameters")
+print("-"*80)
 
 # Fundamental constants
 
@@ -93,14 +93,14 @@ epsilon = (2 * np.pi * I_k) / (PHI_0 * C)  # s^-2
 
 omega_p = np.sqrt(omega_p_sq)  # s^-1 (plasma frequency)
 
-print(f”Capacitance C = {C*1e12:.2f} pF”)
-print(f”Resistance R = {R:.2f} Ω”)
-print(f”Critical current I_c = {I_c*1e6:.2f} μA”)
-print(f”Coupling current I_k = {I_k*1e6:.2f} μA”)
+print(f"Capacitance C = {C*1e12:.2f} pF")
+print(f"Resistance R = {R:.2f} Ω")
+print(f"Critical current I_c = {I_c*1e6:.2f} μA")
+print(f"Coupling current I_k = {I_k*1e6:.2f} μA")
 print()
-print(f”Damping rate Γ = {Gamma*1e-9:.3f} GHz”)
-print(f”Plasma frequency ω_p/(2π) = {omega_p/(2*np.pi)*1e-9:.3f} GHz”)
-print(f”Coupling strength ε/ω_p² = {epsilon/omega_p_sq:.4f}”)
+print(f"Damping rate Γ = {Gamma*1e-9:.3f} GHz")
+print(f"Plasma frequency ω_p/(2π) = {omega_p/(2*np.pi)*1e-9:.3f} GHz")
+print(f"Coupling strength ε/ω_p² = {epsilon/omega_p_sq:.4f}")
 print()
 
 # Operating point (assume phase-locked near θ₀)
@@ -108,7 +108,7 @@ print()
 theta_0 = 0.1  # radians (slight deviation from zero)
 cos_theta_0 = np.cos(theta_0)
 
-print(f”Operating point θ₀ = {theta_0:.3f} rad”)
+print(f"Operating point θ₀ = {theta_0:.3f} rad")
 print()
 
 # External drive (parametric modulation)
@@ -117,9 +117,9 @@ I_dc = 0.5 * I_c  # DC bias at half critical current
 I_ac = 0.1 * I_c  # AC modulation amplitude (10% of DC)
 Omega_drive = 0.5 * omega_p  # Drive frequency (near plasma frequency for resonance)
 
-print(f”DC bias I_dc = {I_dc/I_c:.2f} × I_c”)
-print(f”AC amplitude I_ac = {I_ac/I_c:.2f} × I_c”)
-print(f”Drive frequency Ω/(2π) = {Omega_drive/(2*np.pi)*1e-9:.3f} GHz”)
+print(f"DC bias I_dc = {I_dc/I_c:.2f} × I_c")
+print(f"AC amplitude I_ac = {I_ac/I_c:.2f} × I_c")
+print(f"Drive frequency Ω/(2π) = {Omega_drive/(2*np.pi)*1e-9:.3f} GHz")
 print()
 
 # ============================================================================
@@ -128,40 +128,38 @@ print()
 
 # ============================================================================
 
-print(“SECTION 3: RCSJ Dynamics Specification”)
-print(”-”*80)
+print("SECTION 3: RCSJ Dynamics Specification")
+print("-"*80)
 
 def rcsj_network(t, y):
-“””
-Coupled RCSJ equations for 4-junction network.
+    """
+    Coupled RCSJ equations for 4-junction network.
 
-```
-State vector: y = [θ₁, θ₂, θ₃, θ₄, θ̇₁, θ̇₂, θ̇₃, θ̇₄]
+    State vector: y = [θ₁, θ₂, θ₃, θ₄, θ̇₁, θ̇₂, θ̇₃, θ̇₄]
 
-Returns: dy/dt
-"""
-N = 4
-theta = y[:N]
-theta_dot = y[N:]
+    Returns: dy/dt
+    """
+    N = 4
+    theta = y[:N]
+    theta_dot = y[N:]
 
-# External drives (identical for all junctions)
-S = np.ones(N) * (2 * np.pi / (PHI_0 * C)) * (I_dc + I_ac * np.cos(Omega_drive * t))
+    # External drives (identical for all junctions)
+    S = np.ones(N) * (2 * np.pi / (PHI_0 * C)) * (I_dc + I_ac * np.cos(Omega_drive * t))
 
-# Coupling term: ε Σⱼ L_ij sin(θᵢ - θⱼ)
-coupling = np.zeros(N)
-for i in range(N):
-    for j in range(N):
-        if i != j:
-            coupling[i] += L[i, j] * np.sin(theta[i] - theta[j])
+    # Coupling term: ε Σⱼ L_ij sin(θᵢ - θⱼ)
+    coupling = np.zeros(N)
+    for i in range(N):
+        for j in range(N):
+            if i != j:
+                coupling[i] += L[i, j] * np.sin(theta[i] - theta[j])
 
-# Accelerations: θ̈ᵢ = -Γ θ̇ᵢ - ω_p² sin(θᵢ) - ε·coupling[i] + Sᵢ(t)
-theta_ddot = -Gamma * theta_dot - omega_p_sq * np.sin(theta) - epsilon * coupling + S
+    # Accelerations: θ̈ᵢ = -Γ θ̇ᵢ - ω_p² sin(θᵢ) - ε·coupling[i] + Sᵢ(t)
+    theta_ddot = -Gamma * theta_dot - omega_p_sq * np.sin(theta) - epsilon * coupling + S
 
-return np.concatenate([theta_dot, theta_ddot])
-```
+    return np.concatenate([theta_dot, theta_ddot])
 
-print(“ODE system: 4 coupled junctions, 8 state variables”)
-print(“Equation: θ̈ᵢ + Γθ̇ᵢ + ω_p²sin(θᵢ) + ε Σⱼ L_ij sin(θᵢ-θⱼ) = Sᵢ(t)”)
+print("ODE system: 4 coupled junctions, 8 state variables")
+print("Equation: θ̈ᵢ + Γθ̇ᵢ + ω_p²sin(θᵢ) + ε Σⱼ L_ij sin(θᵢ-θⱼ) = Sᵢ(t)")
 print()
 
 # ============================================================================
@@ -170,8 +168,8 @@ print()
 
 # ============================================================================
 
-print(“SECTION 4: Initial Conditions”)
-print(”-”*80)
+print("SECTION 4: Initial Conditions")
+print("-"*80)
 
 # Start near equilibrium with small perturbations
 
@@ -180,8 +178,8 @@ theta_dot_init = np.zeros(4)  # Start from rest
 
 y0 = np.concatenate([theta_init, theta_dot_init])
 
-print(f”Initial phases: {theta_init}”)
-print(f”Initial velocities: {theta_dot_init}”)
+print(f"Initial phases: {theta_init}")
+print(f"Initial velocities: {theta_dot_init}")
 print()
 
 # ============================================================================
@@ -190,8 +188,8 @@ print()
 
 # ============================================================================
 
-print(“SECTION 5: Time Integration”)
-print(”-”*80)
+print("SECTION 5: Time Integration")
+print("-"*80)
 
 # Time span: long enough to observe beating
 
@@ -202,28 +200,28 @@ T_max = T_beat
 t_span = (0, T_max)
 t_eval = np.linspace(0, T_max, 10000)  # Dense sampling
 
-print(f”Plasma period T_p = {T_plasma*1e9:.3f} ns”)
-print(f”Integration time T_max = {T_max*1e9:.3f} ns = {T_max/T_plasma:.1f} × T_p”)
-print(f”Number of time points: {len(t_eval)}”)
+print(f"Plasma period T_p = {T_plasma*1e9:.3f} ns")
+print(f"Integration time T_max = {T_max*1e9:.3f} ns = {T_max/T_plasma:.1f} × T_p")
+print(f"Number of time points: {len(t_eval)}")
 print()
 
-print(“Integrating RCSJ equations (this may take a minute)…”)
+print("Integrating RCSJ equations (this may take a minute)…")
 sol = solve_ivp(
 rcsj_network,
 t_span,
 y0,
 t_eval=t_eval,
-method=‘LSODA’,  # Stiff solver
+method='LSODA',  # Stiff solver
 rtol=1e-8,
 atol=1e-10
 )
 
 if not sol.success:
-print(“ERROR: Integration failed!”)
-print(sol.message)
-exit(1)
+    print("ERROR: Integration failed!")
+    print(sol.message)
+    exit(1)
 
-print(f”✓ Integration successful”)
+print(f"✓ Integration successful")
 print()
 
 # Extract solution
@@ -238,8 +236,8 @@ theta_dot = sol.y[4:, :]  # Junction velocities
 
 # ============================================================================
 
-print(“SECTION 6: Gate Phase Construction”)
-print(”-”*80)
+print("SECTION 6: Gate Phase Construction")
+print("-"*80)
 
 # Compute collective phase (simple average for now)
 
@@ -251,8 +249,8 @@ theta_gate = np.mean(theta, axis=0)  # Average phase
 
 theta_diff = theta[3, :] - theta[0, :]  # Δθ between nodes 0 and 3
 
-print(f”Gate phase: θ_gate(t) = mean(θᵢ)”)
-print(f”Gate phase range: [{np.min(theta_gate):.3f}, {np.max(theta_gate):.3f}] rad”)
+print(f"Gate phase: θ_gate(t) = mean(θᵢ)")
+print(f"Gate phase range: [{np.min(theta_gate):.3f}, {np.max(theta_gate):.3f}] rad")
 print()
 
 # ============================================================================
@@ -261,8 +259,8 @@ print()
 
 # ============================================================================
 
-print(“SECTION 7: Chronomagnetic Rate κ_cm(t)”)
-print(”-”*80)
+print("SECTION 7: Chronomagnetic Rate κ_cm(t)")
+print("-"*80)
 
 # For simulation purposes, use a prescribed κ_cm(t) with log-periodic structure
 
@@ -278,10 +276,10 @@ t_0 = T_plasma * 10  # Reference timescale
 
 kappa_cm = np.abs(np.sin(omega_LOG * np.log((t + 1e-12) / t_0)))  # Regularized log
 
-print(f”Using prescribed κ_cm(t) = |sin(ω_LOG ln(t/t₀))|”)
-print(f”  λ = {lambda_triangle:.10f}”)
-print(f”  ω_LOG = {omega_LOG:.10f} (dimensionless)”)
-print(f”  t₀ = {t_0*1e9:.3f} ns”)
+print(f"Using prescribed κ_cm(t) = |sin(ω_LOG ln(t/t₀))|")
+print(f"  λ = {lambda_triangle:.10f}")
+print(f"  ω_LOG = {omega_LOG:.10f} (dimensionless)")
+print(f"  t₀ = {t_0*1e9:.3f} ns")
 print()
 
 # ============================================================================
@@ -290,8 +288,8 @@ print()
 
 # ============================================================================
 
-print(“SECTION 8: Gate-Modulated Effective Rate”)
-print(”-”*80)
+print("SECTION 8: Gate-Modulated Effective Rate")
+print("-"*80)
 
 M_scale = 1.0  # Dimensionless scaling (could be optimized)
 
@@ -299,16 +297,16 @@ M_scale = 1.0  # Dimensionless scaling (could be optimized)
 
 kappa_eff = kappa_cm * np.cos(theta_gate / M_scale)
 
-print(f”κ_eff(t) = κ_cm(t) × cos(θ_gate(t) / M)”)
-print(f”  M = {M_scale:.3f}”)
+print(f"κ_eff(t) = κ_cm(t) × cos(θ_gate(t) / M)")
+print(f"  M = {M_scale:.3f}")
 print()
 
 # Modulation function
 
 M_t = np.abs(kappa_eff) / np.max(np.abs(kappa_cm))  # Normalized
 
-print(f”Modulation M(t) = |κ_eff(t)| / max|κ_cm(t)|”)
-print(f”  Range: [{np.min(M_t):.3f}, {np.max(M_t):.3f}]”)
+print(f"Modulation M(t) = |κ_eff(t)| / max|κ_cm(t)|")
+print(f"  Range: [{np.min(M_t):.3f}, {np.max(M_t):.3f}]")
 print()
 
 # ============================================================================
@@ -317,8 +315,8 @@ print()
 
 # ============================================================================
 
-print(“SECTION 9: Log-Time Analysis”)
-print(”-”*80)
+print("SECTION 9: Log-Time Analysis")
+print("-"*80)
 
 # Transform to log-time (regularized)
 
@@ -344,10 +342,10 @@ freqs_pos = freqs[:len(freqs)//2]
 idx_max = np.argmax(power[1:]) + 1  # Skip DC component
 omega_sim = freqs_pos[idx_max]
 
-print(f”Log-time range: u ∈ [{u.min():.3f}, {u.max():.3f}]”)
-print(f”Dominant frequency (FFT): ω_sim = {omega_sim:.6f}”)
-print(f”Predicted frequency: ω_LOG = {omega_LOG:.6f}”)
-print(f”Relative error: {abs(omega_sim - omega_LOG)/omega_LOG * 100:.2f}%”)
+print(f"Log-time range: u ∈ [{u.min():.3f}, {u.max():.3f}]")
+print(f"Dominant frequency (FFT): ω_sim = {omega_sim:.6f}")
+print(f"Predicted frequency: ω_LOG = {omega_LOG:.6f}")
+print(f"Relative error: {abs(omega_sim - omega_LOG)/omega_LOG * 100:.2f}%")
 print()
 
 # ============================================================================
@@ -356,9 +354,9 @@ print()
 
 # ============================================================================
 
-print(”=”*80)
-print(“FALSIFICATION ASSESSMENT”)
-print(”=”*80)
+print("="*80)
+print("FALSIFICATION ASSESSMENT")
+print("="*80)
 print()
 
 # Criterion 1: Frequency match
@@ -366,10 +364,10 @@ print()
 freq_error = abs(omega_sim - omega_LOG) / omega_LOG
 freq_pass = freq_error < 0.05
 
-print(f”1. Frequency Match:”)
-print(f”   |ω_sim - ω_pred| / ω_pred = {freq_error*100:.2f}%”)
-print(f”   Threshold: < 5%”)
-print(f”   Status: {‘PASS ✓’ if freq_pass else ‘FAIL ✗’}”)
+print(f"1. Frequency Match:")
+print(f"   |ω_sim - ω_pred| / ω_pred = {freq_error*100:.2f}%")
+print(f"   Threshold: < 5%")
+print(f"   Status: {'PASS ✓' if freq_pass else 'FAIL ✗'}")
 print()
 
 # Criterion 2: Substantial modulation
@@ -377,10 +375,10 @@ print()
 peak_to_peak = np.max(M_t) - np.min(M_t)
 mod_pass = peak_to_peak > 0.5
 
-print(f”2. Substantial Modulation:”)
-print(f”   Peak-to-peak: {peak_to_peak:.3f}”)
-print(f”   Threshold: > 0.5”)
-print(f”   Status: {‘PASS ✓’ if mod_pass else ‘FAIL ✗’}”)
+print(f"2. Substantial Modulation:")
+print(f"   Peak-to-peak: {peak_to_peak:.3f}")
+print(f"   Threshold: > 0.5")
+print(f"   Status: {'PASS ✓' if mod_pass else 'FAIL ✗'}")
 print()
 
 # Criterion 3: Spectral purity
@@ -390,27 +388,27 @@ dominant_power = power[idx_max]
 spectral_purity = dominant_power / total_power
 purity_pass = spectral_purity > 0.5
 
-print(f”3. Spectral Purity:”)
-print(f”   Dominant peak power fraction: {spectral_purity*100:.1f}%”)
-print(f”   Threshold: > 50%”)
-print(f”   Status: {‘PASS ✓’ if purity_pass else ‘FAIL ✗’}”)
+print(f"3. Spectral Purity:")
+print(f"   Dominant peak power fraction: {spectral_purity*100:.1f}%")
+print(f"   Threshold: > 50%")
+print(f"   Status: {'PASS ✓' if purity_pass else 'FAIL ✗'}")
 print()
 
 # Overall assessment
 
 all_pass = freq_pass and mod_pass and purity_pass
 
-print(”=”*80)
-print(“OVERALL SIMULATION RESULT”)
-print(”=”*80)
+print("="*80)
+print("OVERALL SIMULATION RESULT")
+print("="*80)
 if all_pass:
-print(“✓ ALL CRITERIA PASSED”)
-print(”  Log-periodic emergence from junction dynamics CONFIRMED”)
-print(”  Hypothesis validated at current precision level”)
+    print("✓ ALL CRITERIA PASSED")
+    print("  Log-periodic emergence from junction dynamics CONFIRMED")
+    print("  Hypothesis validated at current precision level")
 else:
-print(“✗ ONE OR MORE CRITERIA FAILED”)
-print(”  Junction dynamics do NOT produce expected log-periodic structure”)
-print(”  Hypothesis requires revision or parameter adjustment”)
+    print("✗ ONE OR MORE CRITERIA FAILED")
+    print("  Junction dynamics do NOT produce expected log-periodic structure")
+    print("  Hypothesis requires revision or parameter adjustment")
 print()
 
 # ============================================================================
@@ -419,8 +417,8 @@ print()
 
 # ============================================================================
 
-print(“SECTION 11: Generating Plots”)
-print(”-”*80)
+print("SECTION 11: Generating Plots")
+print("-"*80)
 
 fig, axes = plt.subplots(3, 2, figsize=(14, 12))
 
@@ -428,70 +426,70 @@ fig, axes = plt.subplots(3, 2, figsize=(14, 12))
 
 ax = axes[0, 0]
 for i in range(4):
-ax.plot(t*1e9, theta[i, :], label=f’θ_{i+1}’, alpha=0.7)
-ax.set_xlabel(‘Time (ns)’)
-ax.set_ylabel(‘Phase (rad)’)
-ax.set_title(‘Junction Phases θᵢ(t)’)
+    ax.plot(t*1e9, theta[i, :], label=f'θ_{i+1}', alpha=0.7)
+ax.set_xlabel('Time (ns)')
+ax.set_ylabel('Phase (rad)')
+ax.set_title('Junction Phases θᵢ(t)')
 ax.legend()
 ax.grid(True, alpha=0.3)
 
 # Plot 2: Gate phase vs time
 
 ax = axes[0, 1]
-ax.plot(t*1e9, theta_gate, ‘k-’, linewidth=1.5)
-ax.set_xlabel(‘Time (ns)’)
-ax.set_ylabel(‘Gate Phase (rad)’)
-ax.set_title(‘θ_gate(t) = mean(θᵢ)’)
+ax.plot(t*1e9, theta_gate, 'k-', linewidth=1.5)
+ax.set_xlabel('Time (ns)')
+ax.set_ylabel('Gate Phase (rad)')
+ax.set_title('θ_gate(t) = mean(θᵢ)')
 ax.grid(True, alpha=0.3)
 
 # Plot 3: κ_cm and κ_eff vs time
 
 ax = axes[1, 0]
-ax.plot(t*1e9, kappa_cm, ‘b-’, label=‘κ_cm (prescribed)’, alpha=0.7)
-ax.plot(t*1e9, kappa_eff, ‘r-’, label=‘κ_eff (gate-modulated)’, alpha=0.7)
-ax.set_xlabel(‘Time (ns)’)
-ax.set_ylabel(‘Rate (s⁻¹)’)
-ax.set_title(‘Chronomagnetic Rates’)
+ax.plot(t*1e9, kappa_cm, 'b-', label='κ_cm (prescribed)', alpha=0.7)
+ax.plot(t*1e9, kappa_eff, 'r-', label='κ_eff (gate-modulated)', alpha=0.7)
+ax.set_xlabel('Time (ns)')
+ax.set_ylabel('Rate (s⁻¹)')
+ax.set_title('Chronomagnetic Rates')
 ax.legend()
 ax.grid(True, alpha=0.3)
 
 # Plot 4: Modulation M(t) vs time
 
 ax = axes[1, 1]
-ax.plot(t*1e9, M_t, ‘g-’, linewidth=1.5)
-ax.axhline(y=0.85, color=‘r’, linestyle=’–’, alpha=0.5, label=‘Threshold M=0.85’)
-ax.set_xlabel(‘Time (ns)’)
-ax.set_ylabel(‘Modulation M(t)’)
-ax.set_title(‘Normalized Modulation Function’)
+ax.plot(t*1e9, M_t, 'g-', linewidth=1.5)
+ax.axhline(y=0.85, color='r', linestyle='--', alpha=0.5, label='Threshold M=0.85')
+ax.set_xlabel('Time (ns)')
+ax.set_ylabel('Modulation M(t)')
+ax.set_title('Normalized Modulation Function')
 ax.legend()
 ax.grid(True, alpha=0.3)
 
 # Plot 5: M(u) vs log-time
 
 ax = axes[2, 0]
-ax.plot(u, M_t, ‘purple’, linewidth=1.5)
-ax.set_xlabel(‘Log-time u = ln(t/t₀)’)
-ax.set_ylabel(‘M(u)’)
-ax.set_title(‘Modulation in Log-Time Coordinate’)
+ax.plot(u, M_t, 'purple', linewidth=1.5)
+ax.set_xlabel('Log-time u = ln(t/t₀)')
+ax.set_ylabel('M(u)')
+ax.set_title('Modulation in Log-Time Coordinate')
 ax.grid(True, alpha=0.3)
 
 # Plot 6: Power spectrum in log-time
 
 ax = axes[2, 1]
-ax.semilogy(freqs_pos[1:100], power[1:100], ‘b-’)
-ax.axvline(x=omega_LOG, color=‘r’, linestyle=’–’, linewidth=2, label=f’Predicted ω={omega_LOG:.3f}’)
-ax.axvline(x=omega_sim, color=‘g’, linestyle=’–’, linewidth=2, label=f’Observed ω={omega_sim:.3f}’)
-ax.set_xlabel(‘Frequency ω (dimensionless)’)
-ax.set_ylabel(‘Power’)
-ax.set_title(‘Power Spectrum in Log-Time’)
+ax.semilogy(freqs_pos[1:100], power[1:100], 'b-')
+ax.axvline(x=omega_LOG, color='r', linestyle='--', linewidth=2, label=f'Predicted ω={omega_LOG:.3f}')
+ax.axvline(x=omega_sim, color='g', linestyle='--', linewidth=2, label=f'Observed ω={omega_sim:.3f}')
+ax.set_xlabel('Frequency ω (dimensionless)')
+ax.set_ylabel('Power')
+ax.set_title('Power Spectrum in Log-Time')
 ax.legend()
 ax.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig(’/mnt/user-data/outputs/junction_simulation_results.png’, dpi=150)
-print(“✓ Plots saved to: junction_simulation_results.png”)
+plt.savefig('/mnt/user-data/outputs/junction_simulation_results.png', dpi=150)
+print("✓ Plots saved to: junction_simulation_results.png")
 print()
 
-print(”=”*80)
-print(“SIMULATION COMPLETE”)
-print(”=”*80)
+print("="*80)
+print("SIMULATION COMPLETE")
+print("="*80)

@@ -1,0 +1,35 @@
+name: CI
+
+"on":
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies (only if a dependency file exists)
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f pyproject.toml ]; then pip install .; fi
+          if [ -f setup.py ]; then pip install .; fi
+
+      - name: Compile-check all Python files
+        run: python -m compileall -q .
+
+      - name: chronometrics report
+        run: python -m chronometrics.report
+
+      - name: zero_point_energy report
+        run: python -m zero_point_energy.report
+
+      - name: d067_art_v1 report
+        run: python -m d067_art_v1.report
