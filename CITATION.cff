@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: >-
+  If you use this reduced-order architecture, the D067-ART-v1 package, or
+  the source monograph, please cite it as below.
+title: >-
+  Adaptive-Resonance-Tracked Phononic Piezoelectric Light Source: From 100
+  Phononic Metacrystals to D067-ART-v1 Adaptive Resonance Tracking
+type: report
+authors:
+  - family-names: Lockwood
+    given-names: James
+date-released: "2026-09-01"
+version: D067-ART-v1
+repository-code: "https://github.com/Blaze61029dogQ-pixel/Chronomagnetics"
+abstract: >-
+  An extended computational monograph documenting a local-compute design
+  program that screened 100 phononic metacrystal families, converted the
+  strongest candidate (D067) into a finite electromechanical light-source
+  model, audited it independently, closed the electromechanical coupling
+  and capacitance physically against PZT-5A material data, and rejected a
+  passive fixed-frequency production architecture on manufacturing-corner
+  robustness grounds. The frozen result, D067-ART-v1, is a nested inertial
+  phononic resonator coupled to a PZT-5A transducer with adaptive
+  resonance tracking and adaptive electrical loading. Status: reduced-order
+  architecture freeze, not experimentally validated.
+keywords:
+  - phononic metacrystals
+  - piezoelectric energy harvesting
+  - adaptive resonance tracking
+  - reduced-order modeling
+  - PZT-5A
