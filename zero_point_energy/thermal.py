@@ -20,8 +20,20 @@ def unruh_temperature(acceleration: float) -> float:
 
 
 def rindler_thermal_occupation(omega: float, acceleration: float) -> float:
-    """|beta_omega|^2 = 1/(exp(2 pi omega c / a) - 1) (D37). Dimensionless."""
-    return 1.0 / (math.expm1(2 * math.pi * omega * C_LIGHT / acceleration))
+    """|beta_omega|^2 = 1/(exp(2 pi omega c / a) - 1) (D37). Dimensionless.
+
+    Robustness note (v2): for omega*c/acceleration large enough that
+    exp(2*pi*omega*c/a) would overflow float64 (exponent gtrsim 700),
+    math.expm1 itself raises OverflowError even though the true value
+    1/(exp(x)-1) ~ exp(-x) is a well-defined, correctly-rounded-to-zero
+    float there. Guarded explicitly rather than letting a large but
+    physically unremarkable input (a highly boosted detector, or a low
+    acceleration with a high-frequency mode) crash the caller.
+    """
+    exponent = 2 * math.pi * omega * C_LIGHT / acceleration
+    if exponent > 700.0:  # exp(700) ~ 1e304, safely below float64's ~1.8e308 ceiling
+        return 0.0
+    return 1.0 / math.expm1(exponent)
 
 
 def schwarzschild_surface_gravity(mass: float) -> float:
