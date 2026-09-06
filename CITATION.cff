@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Chronomagnetics"
+type: software
+authors:
+  - family-names: Lockwood
+    given-names: James
+version: 0.1.0
+date-released: "2026-09-06"
+repository-code: "https://github.com/Blaze61029dogQ-pixel/Chronomagnetics"
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: >
+  A runnable transcription of two independent research constructions.
+  chronometrics/ is a self-contained, internally-audited mathematical
+  registry built from one exact triangle (144, 138, 116): a Brocard
+  phase, an exact q-screen leakage defect, a frozen log-time phase law,
+  a locked recurrence-gate/spectral-operator model, the dark-to-bright
+  chronometric separation, and a geophysical bridge for eventual testing
+  against real magnetometer/geomagnetic data. This construction is
+  explicitly NOT a confirmed physical law -- see each module's status
+  tags (EXACT / FROZEN / AUDITED / REJECTED / BRIDGE) and the boundary
+  statement in chronometrics/README.md. zero_point_energy/ is a
+  correctness-audited transcription of mainstream, textbook QFT
+  vacuum-energy mechanics (Casimir effect, Casimir-Polder, dynamical
+  Casimir effect, Unruh/Hawking temperature), auditing the source
+  document "Zero-Point Energy: First Principles, Units, and Observables"
+  (Lockwood, Cyrek, Burkeen & Hansley). Source code is MIT-licensed;
+  research/documentation content is CC-BY-4.0 -- see LICENSE and
+  LICENSE-CC-BY-4.0.md.
+keywords:
+  - chronometrics
+  - log-periodic
+  - Josephson junction
+  - zero-point energy
+  - Casimir effect
+  - quantum field theory
