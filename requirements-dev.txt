@@ -1,0 +1,11 @@
+# Development/test dependencies on top of requirements.txt.
+# Kept minimal: the scientific runtime footprint (numpy, scipy, mpmath) lives
+# in requirements.txt; this file adds only what CI/tests/experiments need on
+# top of that.
+-r requirements.txt
+
+pytest>=7.4
+
+# Only used by experiments/junction_log_periodic_simulation.py for its
+# diagnostic plot; not required by zero_point_energy or its test suite.
+matplotlib>=3.8
