@@ -1,29 +1,51 @@
 cff-version: 1.2.0
-message: >-
-  If you use this reduced-order architecture, the D067-ART-v1 package, or
-  the source monograph, please cite it as below.
-title: >-
-  Adaptive-Resonance-Tracked Phononic Piezoelectric Light Source: From 100
-  Phononic Metacrystals to D067-ART-v1 Adaptive Resonance Tracking
-type: report
+message: "If you use this work, please cite it as below."
+title: "Chronomagnetics"
+type: software
 authors:
   - family-names: Lockwood
     given-names: James
-date-released: "2026-09-01"
-version: D067-ART-v1
+version: 0.1.0
+date-released: "2026-09-06"
 repository-code: "https://github.com/Blaze61029dogQ-pixel/Chronomagnetics"
-abstract: >-
-  An extended computational monograph documenting a local-compute design
-  program that screened 100 phononic metacrystal families, converted the
-  strongest candidate (D067) into a finite electromechanical light-source
-  model, audited it independently, closed the electromechanical coupling
-  and capacitance physically against PZT-5A material data, and rejected a
-  passive fixed-frequency production architecture on manufacturing-corner
-  robustness grounds. The frozen result, D067-ART-v1, is a nested inertial
-  phononic resonator coupled to a PZT-5A transducer with adaptive
-  resonance tracking and adaptive electrical loading. Status: reduced-order
-  architecture freeze, not experimentally validated.
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: >
+  A runnable transcription of three independent research constructions.
+  chronometrics/ is a self-contained, internally-audited mathematical
+  registry built from one exact triangle (144, 138, 116): a Brocard
+  phase, an exact q-screen leakage defect, a frozen log-time phase law,
+  a locked recurrence-gate/spectral-operator model, the dark-to-bright
+  chronometric separation, and a geophysical bridge for eventual testing
+  against real magnetometer/geomagnetic data. This construction is
+  explicitly NOT a confirmed physical law -- see each module's status
+  tags (EXACT / FROZEN / AUDITED / REJECTED / BRIDGE) and the boundary
+  statement in chronometrics/README.md. zero_point_energy/ is a
+  correctness-audited transcription of mainstream, textbook QFT
+  vacuum-energy mechanics (Casimir effect, Casimir-Polder, dynamical
+  Casimir effect, Unruh/Hawking temperature), auditing the source
+  document "Zero-Point Energy: First Principles, Units, and Observables"
+  (Lockwood, Cyrek, Burkeen & Hansley). d067_art_v1/ transcribes the
+  reduced-order architecture audited in "Adaptive-Resonance-Tracked
+  Phononic Piezoelectric Light Source: From 100 Phononic Metacrystals to
+  D067-ART-v1 Adaptive Resonance Tracking" (Lockwood, September 2026): a
+  design program that screened 100 phononic metacrystal families and
+  closed on D067, a nested inertial phononic resonator coupled to a
+  PZT-5A transducer with adaptive resonance tracking and adaptive
+  electrical loading, after rejecting a passive fixed-frequency design on
+  manufacturing-robustness grounds. REDUCED-ORDER ARCHITECTURE FREEZE --
+  NOT EXPERIMENTALLY VALIDATED; no 3-D tensor piezoelectric finite-element
+  model or bench prototype has been built. Source code is MIT-licensed;
+  research/documentation content (including the D067-ART-v1 monograph) is
+  CC-BY-4.0 -- see LICENSE and LICENSE-CC-BY-4.0.md.
 keywords:
+  - chronometrics
+  - log-periodic
+  - Josephson junction
+  - zero-point energy
+  - Casimir effect
+  - quantum field theory
   - phononic metacrystals
   - piezoelectric energy harvesting
   - adaptive resonance tracking
