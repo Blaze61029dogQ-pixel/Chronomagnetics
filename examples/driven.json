@@ -1,0 +1,27 @@
+{
+  "model": {
+    "amplitude": "1/10",
+    "mass2": "1/4",
+    "quartic": "1/2",
+    "lapse_amplitude": "1/10"
+  },
+  "resolution": {
+    "theta_cutoff": 3,
+    "zeta_cutoff": 3,
+    "theta_points": 40,
+    "zeta_points": 40
+  },
+  "initial": {
+    "kind": "cosine",
+    "amplitude": "1/10",
+    "theta_mode": 1,
+    "zeta_mode": 1
+  },
+  "drive": {
+    "amplitude": "1/50",
+    "frequency": "6/5",
+    "theta_mode": 1,
+    "zeta_mode": 1
+  },
+  "damping": "1/25"
+}

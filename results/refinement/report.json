@@ -1,0 +1,1234 @@
+{
+  "task": "convergence",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "solver_version": "1.0.0",
+    "solver_sha256": "c938afe9938ddbe034121d2483771ef4fbb4d3d229c49030d9e5928be9cd436e",
+    "arithmetic": "IEEE-754 binary64",
+    "threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null
+    }
+  },
+  "config": {
+    "model": {
+      "radius": 1.0,
+      "amplitude": 0.1,
+      "axial_scale": 1.5,
+      "n": 2,
+      "m": 1,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0,
+      "mass2": 0.25,
+      "quartic": 0.5,
+      "potential_constant": 0.0,
+      "potential_amplitude": 0.0,
+      "potential_n": 2,
+      "potential_m": 1,
+      "potential_phase_theta": 0.0,
+      "potential_phase_zeta": 0.0,
+      "curvature_h2": 0.0,
+      "curvature_k": 0.0,
+      "lapse_scale": 1.0,
+      "lapse_amplitude": 0.0,
+      "lapse_n": 1,
+      "lapse_m": 0,
+      "lapse_phase_theta": 0.0,
+      "lapse_phase_zeta": 0.0
+    },
+    "resolution": {
+      "theta_cutoff": 4,
+      "zeta_cutoff": 4,
+      "theta_points": 48,
+      "zeta_points": 48,
+      "memory_limit_mib": 1024
+    },
+    "initial": {
+      "kind": "cosine",
+      "amplitude": 0.2,
+      "offset": 0.0,
+      "theta_mode": 1,
+      "zeta_mode": 1,
+      "velocity_amplitude": 0.0,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0,
+      "mode_index": 1
+    },
+    "drive": {
+      "amplitude": 0.0,
+      "frequency": 1.0,
+      "theta_mode": 1,
+      "zeta_mode": 1,
+      "phase_time": 0.0,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0
+    },
+    "damping": 0.0
+  },
+  "runs": [
+    {
+      "kind": "basis",
+      "cutoff": 2,
+      "quadrature": [
+        48,
+        48
+      ],
+      "spectrum": {
+        "squared_frequencies": [
+          {
+            "binary64_exact_decimal": "0.2499999999999999722444243843710864894092082977294921875",
+            "binary64_hex": "0x1.fffffffffffffp-3"
+          },
+          {
+            "binary64_exact_decimal": "0.69158052148289195226738002020283602178096771240234375",
+            "binary64_hex": "0x1.6216d794a3a8bp-1"
+          },
+          {
+            "binary64_exact_decimal": "0.69611239067261576618506069280556403100490570068359375",
+            "binary64_hex": "0x1.6468d7e08efb3p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.24258807032914564416614666697569191455841064453125",
+            "binary64_hex": "0x1.3e1a407476a34p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.24258807032914564416614666697569191455841064453125",
+            "binary64_hex": "0x1.3e1a407476a34p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.681122060966387277147759959916584193706512451171875",
+            "binary64_hex": "0x1.ae5e03f06f4bep+0"
+          },
+          {
+            "binary64_exact_decimal": "1.68112206096638860941538951010443270206451416015625",
+            "binary64_hex": "0x1.ae5e03f06f4c4p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.6923513808302601546529331244528293609619140625",
+            "binary64_hex": "0x1.b13df0aa01a40p+0"
+          }
+        ],
+        "frequencies": [
+          {
+            "binary64_exact_decimal": "0.499999999999999944488848768742172978818416595458984375",
+            "binary64_hex": "0x1.fffffffffffffp-2"
+          },
+          {
+            "binary64_exact_decimal": "0.8316132042499637666566059124306775629520416259765625",
+            "binary64_hex": "0x1.a9c934b659c92p-1"
+          },
+          {
+            "binary64_exact_decimal": "0.83433350086917623666948884419980458915233612060546875",
+            "binary64_hex": "0x1.ab2dc2b8616efp-1"
+          },
+          {
+            "binary64_exact_decimal": "1.11471434472206620824863421148620545864105224609375",
+            "binary64_hex": "0x1.1d5deb56f69dcp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.11471434472206620824863421148620545864105224609375",
+            "binary64_hex": "0x1.1d5deb56f69dcp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.2965809118471500749336655644583515822887420654296875",
+            "binary64_hex": "0x1.4becba050059bp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.296580911847150741067480339552275836467742919921875",
+            "binary64_hex": "0x1.4becba050059ep+0"
+          },
+          {
+            "binary64_exact_decimal": "1.3009040628848309584242315395385958254337310791015625",
+            "binary64_hex": "0x1.4d080c7552e99p+0"
+          }
+        ],
+        "growth_rates": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "classification": [
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive"
+        ],
+        "scaled_residuals": [
+          {
+            "binary64_exact_decimal": "1.491963141471288137045110675695773824558011679293077940411382797947226208634674549102783203125E-18",
+            "binary64_hex": "0x1.b8598c37dc792p-60"
+          },
+          {
+            "binary64_exact_decimal": "4.96294021676600510989666725424829954407825478445055733534019282160443253815174102783203125E-17",
+            "binary64_hex": "0x1.c9c01cd8a493ap-55"
+          },
+          {
+            "binary64_exact_decimal": "5.04278753259359661649757964561509391103887682268440417754362670166301541030406951904296875E-17",
+            "binary64_hex": "0x1.d11d744142286p-55"
+          },
+          {
+            "binary64_exact_decimal": "4.86238041509871510770612103773828868149222236900129645587043114574044011533260345458984375E-17",
+            "binary64_hex": "0x1.c079b6249c15ep-55"
+          },
+          {
+            "binary64_exact_decimal": "3.472367832360554171310253845086184712368331436982936410995392861877917312085628509521484375E-17",
+            "binary64_hex": "0x1.4044f7a381d43p-55"
+          },
+          {
+            "binary64_exact_decimal": "3.97482997720222827627106475091829924497507532514008199431287948755198158323764801025390625E-17",
+            "binary64_hex": "0x1.6e9d04f0a9bd2p-55"
+          },
+          {
+            "binary64_exact_decimal": "5.0509664116761716192799472807668535356527832365369778955255242181010544300079345703125E-17",
+            "binary64_hex": "0x1.d1de928b9fda0p-55"
+          },
+          {
+            "binary64_exact_decimal": "6.77471404151914854849812197210958409214587674397611838372768033877946436405181884765625E-17",
+            "binary64_hex": "0x1.386db4d030de8p-54"
+          }
+        ],
+        "mass_orthogonality_error": {
+          "binary64_exact_decimal": "1.680998588062206335349629866795882678301584343960595191447282559238374233245849609375E-15",
+          "binary64_hex": "0x1.e483cd8f60658p-50"
+        },
+        "classification_tolerance": {
+          "binary64_exact_decimal": "1.7066422983209774441673796487587943236131915458742014379822649061679840087890625E-13",
+          "binary64_hex": "0x1.804d3af645588p-43"
+        },
+        "scope": "assembled finite Galerkin matrix; not certified continuum bounds"
+      },
+      "change_from_previous": null
+    },
+    {
+      "kind": "basis",
+      "cutoff": 3,
+      "quadrature": [
+        48,
+        48
+      ],
+      "spectrum": {
+        "squared_frequencies": [
+          {
+            "binary64_exact_decimal": "0.2499999999999999722444243843710864894092082977294921875",
+            "binary64_hex": "0x1.fffffffffffffp-3"
+          },
+          {
+            "binary64_exact_decimal": "0.6915788054956999442168807945563457906246185302734375",
+            "binary64_hex": "0x1.62169e006beaep-1"
+          },
+          {
+            "binary64_exact_decimal": "0.6961106902018794340136764731141738593578338623046875",
+            "binary64_hex": "0x1.64689ed1a0496p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.240232826106678398758731418638490140438079833984375",
+            "binary64_hex": "0x1.3d7fe6038dc86p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.24023282610668150738320036907680332660675048828125",
+            "binary64_hex": "0x1.3d7fe6038dc94p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.677106744690776363171380580752156674861907958984375",
+            "binary64_hex": "0x1.ad56de1c59106p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.677106744690779915885059381253086030483245849609375",
+            "binary64_hex": "0x1.ad56de1c59116p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.6915061534949611399269997491501271724700927734375",
+            "binary64_hex": "0x1.b1068c1a3e5d8p+0"
+          }
+        ],
+        "frequencies": [
+          {
+            "binary64_exact_decimal": "0.499999999999999944488848768742172978818416595458984375",
+            "binary64_hex": "0x1.fffffffffffffp-2"
+          },
+          {
+            "binary64_exact_decimal": "0.8316121725273746267959040778805501759052276611328125",
+            "binary64_hex": "0x1.a9c91217ebd1ap-1"
+          },
+          {
+            "binary64_exact_decimal": "0.83433248180918828662555597475147806107997894287109375",
+            "binary64_hex": "0x1.ab2da086b8d23p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.11365740966720938587286582333035767078399658203125",
+            "binary64_hex": "0x1.1d18a6e977ff4p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.113657409667210718140495373518206179141998291015625",
+            "binary64_hex": "0x1.1d18a6e977ffap+0"
+          },
+          {
+            "binary64_exact_decimal": "1.2950315612720704194771315087564289569854736328125",
+            "binary64_hex": "0x1.4b87303af38c8p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.295031561272071751744761058944277465343475341796875",
+            "binary64_hex": "0x1.4b87303af38cep+0"
+          },
+          {
+            "binary64_exact_decimal": "1.300579160795282351870127968140877783298492431640625",
+            "binary64_hex": "0x1.4cf2c1817990ap+0"
+          }
+        ],
+        "growth_rates": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "classification": [
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive"
+        ],
+        "scaled_residuals": [
+          {
+            "binary64_exact_decimal": "5.6176446095718018469920826083565781504204518489995249207191729823307468905113637447357177734375E-19",
+            "binary64_hex": "0x1.4b9b71f6ee83bp-61"
+          },
+          {
+            "binary64_exact_decimal": "7.762347518121444759091916277154369497586982825677870412306447178707458078861236572265625E-17",
+            "binary64_hex": "0x1.65f99fd6b4ce4p-54"
+          },
+          {
+            "binary64_exact_decimal": "6.28222563714463110163576294796269377848827960598987463214371018693782389163970947265625E-17",
+            "binary64_hex": "0x1.21b76df1876e8p-54"
+          },
+          {
+            "binary64_exact_decimal": "6.80689917629356881734297822217672908137925502744698669221889986147289164364337921142578125E-17",
+            "binary64_hex": "0x1.39e9ae6a11ff5p-54"
+          },
+          {
+            "binary64_exact_decimal": "7.02946248642975067134320042653708319983743267882377037114594031663727946579456329345703125E-17",
+            "binary64_hex": "0x1.442d3ebea0f3dp-54"
+          },
+          {
+            "binary64_exact_decimal": "5.63334319581200116695744209225404965696056743267201849523218015747261233627796173095703125E-17",
+            "binary64_hex": "0x1.03cac719b50bdp-54"
+          },
+          {
+            "binary64_exact_decimal": "9.30700546850550283705655586297686269135130723005079611542811335311853326857089996337890625E-17",
+            "binary64_hex": "0x1.ad35ba0911c09p-54"
+          },
+          {
+            "binary64_exact_decimal": "6.04190014831318646301089521270042803074106540551536925764963825713493861258029937744140625E-17",
+            "binary64_hex": "0x1.16a22ab8d9c99p-54"
+          }
+        ],
+        "mass_orthogonality_error": {
+          "binary64_exact_decimal": "1.332267629550187848508358001708984375E-15",
+          "binary64_hex": "0x1.8000000000000p-50"
+        },
+        "classification_tolerance": {
+          "binary64_exact_decimal": "3.74879864754996268556810653831044575297511134426287071619299240410327911376953125E-13",
+          "binary64_hex": "0x1.a613c3b1afd22p-42"
+        },
+        "scope": "assembled finite Galerkin matrix; not certified continuum bounds"
+      },
+      "change_from_previous": [
+        {
+          "binary64_exact_decimal": "0",
+          "binary64_hex": "0x0.0p+0"
+        },
+        {
+          "binary64_exact_decimal": "-0.00000171598719200805049922564649023115634918212890625",
+          "binary64_hex": "-0x1.cca1bdee80000p-20"
+        },
+        {
+          "binary64_exact_decimal": "-0.00000170047073633217138421969139017164707183837890625",
+          "binary64_hex": "-0x1.c877758e80000p-20"
+        },
+        {
+          "binary64_exact_decimal": "-0.002355244222467245407415248337201774120330810546875",
+          "binary64_hex": "-0x1.34b4e1d1b5c00p-9"
+        },
+        {
+          "binary64_exact_decimal": "-0.00235524422246413678294629789888858795166015625",
+          "binary64_hex": "-0x1.34b4e1d1b4000p-9"
+        },
+        {
+          "binary64_exact_decimal": "-0.0040153162756109139763793791644275188446044921875",
+          "binary64_hex": "-0x1.0725d4163b800p-8"
+        },
+        {
+          "binary64_exact_decimal": "-0.004015316275608693530330128851346671581268310546875",
+          "binary64_hex": "-0x1.0725d4163ae00p-8"
+        },
+        {
+          "binary64_exact_decimal": "-0.0008452273352990147259333753027021884918212890625",
+          "binary64_hex": "-0x1.bb247e1a34000p-11"
+        }
+      ]
+    },
+    {
+      "kind": "basis",
+      "cutoff": 4,
+      "quadrature": [
+        48,
+        48
+      ],
+      "spectrum": {
+        "squared_frequencies": [
+          {
+            "binary64_exact_decimal": "0.2499999999999999722444243843710864894092082977294921875",
+            "binary64_hex": "0x1.fffffffffffffp-3"
+          },
+          {
+            "binary64_exact_decimal": "0.691577881668371308165887967334128916263580322265625",
+            "binary64_hex": "0x1.62167f00ce234p-1"
+          },
+          {
+            "binary64_exact_decimal": "0.6961102077675038746207292206236161291599273681640625",
+            "binary64_hex": "0x1.64688ea18be02p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.240232825964481033764741368941031396389007568359375",
+            "binary64_hex": "0x1.3d7fe602f16f6p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.240232825964481033764741368941031396389007568359375",
+            "binary64_hex": "0x1.3d7fe602f16f6p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.67710674306503459973782810266129672527313232421875",
+            "binary64_hex": "0x1.ad56de155d8acp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.67710674306503459973782810266129672527313232421875",
+            "binary64_hex": "0x1.ad56de155d8acp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.691506151962115733766722769360058009624481201171875",
+            "binary64_hex": "0x1.b1068c13a8fbep+0"
+          }
+        ],
+        "frequencies": [
+          {
+            "binary64_exact_decimal": "0.499999999999999944488848768742172978818416595458984375",
+            "binary64_hex": "0x1.fffffffffffffp-2"
+          },
+          {
+            "binary64_exact_decimal": "0.83161161708358266597684860244044102728366851806640625",
+            "binary64_hex": "0x1.a9c8ff74b200dp-1"
+          },
+          {
+            "binary64_exact_decimal": "0.8343321926951541289696478997939266264438629150390625",
+            "binary64_hex": "0x1.ab2d96d340562p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.113657409603366676975610971567220985889434814453125",
+            "binary64_hex": "0x1.1d18a6e931cd2p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.113657409603366676975610971567220985889434814453125",
+            "binary64_hex": "0x1.1d18a6e931cd2p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.295031560644386292580065855872817337512969970703125",
+            "binary64_hex": "0x1.4b87303841672p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.295031560644386292580065855872817337512969970703125",
+            "binary64_hex": "0x1.4b87303841672p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.3005791602059890710307854533311910927295684814453125",
+            "binary64_hex": "0x1.4cf2c17ef1a15p+0"
+          }
+        ],
+        "growth_rates": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "classification": [
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive"
+        ],
+        "scaled_residuals": [
+          {
+            "binary64_exact_decimal": "2.6790855868258969658794636674621126581529771147941430819994224066249444149434566497802734375E-19",
+            "binary64_hex": "0x1.3c4a64ba910f0p-62"
+          },
+          {
+            "binary64_exact_decimal": "3.87935067689487519614352107593619792575039399739646184261943062665523029863834381103515625E-17",
+            "binary64_hex": "0x1.65ce93fbb23e2p-55"
+          },
+          {
+            "binary64_exact_decimal": "7.986850687776217356490267549437096809257245126449642480537249866756610572338104248046875E-17",
+            "binary64_hex": "0x1.70541708debecp-54"
+          },
+          {
+            "binary64_exact_decimal": "4.935777847099710653539505895860485004982117903326276076025891370591125451028347015380859375E-17",
+            "binary64_hex": "0x1.c73ec2656d9bbp-55"
+          },
+          {
+            "binary64_exact_decimal": "7.36952935593490738953035752776957272022107065206734943796362813372979871928691864013671875E-17",
+            "binary64_hex": "0x1.53dc0bcac021bp-54"
+          },
+          {
+            "binary64_exact_decimal": "4.42125211644776020150749373952355554746135337632235995375395987139199860394001007080078125E-17",
+            "binary64_hex": "0x1.97c9dd31684aap-55"
+          },
+          {
+            "binary64_exact_decimal": "8.015931225511260803223561992823966187486653075557063719003281221375800669193267822265625E-17",
+            "binary64_hex": "0x1.71ab699122ee4p-54"
+          },
+          {
+            "binary64_exact_decimal": "4.20256428762740277595685987983943816300149296980546986812754539641900919377803802490234375E-17",
+            "binary64_hex": "0x1.839e3e6127efep-55"
+          }
+        ],
+        "mass_orthogonality_error": {
+          "binary64_exact_decimal": "8.8817841970012523233890533447265625E-16",
+          "binary64_hex": "0x1.0000000000000p-50"
+        },
+        "classification_tolerance": {
+          "binary64_exact_decimal": "6.6116422328186973053090988025948235621252757621135742738260887563228607177734375E-13",
+          "binary64_hex": "0x1.7433ce6f65ceep-41"
+        },
+        "scope": "assembled finite Galerkin matrix; not certified continuum bounds"
+      },
+      "change_from_previous": [
+        {
+          "binary64_exact_decimal": "0",
+          "binary64_hex": "0x0.0p+0"
+        },
+        {
+          "binary64_exact_decimal": "-9.238273286360509928272222168743610382080078125E-7",
+          "binary64_hex": "-0x1.eff9dc7a00000p-21"
+        },
+        {
+          "binary64_exact_decimal": "-4.82434375559392947252490557730197906494140625E-7",
+          "binary64_hex": "-0x1.0301469400000p-21"
+        },
+        {
+          "binary64_exact_decimal": "-1.42197364993990049697458744049072265625E-10",
+          "binary64_hex": "-0x1.38b2000000000p-33"
+        },
+        {
+          "binary64_exact_decimal": "-1.42200473618459000135771930217742919921875E-10",
+          "binary64_hex": "-0x1.38b3c00000000p-33"
+        },
+        {
+          "binary64_exact_decimal": "-1.625741763433552478090859949588775634765625E-9",
+          "binary64_hex": "-0x1.bee1680000000p-30"
+        },
+        {
+          "binary64_exact_decimal": "-1.625745316147231278591789305210113525390625E-9",
+          "binary64_hex": "-0x1.bee1a80000000p-30"
+        },
+        {
+          "binary64_exact_decimal": "-1.532845406160276979790069162845611572265625E-9",
+          "binary64_hex": "-0x1.a558680000000p-30"
+        }
+      ]
+    },
+    {
+      "kind": "basis",
+      "cutoff": 5,
+      "quadrature": [
+        48,
+        48
+      ],
+      "spectrum": {
+        "squared_frequencies": [
+          {
+            "binary64_exact_decimal": "0.2499999999999999722444243843710864894092082977294921875",
+            "binary64_hex": "0x1.fffffffffffffp-3"
+          },
+          {
+            "binary64_exact_decimal": "0.6915778816562490050046108081005513668060302734375",
+            "binary64_hex": "0x1.62167f00b37b0p-1"
+          },
+          {
+            "binary64_exact_decimal": "0.6961102077556022837967475425102747976779937744140625",
+            "binary64_hex": "0x1.64688ea171b42p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.24022264060671005836411495693027973175048828125",
+            "binary64_hex": "0x1.3d7f3b212a220p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.24022264060671627561305285780690610408782958984375",
+            "binary64_hex": "0x1.3d7f3b212a23cp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.677093655352517753698293745401315391063690185546875",
+            "binary64_hex": "0x1.ad5602821172ep+0"
+          },
+          {
+            "binary64_exact_decimal": "1.677093655352517753698293745401315391063690185546875",
+            "binary64_hex": "0x1.ad5602821172ep+0"
+          },
+          {
+            "binary64_exact_decimal": "1.69149865526644749280649193678982555866241455078125",
+            "binary64_hex": "0x1.b1060e4d98ed4p+0"
+          }
+        ],
+        "frequencies": [
+          {
+            "binary64_exact_decimal": "0.499999999999999944488848768742172978818416595458984375",
+            "binary64_hex": "0x1.fffffffffffffp-2"
+          },
+          {
+            "binary64_exact_decimal": "0.831611617076294162842486912268213927745819091796875",
+            "binary64_hex": "0x1.a9c8ff74a1f9cp-1"
+          },
+          {
+            "binary64_exact_decimal": "0.83433219268802172319254850663128308951854705810546875",
+            "binary64_hex": "0x1.ab2d96d330a6fp-1"
+          },
+          {
+            "binary64_exact_decimal": "1.1136528366626243791159822649206034839153289794921875",
+            "binary64_hex": "0x1.1d185a3090483p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.113652836662627265695846290327608585357666015625",
+            "binary64_hex": "0x1.1d185a3090490p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.2950265075868205855158521444536745548248291015625",
+            "binary64_hex": "0x1.4b86db7189da8p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.2950265075868205855158521444536745548248291015625",
+            "binary64_hex": "0x1.4b86db7189da8p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.3005762781422884888371527267736382782459259033203125",
+            "binary64_hex": "0x1.4cf2912493145p+0"
+          }
+        ],
+        "growth_rates": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "classification": [
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive"
+        ],
+        "scaled_residuals": [
+          {
+            "binary64_exact_decimal": "1.47740985763776661351129841210010025178017073144167933297643546808330938802100718021392822265625E-19",
+            "binary64_hex": "0x1.5cd7f2370e182p-63"
+          },
+          {
+            "binary64_exact_decimal": "6.0297495610470336751366872203666646514696992285864407534745623706839978694915771484375E-17",
+            "binary64_hex": "0x1.1612b7d34d5f0p-54"
+          },
+          {
+            "binary64_exact_decimal": "5.43074503857514957012981593814871310505746463434366411160425514026428572833538055419921875E-17",
+            "binary64_hex": "0x1.f4e5d77c00d56p-55"
+          },
+          {
+            "binary64_exact_decimal": "3.89609108215973680100971084196410877054394495083537719448685265888343565165996551513671875E-17",
+            "binary64_hex": "0x1.6759d98622a36p-55"
+          },
+          {
+            "binary64_exact_decimal": "5.286992500064092279049774153826802649912326866575573713902258532471023499965667724609375E-17",
+            "binary64_hex": "0x1.e7a394b509df8p-55"
+          },
+          {
+            "binary64_exact_decimal": "4.9863109532851306664906552422898899607113859717456849640626614927896298468112945556640625E-17",
+            "binary64_hex": "0x1.cbe7f047bfa74p-55"
+          },
+          {
+            "binary64_exact_decimal": "8.1698817505817225209895341937514335218838560964856043700166310372878797352313995361328125E-17",
+            "binary64_hex": "0x1.78c4f07a8b872p-54"
+          },
+          {
+            "binary64_exact_decimal": "5.6110081102550703657643025763205858524360246310409838788046954505261965095996856689453125E-17",
+            "binary64_hex": "0x1.02c31772465c2p-54"
+          }
+        ],
+        "mass_orthogonality_error": {
+          "binary64_exact_decimal": "1.666692699851484291202931900055767382916611777689264162205518005066551268100738525390625E-15",
+          "binary64_hex": "0x1.e06436f8dacd9p-50"
+        },
+        "classification_tolerance": {
+          "binary64_exact_decimal": "1.02942153783988898717910623402178152993417803440223678990150801837444305419921875E-12",
+          "binary64_hex": "0x1.21c1a3a70a0a3p-40"
+        },
+        "scope": "assembled finite Galerkin matrix; not certified continuum bounds"
+      },
+      "change_from_previous": [
+        {
+          "binary64_exact_decimal": "0",
+          "binary64_hex": "0x0.0p+0"
+        },
+        {
+          "binary64_exact_decimal": "-1.2122303161277159233577549457550048828125E-11",
+          "binary64_hex": "-0x1.aa84000000000p-37"
+        },
+        {
+          "binary64_exact_decimal": "-1.190159082398167811334133148193359375E-11",
+          "binary64_hex": "-0x1.a2c0000000000p-37"
+        },
+        {
+          "binary64_exact_decimal": "-0.000010185357770975400626412010751664638519287109375",
+          "binary64_hex": "-0x1.55c38e9ac0000p-17"
+        },
+        {
+          "binary64_exact_decimal": "-0.000010185357764758151688511134125292301177978515625",
+          "binary64_hex": "-0x1.55c38e9740000p-17"
+        },
+        {
+          "binary64_exact_decimal": "-0.000013087712516846039534357259981334209442138671875",
+          "binary64_hex": "-0x1.b726982fc0000p-17"
+        },
+        {
+          "binary64_exact_decimal": "-0.000013087712516846039534357259981334209442138671875",
+          "binary64_hex": "-0x1.b726982fc0000p-17"
+        },
+        {
+          "binary64_exact_decimal": "-0.000007496695668240960230832570232450962066650390625",
+          "binary64_hex": "-0x1.f718403a80000p-18"
+        }
+      ]
+    },
+    {
+      "kind": "quadrature",
+      "points": 32,
+      "cutoff": [
+        4,
+        4
+      ],
+      "spectrum": {
+        "squared_frequencies": [
+          {
+            "binary64_exact_decimal": "0.250000000000000055511151231257827021181583404541015625",
+            "binary64_hex": "0x1.0000000000001p-2"
+          },
+          {
+            "binary64_exact_decimal": "0.6915778816683639806939254413009621202945709228515625",
+            "binary64_hex": "0x1.62167f00ce1f2p-1"
+          },
+          {
+            "binary64_exact_decimal": "0.6961102077675018762192848953418433666229248046875",
+            "binary64_hex": "0x1.64688ea18bdf0p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.240232825964475704694223168189637362957000732421875",
+            "binary64_hex": "0x1.3d7fe602f16dep+0"
+          },
+          {
+            "binary64_exact_decimal": "1.24023282596448414238921031937934458255767822265625",
+            "binary64_hex": "0x1.3d7fe602f1704p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.6771067430650337115594084025360643863677978515625",
+            "binary64_hex": "0x1.ad56de155d8a8p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.67710674306503815245150690316222608089447021484375",
+            "binary64_hex": "0x1.ad56de155d8bcp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.691506151962108628339365168358199298381805419921875",
+            "binary64_hex": "0x1.b1068c13a8f9ep+0"
+          }
+        ],
+        "frequencies": [
+          {
+            "binary64_exact_decimal": "0.5",
+            "binary64_hex": "0x1.0000000000000p-1"
+          },
+          {
+            "binary64_exact_decimal": "0.83161161708357822508475010181427933275699615478515625",
+            "binary64_hex": "0x1.a9c8ff74b1fe5p-1"
+          },
+          {
+            "binary64_exact_decimal": "0.83433219269515301874662327463738620281219482421875",
+            "binary64_hex": "0x1.ab2d96d340558p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.1136574096033644565295617212541401386260986328125",
+            "binary64_hex": "0x1.1d18a6e931cc8p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.1136574096033682312878454467863775789737701416015625",
+            "binary64_hex": "0x1.1d18a6e931cd9p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.295031560644385848490856005810201168060302734375",
+            "binary64_hex": "0x1.4b87303841670p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.2950315606443876248476954060606658458709716796875",
+            "binary64_hex": "0x1.4b87303841678p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.3005791602059864064955263529554940760135650634765625",
+            "binary64_hex": "0x1.4cf2c17ef1a09p+0"
+          }
+        ],
+        "growth_rates": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "classification": [
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive"
+        ],
+        "scaled_residuals": [
+          {
+            "binary64_exact_decimal": "5.358140604731376929881723295174949105834182714146857705317383846477241604588925838470458984375E-19",
+            "binary64_hex": "0x1.3c49ee7892feep-61"
+          },
+          {
+            "binary64_exact_decimal": "8.72988047441555606228276324772119698832982794749028865322060255493852309882640838623046875E-17",
+            "binary64_hex": "0x1.92983cc4e8bf3p-54"
+          },
+          {
+            "binary64_exact_decimal": "3.251255898457772369162572527579818042659220764093765121405255058562033809721469879150390625E-17",
+            "binary64_hex": "0x1.2be01c02545d5p-55"
+          },
+          {
+            "binary64_exact_decimal": "1.26896544052596055607811781536335940064781838804673641529774386071949265897274017333984375E-16",
+            "binary64_hex": "0x1.249a7f90cd32bp-53"
+          },
+          {
+            "binary64_exact_decimal": "2.387562054608802386075779884883305792114039330163548224827962940253200940787792205810546875E-17",
+            "binary64_hex": "0x1.b86d6e23325eep-56"
+          },
+          {
+            "binary64_exact_decimal": "7.65105489280938760530361502601630181229732364741637218319425528534338809549808502197265625E-17",
+            "binary64_hex": "0x1.60d7b6849ca61p-54"
+          },
+          {
+            "binary64_exact_decimal": "8.52568648031024764611814807862976404698407035544736876087057453332818113267421722412109375E-17",
+            "binary64_hex": "0x1.892d8a4a3b377p-54"
+          },
+          {
+            "binary64_exact_decimal": "8.92889990960069163980032573035702718496748296617138151987091987393796443939208984375E-17",
+            "binary64_hex": "0x1.9bc5d81a8a9c0p-54"
+          }
+        ],
+        "mass_orthogonality_error": {
+          "binary64_exact_decimal": "1.1102230246251565404236316680908203125E-15",
+          "binary64_hex": "0x1.4000000000000p-50"
+        },
+        "classification_tolerance": {
+          "binary64_exact_decimal": "6.61164223283522981039861384424603153882847583755477671729749999940395355224609375E-13",
+          "binary64_hex": "0x1.7433ce6f69ce3p-41"
+        },
+        "scope": "assembled finite Galerkin matrix; not certified continuum bounds"
+      },
+      "change_from_previous": null
+    },
+    {
+      "kind": "quadrature",
+      "points": 48,
+      "cutoff": [
+        4,
+        4
+      ],
+      "spectrum": {
+        "squared_frequencies": [
+          {
+            "binary64_exact_decimal": "0.2499999999999999722444243843710864894092082977294921875",
+            "binary64_hex": "0x1.fffffffffffffp-3"
+          },
+          {
+            "binary64_exact_decimal": "0.691577881668371308165887967334128916263580322265625",
+            "binary64_hex": "0x1.62167f00ce234p-1"
+          },
+          {
+            "binary64_exact_decimal": "0.6961102077675038746207292206236161291599273681640625",
+            "binary64_hex": "0x1.64688ea18be02p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.240232825964481033764741368941031396389007568359375",
+            "binary64_hex": "0x1.3d7fe602f16f6p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.240232825964481033764741368941031396389007568359375",
+            "binary64_hex": "0x1.3d7fe602f16f6p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.67710674306503459973782810266129672527313232421875",
+            "binary64_hex": "0x1.ad56de155d8acp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.67710674306503459973782810266129672527313232421875",
+            "binary64_hex": "0x1.ad56de155d8acp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.691506151962115733766722769360058009624481201171875",
+            "binary64_hex": "0x1.b1068c13a8fbep+0"
+          }
+        ],
+        "frequencies": [
+          {
+            "binary64_exact_decimal": "0.499999999999999944488848768742172978818416595458984375",
+            "binary64_hex": "0x1.fffffffffffffp-2"
+          },
+          {
+            "binary64_exact_decimal": "0.83161161708358266597684860244044102728366851806640625",
+            "binary64_hex": "0x1.a9c8ff74b200dp-1"
+          },
+          {
+            "binary64_exact_decimal": "0.8343321926951541289696478997939266264438629150390625",
+            "binary64_hex": "0x1.ab2d96d340562p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.113657409603366676975610971567220985889434814453125",
+            "binary64_hex": "0x1.1d18a6e931cd2p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.113657409603366676975610971567220985889434814453125",
+            "binary64_hex": "0x1.1d18a6e931cd2p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.295031560644386292580065855872817337512969970703125",
+            "binary64_hex": "0x1.4b87303841672p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.295031560644386292580065855872817337512969970703125",
+            "binary64_hex": "0x1.4b87303841672p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.3005791602059890710307854533311910927295684814453125",
+            "binary64_hex": "0x1.4cf2c17ef1a15p+0"
+          }
+        ],
+        "growth_rates": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "classification": [
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive"
+        ],
+        "scaled_residuals": [
+          {
+            "binary64_exact_decimal": "2.6790855868258969658794636674621126581529771147941430819994224066249444149434566497802734375E-19",
+            "binary64_hex": "0x1.3c4a64ba910f0p-62"
+          },
+          {
+            "binary64_exact_decimal": "3.87935067689487519614352107593619792575039399739646184261943062665523029863834381103515625E-17",
+            "binary64_hex": "0x1.65ce93fbb23e2p-55"
+          },
+          {
+            "binary64_exact_decimal": "7.986850687776217356490267549437096809257245126449642480537249866756610572338104248046875E-17",
+            "binary64_hex": "0x1.70541708debecp-54"
+          },
+          {
+            "binary64_exact_decimal": "4.935777847099710653539505895860485004982117903326276076025891370591125451028347015380859375E-17",
+            "binary64_hex": "0x1.c73ec2656d9bbp-55"
+          },
+          {
+            "binary64_exact_decimal": "7.36952935593490738953035752776957272022107065206734943796362813372979871928691864013671875E-17",
+            "binary64_hex": "0x1.53dc0bcac021bp-54"
+          },
+          {
+            "binary64_exact_decimal": "4.42125211644776020150749373952355554746135337632235995375395987139199860394001007080078125E-17",
+            "binary64_hex": "0x1.97c9dd31684aap-55"
+          },
+          {
+            "binary64_exact_decimal": "8.015931225511260803223561992823966187486653075557063719003281221375800669193267822265625E-17",
+            "binary64_hex": "0x1.71ab699122ee4p-54"
+          },
+          {
+            "binary64_exact_decimal": "4.20256428762740277595685987983943816300149296980546986812754539641900919377803802490234375E-17",
+            "binary64_hex": "0x1.839e3e6127efep-55"
+          }
+        ],
+        "mass_orthogonality_error": {
+          "binary64_exact_decimal": "8.8817841970012523233890533447265625E-16",
+          "binary64_hex": "0x1.0000000000000p-50"
+        },
+        "classification_tolerance": {
+          "binary64_exact_decimal": "6.6116422328186973053090988025948235621252757621135742738260887563228607177734375E-13",
+          "binary64_hex": "0x1.7433ce6f65ceep-41"
+        },
+        "scope": "assembled finite Galerkin matrix; not certified continuum bounds"
+      },
+      "change_from_previous": [
+        {
+          "binary64_exact_decimal": "-8.32667268468867405317723751068115234375E-17",
+          "binary64_hex": "-0x1.8000000000000p-54"
+        },
+        {
+          "binary64_exact_decimal": "7.3274719625260331667959690093994140625E-15",
+          "binary64_hex": "0x1.0800000000000p-47"
+        },
+        {
+          "binary64_exact_decimal": "1.9984014443252817727625370025634765625E-15",
+          "binary64_hex": "0x1.2000000000000p-49"
+        },
+        {
+          "binary64_exact_decimal": "5.3290705182007513940334320068359375E-15",
+          "binary64_hex": "0x1.8000000000000p-48"
+        },
+        {
+          "binary64_exact_decimal": "-3.108624468950438313186168670654296875E-15",
+          "binary64_hex": "-0x1.c000000000000p-49"
+        },
+        {
+          "binary64_exact_decimal": "8.8817841970012523233890533447265625E-16",
+          "binary64_hex": "0x1.0000000000000p-50"
+        },
+        {
+          "binary64_exact_decimal": "-3.552713678800500929355621337890625E-15",
+          "binary64_hex": "-0x1.0000000000000p-48"
+        },
+        {
+          "binary64_exact_decimal": "7.10542735760100185871124267578125E-15",
+          "binary64_hex": "0x1.0000000000000p-47"
+        }
+      ]
+    },
+    {
+      "kind": "quadrature",
+      "points": 64,
+      "cutoff": [
+        4,
+        4
+      ],
+      "spectrum": {
+        "squared_frequencies": [
+          {
+            "binary64_exact_decimal": "0.250000000000000055511151231257827021181583404541015625",
+            "binary64_hex": "0x1.0000000000001p-2"
+          },
+          {
+            "binary64_exact_decimal": "0.6915778816683715302104928923654370009899139404296875",
+            "binary64_hex": "0x1.62167f00ce236p-1"
+          },
+          {
+            "binary64_exact_decimal": "0.6961102077675034305315193705609999597072601318359375",
+            "binary64_hex": "0x1.64688ea18bdfep-1"
+          },
+          {
+            "binary64_exact_decimal": "1.2402328259644850305676300195045769214630126953125",
+            "binary64_hex": "0x1.3d7fe602f1708p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.2402328259644850305676300195045769214630126953125",
+            "binary64_hex": "0x1.3d7fe602f1708p+0"
+          },
+          {
+            "binary64_exact_decimal": "1.6771067430650308249795443771290592849254608154296875",
+            "binary64_hex": "0x1.ad56de155d89bp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.6771067430650308249795443771290592849254608154296875",
+            "binary64_hex": "0x1.ad56de155d89bp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.6915061519621110708300193437025882303714752197265625",
+            "binary64_hex": "0x1.b1068c13a8fa9p+0"
+          }
+        ],
+        "frequencies": [
+          {
+            "binary64_exact_decimal": "0.5",
+            "binary64_hex": "0x1.0000000000000p-1"
+          },
+          {
+            "binary64_exact_decimal": "0.8316116170835827769991510649560950696468353271484375",
+            "binary64_hex": "0x1.a9c8ff74b200ep-1"
+          },
+          {
+            "binary64_exact_decimal": "0.834332192695153906925042974762618541717529296875",
+            "binary64_hex": "0x1.ab2d96d340560p-1"
+          },
+          {
+            "binary64_exact_decimal": "1.1136574096033686753770552968489937484264373779296875",
+            "binary64_hex": "0x1.1d18a6e931cdbp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.1136574096033686753770552968489937484264373779296875",
+            "binary64_hex": "0x1.1d18a6e931cdbp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.2950315606443847382678313806536607444286346435546875",
+            "binary64_hex": "0x1.4b8730384166bp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.2950315606443847382678313806536607444286346435546875",
+            "binary64_hex": "0x1.4b8730384166bp+0"
+          },
+          {
+            "binary64_exact_decimal": "1.3005791602059872946739460530807264149188995361328125",
+            "binary64_hex": "0x1.4cf2c17ef1a0dp+0"
+          }
+        ],
+        "growth_rates": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "classification": [
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive",
+          "positive"
+        ],
+        "scaled_residuals": [
+          {
+            "binary64_exact_decimal": "5.3581406047313875224964174249721409137128669312471096648764490311123154242523014545440673828125E-19",
+            "binary64_hex": "0x1.3c49ee7892ff9p-61"
+          },
+          {
+            "binary64_exact_decimal": "2.2191173785922202976971451148638248952366307543688887793376096624342608265578746795654296875E-17",
+            "binary64_hex": "0x1.995adaf51553bp-56"
+          },
+          {
+            "binary64_exact_decimal": "8.26947935170266884019267979656231607449895135673878510118584017618559300899505615234375E-17",
+            "binary64_hex": "0x1.7d5cc7c1f2a18p-54"
+          },
+          {
+            "binary64_exact_decimal": "7.22870583568365189195366163507723061087565651918439291190310314050293527543544769287109375E-17",
+            "binary64_hex": "0x1.4d5d7ed161637p-54"
+          },
+          {
+            "binary64_exact_decimal": "4.16806039336956996156444821503428161016881163124410403231223654074710793793201446533203125E-17",
+            "binary64_hex": "0x1.806f8b22e3c3ap-55"
+          },
+          {
+            "binary64_exact_decimal": "4.423703992350501020689193550149477077848138325383807456514517753021209500730037689208984375E-17",
+            "binary64_hex": "0x1.9803c1df98ba3p-55"
+          },
+          {
+            "binary64_exact_decimal": "6.51898464172864803941407079054841119920397048202558021312569280780735425651073455810546875E-17",
+            "binary64_hex": "0x1.2ca29620ad2d3p-54"
+          },
+          {
+            "binary64_exact_decimal": "7.50330527037216165195354518066017945846287397660030749069193234390695579349994659423828125E-17",
+            "binary64_hex": "0x1.5a0764af3bf45p-54"
+          }
+        ],
+        "mass_orthogonality_error": {
+          "binary64_exact_decimal": "7.7715611723760957829654216766357421875E-16",
+          "binary64_hex": "0x1.c000000000000p-51"
+        },
+        "classification_tolerance": {
+          "binary64_exact_decimal": "6.61164223281869831505105748548993448913783932407994825553032569587230682373046875E-13",
+          "binary64_hex": "0x1.7433ce6f65cefp-41"
+        },
+        "scope": "assembled finite Galerkin matrix; not certified continuum bounds"
+      },
+      "change_from_previous": [
+        {
+          "binary64_exact_decimal": "8.32667268468867405317723751068115234375E-17",
+          "binary64_hex": "0x1.8000000000000p-54"
+        },
+        {
+          "binary64_exact_decimal": "2.220446049250313080847263336181640625E-16",
+          "binary64_hex": "0x1.0000000000000p-52"
+        },
+        {
+          "binary64_exact_decimal": "-4.44089209850062616169452667236328125E-16",
+          "binary64_hex": "-0x1.0000000000000p-51"
+        },
+        {
+          "binary64_exact_decimal": "3.996802888650563545525074005126953125E-15",
+          "binary64_hex": "0x1.2000000000000p-48"
+        },
+        {
+          "binary64_exact_decimal": "3.996802888650563545525074005126953125E-15",
+          "binary64_hex": "0x1.2000000000000p-48"
+        },
+        {
+          "binary64_exact_decimal": "-3.7747582837255322374403476715087890625E-15",
+          "binary64_hex": "-0x1.1000000000000p-48"
+        },
+        {
+          "binary64_exact_decimal": "-3.7747582837255322374403476715087890625E-15",
+          "binary64_hex": "-0x1.1000000000000p-48"
+        },
+        {
+          "binary64_exact_decimal": "-4.6629367034256574697792530059814453125E-15",
+          "binary64_hex": "-0x1.5000000000000p-48"
+        }
+      ]
+    }
+  ],
+  "scope": "observed refinement changes; no interval-certified continuum enclosure"
+}

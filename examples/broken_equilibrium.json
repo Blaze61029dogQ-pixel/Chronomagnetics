@@ -1,0 +1,18 @@
+{
+  "model": {
+    "amplitude": "1/10",
+    "mass2": "-1/2",
+    "quartic": 1,
+    "potential_amplitude": "1/5"
+  },
+  "resolution": {
+    "theta_cutoff": 4,
+    "zeta_cutoff": 4,
+    "theta_points": 48,
+    "zeta_points": 48
+  },
+  "initial": {
+    "kind": "constant",
+    "amplitude": "7/10"
+  }
+}

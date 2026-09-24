@@ -1,0 +1,14 @@
+# Normalize all text files to LF in the repository and in working trees.
+* text=auto eol=lf
+
+# Source, documentation, and configuration are always text with LF endings.
+*.py     text eol=lf
+*.md     text eol=lf
+*.json   text eol=lf
+*.txt    text eol=lf
+*.sha256 text eol=lf
+*.cff    text eol=lf
+
+# Numerical data archives must never be converted.
+*.npz    binary
+*.npy    binary
