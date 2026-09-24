@@ -1,0 +1,72 @@
+name: Validate
+
+"on":
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  packages:
+    name: Package self-checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Compile-check all Python files
+        run: python -m compileall -q .
+
+      - name: chronometrics report
+        run: python -m chronometrics.report
+
+      - name: zero_point_energy report
+        run: python -m zero_point_energy.report
+
+      - name: d067_art_v1 report
+        run: python -m d067_art_v1.report
+
+  phase-field-solver:
+    name: Phase field solver
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: phase_field_solver
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tested dependencies
+        run: python -m pip install -r requirements-tested.txt
+
+      - name: Check release manifest
+        run: sha256sum -c MANIFEST.sha256
+
+      - name: Check command line entry points
+        run: |
+          python phasefield.py --help > /dev/null
+          for task in spectrum evolve resume equilibrium converge sweep; do
+            python phasefield.py "$task" --help > /dev/null
+          done
+          python verify_solver.py --help > /dev/null
+          python run_examples.py --help > /dev/null
+
+      - name: Verification suite and all example jobs
+        run: python run_examples.py --out "$RUNNER_TEMP/phase_field_runs"
