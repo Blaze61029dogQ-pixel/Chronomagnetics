@@ -28,6 +28,14 @@ numbers rather than asking the reader to trust an external claim.
   manufacturing-robustness grounds. **Reduced-order architecture freeze —
   not experimentally validated.** The full monograph is in
   [`docs/James_Lockwood_Phononic_Light_Source_Condensed_Report.pdf`](docs/James_Lockwood_Phononic_Light_Source_Condensed_Report.pdf).
+- [`phase_field_solver/`](phase_field_solver/) — **Geometry Coupled Phase
+  Field Solver v1.0.0**, a variational Fourier Galerkin solver for a real
+  scalar field on a prescribed static periodic corrugated tube (spectra,
+  nonlinear/driven evolution, equilibria, refinement, sweeps, restartable
+  checkpoints). Implementation verification only (30 executed tests); not
+  physical validation. Run its suite from inside the folder with
+  `python verify_solver.py --out my_verification.json`; see its
+  [README](phase_field_solver/README.md).
 
 ## Running the self-checks
 

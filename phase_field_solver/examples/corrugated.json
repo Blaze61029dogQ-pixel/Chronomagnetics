@@ -1,0 +1,23 @@
+{
+  "model": {
+    "radius": 1,
+    "amplitude": "1/10",
+    "axial_scale": "3/2",
+    "n": 2,
+    "m": 1,
+    "mass2": "1/4",
+    "quartic": "1/2"
+  },
+  "resolution": {
+    "theta_cutoff": 4,
+    "zeta_cutoff": 4,
+    "theta_points": 48,
+    "zeta_points": 48
+  },
+  "initial": {
+    "kind": "cosine",
+    "amplitude": "1/5",
+    "theta_mode": 1,
+    "zeta_mode": 1
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "task": "equilibrium",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "solver_version": "1.0.0",
+    "solver_sha256": "c938afe9938ddbe034121d2483771ef4fbb4d3d229c49030d9e5928be9cd436e",
+    "arithmetic": "IEEE-754 binary64",
+    "threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null
+    }
+  },
+  "config": {
+    "model": {
+      "radius": 1.0,
+      "amplitude": 0.1,
+      "axial_scale": 1.5,
+      "n": 2,
+      "m": 1,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0,
+      "mass2": -0.5,
+      "quartic": 1.0,
+      "potential_constant": 0.0,
+      "potential_amplitude": 0.2,
+      "potential_n": 2,
+      "potential_m": 1,
+      "potential_phase_theta": 0.0,
+      "potential_phase_zeta": 0.0,
+      "curvature_h2": 0.0,
+      "curvature_k": 0.0,
+      "lapse_scale": 1.0,
+      "lapse_amplitude": 0.0,
+      "lapse_n": 1,
+      "lapse_m": 0,
+      "lapse_phase_theta": 0.0,
+      "lapse_phase_zeta": 0.0
+    },
+    "resolution": {
+      "theta_cutoff": 4,
+      "zeta_cutoff": 4,
+      "theta_points": 48,
+      "zeta_points": 48,
+      "memory_limit_mib": 1024
+    },
+    "initial": {
+      "kind": "constant",
+      "amplitude": 0.7,
+      "offset": 0.0,
+      "theta_mode": 1,
+      "zeta_mode": 1,
+      "velocity_amplitude": 0.0,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0,
+      "mode_index": 1
+    },
+    "drive": {
+      "amplitude": 0.0,
+      "frequency": 1.0,
+      "theta_mode": 1,
+      "zeta_mode": 1,
+      "phase_time": 0.0,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0
+    },
+    "damping": 0.0
+  },
+  "geometry": {
+    "area": {
+      "binary64_exact_decimal": "59.5454528798485824836461688391864299774169921875",
+      "binary64_hex": "0x1.dc5d166643ab6p+5"
+    },
+    "integral_gaussian_curvature": {
+      "binary64_exact_decimal": "-6.50915823102372039676084002911112517356063698393577043876945253941812552511692047119140625E-17",
+      "binary64_hex": "-0x1.2c2e939fa4859p-54"
+    },
+    "integral_mean_curvature_squared": {
+      "binary64_exact_decimal": "15.1973861857030971833637522649951279163360595703125",
+      "binary64_hex": "0x1.e650fcd588dd1p+3"
+    },
+    "sampled_minimum_H_squared_minus_K": {
+      "binary64_exact_decimal": "0.1094711172077426908355590740029583685100078582763671875",
+      "binary64_hex": "0x1.c064c94438adep-4"
+    },
+    "analytic_radius_lower_bound": {
+      "binary64_exact_decimal": "0.90000000000000002220446049250313080847263336181640625",
+      "binary64_hex": "0x1.ccccccccccccdp-1"
+    },
+    "analytic_lapse_lower_bound": {
+      "binary64_exact_decimal": "1",
+      "binary64_hex": "0x1.0000000000000p+0"
+    },
+    "sampled_minimum_determinant": {
+      "binary64_exact_decimal": "1.822500000000000230926389122032560408115386962890625",
+      "binary64_hex": "0x1.d28f5c28f5c2ap+0"
+    },
+    "ndof": 81,
+    "quadrature_shape": [
+      48,
+      48
+    ],
+    "estimated_workspace_bytes": 10325088,
+    "mass_condition_number": {
+      "binary64_exact_decimal": "1.178266876839741517102311263442970812320709228515625",
+      "binary64_hex": "0x1.2da2e5e5fc9bap+0"
+    },
+    "assembly_asymmetry": {
+      "mass": {
+        "binary64_exact_decimal": "8.8817841970012523233890533447265625E-15",
+        "binary64_hex": "0x1.4000000000000p-47"
+      },
+      "stiffness": {
+        "binary64_exact_decimal": "5.595524044110788963735103607177734375E-14",
+        "binary64_hex": "0x1.f800000000000p-45"
+      }
+    },
+    "fingerprint": "6b8efe902c57dfa0b3cdd7a27f0c5d8914a9d916d369179846561a3d86820a10"
+  },
+  "converged": true,
+  "reason": "residual_tolerance",
+  "residual": {
+    "binary64_exact_decimal": "6.5048849337534230684421514683876543854522509109650219016884875600226223468780517578125E-15",
+    "binary64_hex": "0x1.d4b9f2960965dp-48"
+  },
+  "tolerance": {
+    "binary64_exact_decimal": "1.1782551004832177300008987664019406704785097872445476241409778594970703125E-10",
+    "binary64_hex": "0x1.0319dd8a6e6e4p-33"
+  },
+  "energy": {
+    "binary64_exact_decimal": "-3.68431409590940717180274077691137790679931640625",
+    "binary64_hex": "-0x1.d7979ab30fb50p+1"
+  },
+  "stationary_classification": "positive",
+  "hessian_spectrum": {
+    "squared_frequencies": [
+      {
+        "binary64_exact_decimal": "0.996480041242840730575380803202278912067413330078125",
+        "binary64_hex": "0x1.fe32a1c8826c4p-1"
+      },
+      {
+        "binary64_exact_decimal": "1.44024263665088181340934170293621718883514404296875",
+        "binary64_hex": "0x1.70b3bdceb868cp+0"
+      },
+      {
+        "binary64_exact_decimal": "1.440617452350607674560478699277155101299285888671875",
+        "binary64_hex": "0x1.70cc4e2be487ep+0"
+      },
+      {
+        "binary64_exact_decimal": "1.981208288697795527610878707491792738437652587890625",
+        "binary64_hex": "0x1.fb307766856aap+0"
+      },
+      {
+        "binary64_exact_decimal": "1.981208288697795527610878707491792738437652587890625",
+        "binary64_hex": "0x1.fb307766856aap+0"
+      },
+      {
+        "binary64_exact_decimal": "2.433104633058675414503113643149845302104949951171875",
+        "binary64_hex": "0x1.376ff8fd5dd5fp+1"
+      },
+      {
+        "binary64_exact_decimal": "2.433104633058679855395212143776006996631622314453125",
+        "binary64_hex": "0x1.376ff8fd5dd69p+1"
+      },
+      {
+        "binary64_exact_decimal": "2.435540429401087170191431141574867069721221923828125",
+        "binary64_hex": "0x1.37bfc9ee2e861p+1"
+      }
+    ],
+    "frequencies": [
+      {
+        "binary64_exact_decimal": "0.99823846912591018831761857654782943427562713623046875",
+        "binary64_hex": "0x1.ff191cd50280fp-1"
+      },
+      {
+        "binary64_exact_decimal": "1.2001010943461729585379771378939040005207061767578125",
+        "binary64_hex": "0x1.3339d3481c51dp+0"
+      },
+      {
+        "binary64_exact_decimal": "1.2002572442400036845100430582533590495586395263671875",
+        "binary64_hex": "0x1.33440f0acc433p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.4075540091583682578146863306756131350994110107421875",
+        "binary64_hex": "0x1.685575a4b05a3p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.4075540091583682578146863306756131350994110107421875",
+        "binary64_hex": "0x1.685575a4b05a3p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.5598412204640175193759432659135200083255767822265625",
+        "binary64_hex": "0x1.8f51c114d87e9p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.5598412204640188516435728161013685166835784912109375",
+        "binary64_hex": "0x1.8f51c114d87efp+0"
+      },
+      {
+        "binary64_exact_decimal": "1.5606218085753791324776784676942043006420135498046875",
+        "binary64_hex": "0x1.8f84e92d4170bp+0"
+      }
+    ],
+    "growth_rates": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "classification": [
+      "positive",
+      "positive",
+      "positive",
+      "positive",
+      "positive",
+      "positive",
+      "positive",
+      "positive"
+    ],
+    "scaled_residuals": [
+      {
+        "binary64_exact_decimal": "6.70732515294722488200736983645115322186123001668993544310826138143966090865433216094970703125E-18",
+        "binary64_hex": "0x1.eee9ca3b56dcdp-58"
+      },
+      {
+        "binary64_exact_decimal": "5.431947017676733894137577907186685136152841843460402360133087995563982985913753509521484375E-17",
+        "binary64_hex": "0x1.f502390092d43p-55"
+      },
+      {
+        "binary64_exact_decimal": "3.946658888321929952746160425724250893474500883977527931900652902186266146600246429443359375E-17",
+        "binary64_hex": "0x1.6c03d92811adbp-55"
+      },
+      {
+        "binary64_exact_decimal": "4.703898927220246252705231968302280002916875058520569663489396816657972522079944610595703125E-17",
+        "binary64_hex": "0x1.b1dbac5472659p-55"
+      },
+      {
+        "binary64_exact_decimal": "6.10105792260462101254653921209214501800389558977370796366557215151260606944561004638671875E-17",
+        "binary64_hex": "0x1.195c941fbea5bp-54"
+      },
+      {
+        "binary64_exact_decimal": "7.32409157367738034528801891896145151072188166411179588433100207112147472798824310302734375E-17",
+        "binary64_hex": "0x1.51c39c8587a9fp-54"
+      },
+      {
+        "binary64_exact_decimal": "5.887378469640813001223918330844012957024606190643833958375807924312539398670196533203125E-17",
+        "binary64_hex": "0x1.0f81e59abf354p-54"
+      },
+      {
+        "binary64_exact_decimal": "7.53881563217244685386911206968100506340551514804747268438944729496142826974391937255859375E-17",
+        "binary64_hex": "0x1.5baaa02ae9167p-54"
+      }
+    ],
+    "mass_orthogonality_error": {
+      "binary64_exact_decimal": "8.8817841970012523233890533447265625E-16",
+      "binary64_hex": "0x1.0000000000000p-50"
+    },
+    "classification_tolerance": {
+      "binary64_exact_decimal": "6.39908658131098558184866488409292477443530977598840081554953940212726593017578125E-13",
+      "binary64_hex": "0x1.683c8e7e83459p-41"
+    },
+    "scope": "assembled finite Galerkin matrix; not certified continuum bounds"
+  },
+  "trace": [
+    {
+      "iteration": 0,
+      "energy": -3.5754980507190837,
+      "dual_residual": 1.0782551004832177,
+      "line_step": 1.0,
+      "hessian_shift": 0.0
+    },
+    {
+      "iteration": 1,
+      "energy": -3.68422831511998,
+      "dual_residual": 0.0179183585008938,
+      "line_step": 1.0,
+      "hessian_shift": 0.0
+    },
+    {
+      "iteration": 2,
+      "energy": -3.6843140949909294,
+      "dual_residual": 4.657123884902064e-05,
+      "line_step": 1.0,
+      "hessian_shift": 0.0
+    },
+    {
+      "iteration": 3,
+      "energy": -3.684314095909408,
+      "dual_residual": 5.130421685392485e-10,
+      "line_step": 1.0,
+      "hessian_shift": 0.0
+    },
+    {
+      "iteration": 4,
+      "energy": -3.684314095909407,
+      "dual_residual": 6.504884933753423e-15
+    }
+  ],
+  "note": "Stationarity does not imply a global minimum; classification uses the discrete Hessian"
+}

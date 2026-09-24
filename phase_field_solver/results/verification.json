@@ -1,0 +1,247 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "solver_version": "1.0.0",
+    "solver_sha256": "c938afe9938ddbe034121d2483771ef4fbb4d3d229c49030d9e5928be9cd436e",
+    "arithmetic": "IEEE-754 binary64",
+    "threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": null
+    }
+  },
+  "tests_run": 30,
+  "failures": 0,
+  "errors": 0,
+  "successful": true,
+  "tests": [
+    {
+      "test": "__main__.Verification.test_01_flat_geometry",
+      "status": "passed",
+      "seconds": 0.0007755220000262852
+    },
+    {
+      "test": "__main__.Verification.test_02_curvature_against_embedding",
+      "status": "passed",
+      "seconds": 0.0004461739999896963
+    },
+    {
+      "test": "__main__.Verification.test_03_gauss_bonnet",
+      "status": "passed",
+      "seconds": 0.004708237999977882
+    },
+    {
+      "test": "__main__.Verification.test_04_flat_spectrum",
+      "status": "passed",
+      "seconds": 0.0017407409999918855
+    },
+    {
+      "test": "__main__.Verification.test_05_constant_mode_curved",
+      "status": "passed",
+      "seconds": 0.0058407909999687035
+    },
+    {
+      "test": "__main__.Verification.test_06_lapse_exact_ground",
+      "status": "passed",
+      "seconds": 0.011673598000015772
+    },
+    {
+      "test": "__main__.Verification.test_07_independent_complex_assembly",
+      "status": "passed",
+      "seconds": 0.00931811700002072
+    },
+    {
+      "test": "__main__.Verification.test_08_phase_translation_invariance",
+      "status": "passed",
+      "seconds": 0.016500405999977374
+    },
+    {
+      "test": "__main__.Verification.test_09_mass_shift_and_lapse_scaling",
+      "status": "passed",
+      "seconds": 0.004611642000043048
+    },
+    {
+      "test": "__main__.Verification.test_10_eigen_residual_and_orthogonality",
+      "status": "passed",
+      "seconds": 0.004795769999986987
+    },
+    {
+      "test": "__main__.Verification.test_11_potential_second_order",
+      "status": "passed",
+      "seconds": 0.046180245000016384
+    },
+    {
+      "test": "__main__.Verification.test_12_energy_gradient",
+      "status": "passed",
+      "seconds": 0.0018034670000020014
+    },
+    {
+      "test": "__main__.Verification.test_13_hessian_directional_derivative",
+      "status": "passed",
+      "seconds": 0.0014895319999936874
+    },
+    {
+      "test": "__main__.Verification.test_14_cubic_projection_dealiasing",
+      "status": "passed",
+      "seconds": 0.009313851000001705
+    },
+    {
+      "test": "__main__.Verification.test_15_full_field_duffing",
+      "status": "passed",
+      "seconds": 0.1904009480000468
+    },
+    {
+      "test": "__main__.Verification.test_16_corrugated_nonlinear_energy_order",
+      "status": "passed",
+      "seconds": 0.12204322399998091
+    },
+    {
+      "test": "__main__.Verification.test_17_manufactured_nonlinear_forcing",
+      "status": "passed",
+      "seconds": 0.16819722999997566
+    },
+    {
+      "test": "__main__.Verification.test_18_exact_damping_loss",
+      "status": "passed",
+      "seconds": 0.01258887199998071
+    },
+    {
+      "test": "__main__.Verification.test_19_negative_mode_is_retained",
+      "status": "passed",
+      "seconds": 0.019432148000021243
+    },
+    {
+      "test": "__main__.Verification.test_20_broken_vacuum_equilibrium",
+      "status": "passed",
+      "seconds": 0.006159136999997372
+    },
+    {
+      "test": "__main__.Verification.test_21_zero_stationary_is_classified_unstable",
+      "status": "passed",
+      "seconds": 0.001531715999988137
+    },
+    {
+      "test": "__main__.Verification.test_22_nonuniform_equilibrium",
+      "status": "passed",
+      "seconds": 0.009864993999997296
+    },
+    {
+      "test": "__main__.Verification.test_23_restart_exact_same_environment",
+      "status": "passed",
+      "seconds": 0.06274961500002973
+    },
+    {
+      "test": "__main__.Verification.test_24_checkpoint_tamper_rejected",
+      "status": "passed",
+      "seconds": 0.004300351000040337
+    },
+    {
+      "test": "__main__.Verification.test_25_checkpoint_wrong_operator_rejected",
+      "status": "passed",
+      "seconds": 0.004550769000047694
+    },
+    {
+      "test": "__main__.Verification.test_26_bad_geometry_and_nonfinite_rejected",
+      "status": "passed",
+      "seconds": 0.00017359299999952782
+    },
+    {
+      "test": "__main__.Verification.test_27_timestep_guard_preserves_state",
+      "status": "passed",
+      "seconds": 0.0016524480000157382
+    },
+    {
+      "test": "__main__.Verification.test_28_basis_and_quadrature_convergence",
+      "status": "passed",
+      "seconds": 0.034682533000022886
+    },
+    {
+      "test": "__main__.Verification.test_29_real_field_contract",
+      "status": "passed",
+      "seconds": 0.0008228240000107689
+    },
+    {
+      "test": "__main__.Verification.test_30_finite_resource_budget",
+      "status": "passed",
+      "seconds": 5.960000004279209e-05
+    }
+  ],
+  "metrics": {
+    "gauss_bonnet_absolute_residual": {
+      "binary64_exact_decimal": "1.1818864095956486527919425808107906368296636211157046858488683938048779964447021484375E-15",
+      "binary64_hex": "0x1.54a7d311a5b1cp-50"
+    },
+    "flat_spectrum_max_error": {
+      "binary64_exact_decimal": "9.76996261670137755572795867919921875E-15",
+      "binary64_hex": "0x1.6000000000000p-47"
+    },
+    "curved_constant_mode_error": {
+      "binary64_exact_decimal": "8.8817841970012523233890533447265625E-16",
+      "binary64_hex": "0x1.0000000000000p-50"
+    },
+    "lapse_ground_error": {
+      "binary64_exact_decimal": "1.609823385706476983614265918731689453125E-15",
+      "binary64_hex": "0x1.d000000000000p-50"
+    },
+    "independent_complex_spectrum_error": {
+      "binary64_exact_decimal": "1.95399252334027551114559173583984375E-14",
+      "binary64_hex": "0x1.6000000000000p-46"
+    },
+    "eigen_max_scaled_residual": {
+      "binary64_exact_decimal": "1.17057540523412412565154391133392735935602870585466039887734268631902523338794708251953125E-16",
+      "binary64_hex": "0x1.0dea9363d1a01p-53"
+    },
+    "potential_fourth_order_remainder_ratio_0": {
+      "binary64_exact_decimal": "15.9667559428828642609232701943255960941314697265625",
+      "binary64_hex": "0x1.feefaa28bca85p+3"
+    },
+    "potential_fourth_order_remainder_ratio_1": {
+      "binary64_exact_decimal": "15.991687650112449858852414763532578945159912109375",
+      "binary64_hex": "0x1.ffbbe7bd228fep+3"
+    },
+    "duffing_field_error_ratio_0": {
+      "binary64_exact_decimal": "4.000054058081463637108754483051598072052001953125",
+      "binary64_hex": "0x1.0000e2bc6c494p+2"
+    },
+    "duffing_field_error_ratio_1": {
+      "binary64_exact_decimal": "4.00001351874818400489175473921932280063629150390625",
+      "binary64_hex": "0x1.000038b3a5349p+2"
+    },
+    "nonlinear_energy_error_ratio_0": {
+      "binary64_exact_decimal": "4.000010017175480214746130513958632946014404296875",
+      "binary64_hex": "0x1.00002a03dc3acp+2"
+    },
+    "nonlinear_energy_error_ratio_1": {
+      "binary64_exact_decimal": "4.000002506915055988656604313291609287261962890625",
+      "binary64_hex": "0x1.00000a83c7904p+2"
+    },
+    "manufactured_finest_max_field_error": {
+      "binary64_exact_decimal": "3.425262609935142421591081074438989162445068359375E-7",
+      "binary64_hex": "0x1.6fc8e6d580000p-22"
+    },
+    "damping_balance_absolute_error": {
+      "binary64_exact_decimal": "4.44089209850062616169452667236328125E-16",
+      "binary64_hex": "0x1.0000000000000p-51"
+    },
+    "broken_vacuum_dual_residual": {
+      "binary64_exact_decimal": "8.35368145791205895423125561362424125144113436214343693109185551293194293975830078125E-15",
+      "binary64_hex": "0x1.2cf91ca9a726ap-47"
+    },
+    "nonuniform_equilibrium_dual_residual": {
+      "binary64_exact_decimal": "2.85397061829670848883514607823688934709754363126810172701652845717035233974456787109375E-15",
+      "binary64_hex": "0x1.9b4cee61c2c63p-49"
+    },
+    "basis_refinement_change_0": {
+      "binary64_exact_decimal": "0.004146539998824749773120856843888759613037109375",
+      "binary64_hex": "0x1.0fbf65afbf000p-8"
+    },
+    "basis_refinement_change_1": {
+      "binary64_exact_decimal": "0.000109932969141635084042718517594039440155029296875",
+      "binary64_hex": "0x1.cd17a07638000p-14"
+    }
+  },
+  "scope": "implementation verification; not physical validation or a continuum proof"
+}
