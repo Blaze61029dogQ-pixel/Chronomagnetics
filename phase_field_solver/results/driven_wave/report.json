@@ -1,0 +1,170 @@
+{
+  "task": "evolve",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "solver_version": "1.0.0",
+    "solver_sha256": "c938afe9938ddbe034121d2483771ef4fbb4d3d229c49030d9e5928be9cd436e",
+    "arithmetic": "IEEE-754 binary64",
+    "threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null
+    }
+  },
+  "config": {
+    "model": {
+      "radius": 1.0,
+      "amplitude": 0.1,
+      "axial_scale": 1.5,
+      "n": 2,
+      "m": 1,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0,
+      "mass2": 0.25,
+      "quartic": 0.5,
+      "potential_constant": 0.0,
+      "potential_amplitude": 0.0,
+      "potential_n": 2,
+      "potential_m": 1,
+      "potential_phase_theta": 0.0,
+      "potential_phase_zeta": 0.0,
+      "curvature_h2": 0.0,
+      "curvature_k": 0.0,
+      "lapse_scale": 1.0,
+      "lapse_amplitude": 0.1,
+      "lapse_n": 1,
+      "lapse_m": 0,
+      "lapse_phase_theta": 0.0,
+      "lapse_phase_zeta": 0.0
+    },
+    "resolution": {
+      "theta_cutoff": 3,
+      "zeta_cutoff": 3,
+      "theta_points": 40,
+      "zeta_points": 40,
+      "memory_limit_mib": 1024
+    },
+    "initial": {
+      "kind": "cosine",
+      "amplitude": 0.1,
+      "offset": 0.0,
+      "theta_mode": 1,
+      "zeta_mode": 1,
+      "velocity_amplitude": 0.0,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0,
+      "mode_index": 1
+    },
+    "drive": {
+      "amplitude": 0.02,
+      "frequency": 1.2,
+      "theta_mode": 1,
+      "zeta_mode": 1,
+      "phase_time": 0.0,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0
+    },
+    "damping": 0.04
+  },
+  "geometry": {
+    "area": {
+      "binary64_exact_decimal": "59.54545287984857537821881123818457126617431640625",
+      "binary64_hex": "0x1.dc5d166643ab5p+5"
+    },
+    "integral_gaussian_curvature": {
+      "binary64_exact_decimal": "2.5119767736765822296539552418336819815002084106160540333263497814186848700046539306640625E-16",
+      "binary64_hex": "0x1.219c77dff3a91p-52"
+    },
+    "integral_mean_curvature_squared": {
+      "binary64_exact_decimal": "15.19738618570310251243427046574652194976806640625",
+      "binary64_hex": "0x1.e650fcd588dd4p+3"
+    },
+    "sampled_minimum_H_squared_minus_K": {
+      "binary64_exact_decimal": "0.1094711172077426908355590740029583685100078582763671875",
+      "binary64_hex": "0x1.c064c94438adep-4"
+    },
+    "analytic_radius_lower_bound": {
+      "binary64_exact_decimal": "0.90000000000000002220446049250313080847263336181640625",
+      "binary64_hex": "0x1.ccccccccccccdp-1"
+    },
+    "analytic_lapse_lower_bound": {
+      "binary64_exact_decimal": "0.90000000000000002220446049250313080847263336181640625",
+      "binary64_hex": "0x1.ccccccccccccdp-1"
+    },
+    "sampled_minimum_determinant": {
+      "binary64_exact_decimal": "1.822500000000000230926389122032560408115386962890625",
+      "binary64_hex": "0x1.d28f5c28f5c2ap+0"
+    },
+    "ndof": 49,
+    "quadrature_shape": [
+      40,
+      40
+    ],
+    "estimated_workspace_bytes": 4505696,
+    "mass_condition_number": {
+      "binary64_exact_decimal": "1.3262258307520700117976275578257627785205841064453125",
+      "binary64_hex": "0x1.5383893a30c95p+0"
+    },
+    "assembly_asymmetry": {
+      "mass": {
+        "binary64_exact_decimal": "5.3290705182007513940334320068359375E-15",
+        "binary64_hex": "0x1.8000000000000p-48"
+      },
+      "stiffness": {
+        "binary64_exact_decimal": "3.586020369539255625568330287933349609375E-14",
+        "binary64_hex": "0x1.4300000000000p-45"
+      }
+    },
+    "fingerprint": "dfaeff26bdf30db4cc47247859e3e11434d76ec8ea95650c6003f2000406d52a"
+  },
+  "history": {
+    "sample_count": 21,
+    "initial_step": 0,
+    "final_step": 400,
+    "final": {
+      "step": 400,
+      "time": {
+        "binary64_exact_decimal": "2",
+        "binary64_hex": "0x1.0000000000000p+1"
+      },
+      "energy": {
+        "binary64_exact_decimal": "0.1077628379424848958922922292913426645100116729736328125",
+        "binary64_hex": "0x1.b965868afe722p-4"
+      },
+      "work": {
+        "binary64_exact_decimal": "-0.00765088500338407216661007481661727069877088069915771484375",
+        "binary64_hex": "-0x1.f5688cdfff706p-8"
+      },
+      "dissipated": {
+        "binary64_exact_decimal": "0.010063221197366210846180223370538442395627498626708984375",
+        "binary64_hex": "0x1.49c06af7b16acp-7"
+      },
+      "balance_defect": {
+        "binary64_exact_decimal": "-6.6331197137899089444346145683084614574909210205078125E-7",
+        "binary64_hex": "-0x1.641ce73644000p-21"
+      },
+      "max_abs_field": {
+        "binary64_exact_decimal": "0.076474601979028722364972736613708548247814178466796875",
+        "binary64_hex": "0x1.393d6ea797bccp-4"
+      },
+      "mass_norm": {
+        "binary64_exact_decimal": "0.27353192249445001937857568918843753635883331298828125",
+        "binary64_hex": "0x1.1818c0961a492p-2"
+      }
+    },
+    "max_sampled_absolute_balance_defect": {
+      "binary64_exact_decimal": "0.000001299617410333540890032821835120557807385921478271484375",
+      "binary64_hex": "0x1.5cdd0744e7000p-20"
+    },
+    "diagnostic_note": "maxima are over stored samples, not every intermediate state"
+  },
+  "dt": {
+    "binary64_exact_decimal": "0.005000000000000000104083408558608425664715468883514404296875",
+    "binary64_hex": "0x1.47ae147ae147bp-8"
+  },
+  "checkpoint": "checkpoint.npz",
+  "equation": "M qtt + damping*M qt + K q + quartic*B^T(wK*(Bq)^3) = drive(t)"
+}

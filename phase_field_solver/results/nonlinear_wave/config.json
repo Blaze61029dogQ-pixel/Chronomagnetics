@@ -1,0 +1,55 @@
+{
+  "model": {
+    "radius": 1.0,
+    "amplitude": 0.1,
+    "axial_scale": 1.5,
+    "n": 2,
+    "m": 1,
+    "phase_theta": 0.0,
+    "phase_zeta": 0.0,
+    "mass2": 0.25,
+    "quartic": 0.5,
+    "potential_constant": 0.0,
+    "potential_amplitude": 0.0,
+    "potential_n": 2,
+    "potential_m": 1,
+    "potential_phase_theta": 0.0,
+    "potential_phase_zeta": 0.0,
+    "curvature_h2": 0.0,
+    "curvature_k": 0.0,
+    "lapse_scale": 1.0,
+    "lapse_amplitude": 0.0,
+    "lapse_n": 1,
+    "lapse_m": 0,
+    "lapse_phase_theta": 0.0,
+    "lapse_phase_zeta": 0.0
+  },
+  "resolution": {
+    "theta_cutoff": 4,
+    "zeta_cutoff": 4,
+    "theta_points": 48,
+    "zeta_points": 48,
+    "memory_limit_mib": 1024
+  },
+  "initial": {
+    "kind": "cosine",
+    "amplitude": 0.2,
+    "offset": 0.0,
+    "theta_mode": 1,
+    "zeta_mode": 1,
+    "velocity_amplitude": 0.0,
+    "phase_theta": 0.0,
+    "phase_zeta": 0.0,
+    "mode_index": 1
+  },
+  "drive": {
+    "amplitude": 0.0,
+    "frequency": 1.0,
+    "theta_mode": 1,
+    "zeta_mode": 1,
+    "phase_time": 0.0,
+    "phase_theta": 0.0,
+    "phase_zeta": 0.0
+  },
+  "damping": 0.0
+}

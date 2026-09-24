@@ -1,0 +1,270 @@
+{
+  "task": "spectrum",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "solver_version": "1.0.0",
+    "solver_sha256": "c938afe9938ddbe034121d2483771ef4fbb4d3d229c49030d9e5928be9cd436e",
+    "arithmetic": "IEEE-754 binary64",
+    "threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null
+    }
+  },
+  "config": {
+    "model": {
+      "radius": 1.0,
+      "amplitude": 0.1,
+      "axial_scale": 1.5,
+      "n": 2,
+      "m": 1,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0,
+      "mass2": 0.25,
+      "quartic": 0.5,
+      "potential_constant": 0.0,
+      "potential_amplitude": 0.0,
+      "potential_n": 2,
+      "potential_m": 1,
+      "potential_phase_theta": 0.0,
+      "potential_phase_zeta": 0.0,
+      "curvature_h2": 0.0,
+      "curvature_k": 0.0,
+      "lapse_scale": 1.0,
+      "lapse_amplitude": 0.0,
+      "lapse_n": 1,
+      "lapse_m": 0,
+      "lapse_phase_theta": 0.0,
+      "lapse_phase_zeta": 0.0
+    },
+    "resolution": {
+      "theta_cutoff": 4,
+      "zeta_cutoff": 4,
+      "theta_points": 48,
+      "zeta_points": 48,
+      "memory_limit_mib": 1024
+    },
+    "initial": {
+      "kind": "cosine",
+      "amplitude": 0.2,
+      "offset": 0.0,
+      "theta_mode": 1,
+      "zeta_mode": 1,
+      "velocity_amplitude": 0.0,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0,
+      "mode_index": 1
+    },
+    "drive": {
+      "amplitude": 0.0,
+      "frequency": 1.0,
+      "theta_mode": 1,
+      "zeta_mode": 1,
+      "phase_time": 0.0,
+      "phase_theta": 0.0,
+      "phase_zeta": 0.0
+    },
+    "damping": 0.0
+  },
+  "geometry": {
+    "area": {
+      "binary64_exact_decimal": "59.5454528798485824836461688391864299774169921875",
+      "binary64_hex": "0x1.dc5d166643ab6p+5"
+    },
+    "integral_gaussian_curvature": {
+      "binary64_exact_decimal": "-6.50915823102372039676084002911112517356063698393577043876945253941812552511692047119140625E-17",
+      "binary64_hex": "-0x1.2c2e939fa4859p-54"
+    },
+    "integral_mean_curvature_squared": {
+      "binary64_exact_decimal": "15.1973861857030971833637522649951279163360595703125",
+      "binary64_hex": "0x1.e650fcd588dd1p+3"
+    },
+    "sampled_minimum_H_squared_minus_K": {
+      "binary64_exact_decimal": "0.1094711172077426908355590740029583685100078582763671875",
+      "binary64_hex": "0x1.c064c94438adep-4"
+    },
+    "analytic_radius_lower_bound": {
+      "binary64_exact_decimal": "0.90000000000000002220446049250313080847263336181640625",
+      "binary64_hex": "0x1.ccccccccccccdp-1"
+    },
+    "analytic_lapse_lower_bound": {
+      "binary64_exact_decimal": "1",
+      "binary64_hex": "0x1.0000000000000p+0"
+    },
+    "sampled_minimum_determinant": {
+      "binary64_exact_decimal": "1.822500000000000230926389122032560408115386962890625",
+      "binary64_hex": "0x1.d28f5c28f5c2ap+0"
+    },
+    "ndof": 81,
+    "quadrature_shape": [
+      48,
+      48
+    ],
+    "estimated_workspace_bytes": 10325088,
+    "mass_condition_number": {
+      "binary64_exact_decimal": "1.178266876839741517102311263442970812320709228515625",
+      "binary64_hex": "0x1.2da2e5e5fc9bap+0"
+    },
+    "assembly_asymmetry": {
+      "mass": {
+        "binary64_exact_decimal": "8.8817841970012523233890533447265625E-15",
+        "binary64_hex": "0x1.4000000000000p-47"
+      },
+      "stiffness": {
+        "binary64_exact_decimal": "5.6399329650957952253520488739013671875E-14",
+        "binary64_hex": "0x1.fc00000000000p-45"
+      }
+    },
+    "fingerprint": "a2fe1e9ec67f5f7160996e7579d9c2dcc4d1cbd7905107a965e8d16258543f3e"
+  },
+  "spectrum": {
+    "squared_frequencies": [
+      {
+        "binary64_exact_decimal": "0.2499999999999999722444243843710864894092082977294921875",
+        "binary64_hex": "0x1.fffffffffffffp-3"
+      },
+      {
+        "binary64_exact_decimal": "0.6915778816683679774968140918645076453685760498046875",
+        "binary64_hex": "0x1.62167f00ce216p-1"
+      },
+      {
+        "binary64_exact_decimal": "0.6961102077675003219070504201226867735385894775390625",
+        "binary64_hex": "0x1.64688ea18bde2p-1"
+      },
+      {
+        "binary64_exact_decimal": "1.2402328259644814778539512190036475658416748046875",
+        "binary64_hex": "0x1.3d7fe602f16f8p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.2402328259644814778539512190036475658416748046875",
+        "binary64_hex": "0x1.3d7fe602f16f8p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.6771067430650337115594084025360643863677978515625",
+        "binary64_hex": "0x1.ad56de155d8a8p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.67710674306503815245150690316222608089447021484375",
+        "binary64_hex": "0x1.ad56de155d8bcp+0"
+      },
+      {
+        "binary64_exact_decimal": "1.6915061519621144014990932191722095012664794921875",
+        "binary64_hex": "0x1.b1068c13a8fb8p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.69150615196211884239119171979837119579315185546875",
+        "binary64_hex": "0x1.b1068c13a8fccp+0"
+      }
+    ],
+    "frequencies": [
+      {
+        "binary64_exact_decimal": "0.499999999999999944488848768742172978818416595458984375",
+        "binary64_hex": "0x1.fffffffffffffp-2"
+      },
+      {
+        "binary64_exact_decimal": "0.83161161708358066757540427715866826474666595458984375",
+        "binary64_hex": "0x1.a9c8ff74b1ffbp-1"
+      },
+      {
+        "binary64_exact_decimal": "0.83433219269515201954590111199649982154369354248046875",
+        "binary64_hex": "0x1.ab2d96d34054fp-1"
+      },
+      {
+        "binary64_exact_decimal": "1.1136574096033668990202158965985290706157684326171875",
+        "binary64_hex": "0x1.1d18a6e931cd3p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.1136574096033668990202158965985290706157684326171875",
+        "binary64_hex": "0x1.1d18a6e931cd3p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.295031560644385848490856005810201168060302734375",
+        "binary64_hex": "0x1.4b87303841670p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.2950315606443876248476954060606658458709716796875",
+        "binary64_hex": "0x1.4b87303841678p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.3005791602059886269415756032685749232769012451171875",
+        "binary64_hex": "0x1.4cf2c17ef1a13p+0"
+      },
+      {
+        "binary64_exact_decimal": "1.300579160205990181253810078487731516361236572265625",
+        "binary64_hex": "0x1.4cf2c17ef1a1ap+0"
+      }
+    ],
+    "growth_rates": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "classification": [
+      "positive",
+      "positive",
+      "positive",
+      "positive",
+      "positive",
+      "positive",
+      "positive",
+      "positive",
+      "positive"
+    ],
+    "scaled_residuals": [
+      {
+        "binary64_exact_decimal": "2.6790855868258969658794636674621126581529771147941430819994224066249444149434566497802734375E-19",
+        "binary64_hex": "0x1.3c4a64ba910f0p-62"
+      },
+      {
+        "binary64_exact_decimal": "5.121687335200374729506674586973306958661042337138842583943443287353147752583026885986328125E-17",
+        "binary64_hex": "0x1.d8646c4c2e861p-55"
+      },
+      {
+        "binary64_exact_decimal": "5.93404706979947495098917670326490298652684886250747997582521975346026010811328887939453125E-17",
+        "binary64_hex": "0x1.11a8dccb316adp-54"
+      },
+      {
+        "binary64_exact_decimal": "4.79155787369510252016584928100849668107271602250814279688739816265297122299671173095703125E-17",
+        "binary64_hex": "0x1.b9f176260017ap-55"
+      },
+      {
+        "binary64_exact_decimal": "7.3105168591225769250698068741760736817777749547986321232428963412530720233917236328125E-17",
+        "binary64_hex": "0x1.51235976dc950p-54"
+      },
+      {
+        "binary64_exact_decimal": "5.393529211336504435758310638304519172749523225353883437716007165363407693803310394287109375E-17",
+        "binary64_hex": "0x1.f1771b9cb600bp-55"
+      },
+      {
+        "binary64_exact_decimal": "8.249232289628221610695307010422444176745037009747252287894525579758919775485992431640625E-17",
+        "binary64_hex": "0x1.7c6dbec46f744p-54"
+      },
+      {
+        "binary64_exact_decimal": "4.61103445928606514490386141757439627297607620602486189209656686216476373374462127685546875E-17",
+        "binary64_hex": "0x1.a94af91097f26p-55"
+      },
+      {
+        "binary64_exact_decimal": "7.90820929820979214419092757846026953531461624780259100919721504396875388920307159423828125E-17",
+        "binary64_hex": "0x1.6cb3a804d0745p-54"
+      }
+    ],
+    "mass_orthogonality_error": {
+      "binary64_exact_decimal": "1.332267629550187848508358001708984375E-15",
+      "binary64_hex": "0x1.8000000000000p-50"
+    },
+    "classification_tolerance": {
+      "binary64_exact_decimal": "6.6116422328186973053090988025948235621252757621135742738260887563228607177734375E-13",
+      "binary64_hex": "0x1.7433ce6f65ceep-41"
+    },
+    "scope": "assembled finite Galerkin matrix; not certified continuum bounds"
+  }
+}

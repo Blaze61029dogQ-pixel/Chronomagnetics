@@ -1,0 +1,41 @@
+# Python environments
+.venv/
+venv/
+env/
+ENV/
+.conda/
+__pypackages__/
+
+# Bytecode and tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.cache/
+
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+.netrc
+.pypirc
+credentials*.json
+secrets*.json
+
+# Temporary and user-generated runs (packaged results live in results/)
+my_*/
+my_*.json
+runs/
+tmp/
+*.tmp
+*.log
+
+# Editor and OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

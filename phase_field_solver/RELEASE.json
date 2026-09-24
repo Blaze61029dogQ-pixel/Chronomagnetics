@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "release_date": "2026-09-24",
+  "source_sha256": "c938afe9938ddbe034121d2483771ef4fbb4d3d229c49030d9e5928be9cd436e",
+  "tests_passed": 30,
+  "example_jobs_completed": 8,
+  "reproduction_runner_executed": true,
+  "readme_python_examples_executed": true,
+  "scope": "Real scalar on a static prescribed periodic corrugated tube; implementation verification, not physical validation or certified continuum error."
+}
