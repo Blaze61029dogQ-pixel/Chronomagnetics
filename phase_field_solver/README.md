@@ -10,7 +10,14 @@ The computational scope is a fixed 2+1 dimensional background. The code does not
 
 ## Start here
 
-Extract the ZIP, then open a terminal inside the extracted Phase_Field_Solver folder. These are ordinary Python scripts; no notebook, GPU, CUDA, driver changes, or external service is required.
+The solver lives in the phase_field_solver/ directory of the Chronomagnetics repository. Clone the repository and change into that directory:
+
+```bash
+git clone https://github.com/Blaze61029dogQ-pixel/Chronomagnetics.git
+cd Chronomagnetics/phase_field_solver
+```
+
+Run every command in this README from inside phase_field_solver/. The scripts, the example configurations, and the results/ paths below are relative to it, and the Python examples import phasefield from it; phasefield is not an installed package. These are ordinary Python scripts; no notebook, GPU, CUDA, driver changes, or external service is required.
 
 A compatible Python installation with NumPy and SciPy is required. The recorded environment was Python 3.12.14, NumPy 2.3.5, and SciPy 1.17.0 on Linux. Native Windows execution uses the same scripts, but was not separately executed here.
 
@@ -193,7 +200,8 @@ Increase quadrature and basis separately before interpreting a result as spatial
 | docs/CONFIGURATION.md | Complete generated configuration defaults and parameter interpretation |
 | docs/THEORY_MONOGRAPH.md | Full expanded theoretical document supplied with the project |
 | VALIDATION.md | Readable record of executed checks and example diagnostics |
-| MANIFEST.sha256 | SHA256 hashes of release files, excluding the manifest itself |
+| MANIFEST.sha256 | SHA256 hashes of release files, excluding the manifest itself; check with sha256sum -c MANIFEST.sha256 from inside phase_field_solver/ |
+| .gitignore, .gitattributes | Repository housekeeping: ignored environments, caches, and my_* runs; LF line endings; .npz stored as binary. Not release files, so not in the manifest |
 
 The theory monograph includes a broader research program and earlier verification material. The supported executable contract for this release is phasefield.py plus NUMERICAL_METHOD.md. Statements or proposed extensions in the monograph are not a claim that every sector is implemented.
 
