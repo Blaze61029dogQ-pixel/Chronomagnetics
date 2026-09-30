@@ -28,6 +28,18 @@ numbers rather than asking the reader to trust an external claim.
   manufacturing-robustness grounds. **Reduced-order architecture freeze —
   not experimentally validated.** The full monograph is in
   [`docs/James_Lockwood_Phononic_Light_Source_Condensed_Report.pdf`](docs/James_Lockwood_Phononic_Light_Source_Condensed_Report.pdf).
+- [`su2_yang_mills_area_law/`](su2_yang_mills_area_law/): manuscript,
+  supplementary document and reproduction script for *Area law for
+  four-dimensional SU(2) lattice Yang–Mills theory at β_W < 2/3, and the
+  limits of single-site mixing criteria* (James M. Lockwood, draft of
+  28 September 2026). These are **fixed-lattice-spacing, strong-coupling
+  results**. They make no claim about the continuum limit or the continuum
+  Yang–Mills mass-gap problem. **Not release-ready:** the PDFs and the
+  original script carry the author's confidentiality notices, and the
+  Theorem 3.9 certificate script is missing, so the reproduction reports
+  one FAIL. This folder has its own licensing: MIT for its code only (see
+  [`su2_yang_mills_area_law/LICENSING.md`](su2_yang_mills_area_law/LICENSING.md)).
+  See its [README](su2_yang_mills_area_law/README.md).
 
 ## Running the self-checks
 
@@ -38,6 +50,13 @@ against the source document's worked values:
 python3 -m chronometrics.report
 python3 -m zero_point_energy.report
 python3 -m d067_art_v1.report
+```
+
+`su2_yang_mills_area_law/` has its own checks and needs numpy, scipy and
+mpmath (pinned in its `requirements.txt`):
+
+```
+cd su2_yang_mills_area_law && make check && make reproduce
 ```
 
 ## Citation

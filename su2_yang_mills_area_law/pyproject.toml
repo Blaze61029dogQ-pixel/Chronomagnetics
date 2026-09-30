@@ -1,0 +1,19 @@
+# Project metadata only. The scripts are deliberately not packaged as a
+# library; run them as documented in README.md.
+[project]
+name = "su2-yang-mills-area-law"
+version = "0.0.0"
+description = "Manuscript and reproducibility materials for strong-coupling area-law and mixing results in four-dimensional SU(2) lattice Yang–Mills theory."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "James M. Lockwood" }]
+# MIT covers the repository's code only; manuscripts and documentation are
+# not MIT-licensed. See LICENSING.md.
+license = "MIT"
+license-files = ["LICENSE"]
+classifiers = ["Private :: Do Not Upload"]
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "mpmath==1.4.1",
+]

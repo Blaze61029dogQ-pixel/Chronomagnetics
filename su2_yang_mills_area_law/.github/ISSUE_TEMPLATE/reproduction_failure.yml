@@ -1,0 +1,35 @@
+name: Reproduction failure
+description: A command documented in README.md or REPRODUCIBILITY.md failed or gave different output.
+labels: [reproduction]
+body:
+  - type: input
+    id: command
+    attributes:
+      label: Exact command
+    validations:
+      required: true
+  - type: input
+    id: exit
+    attributes:
+      label: Exit status
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Full output
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Python version (python3 --version), pip freeze.
+    validations:
+      required: true
+  - type: textarea
+    id: manifest
+    attributes:
+      label: Output of `sha256sum -c MANIFEST.sha256`
+      render: text

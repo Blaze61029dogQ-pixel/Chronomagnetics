@@ -1,0 +1,8 @@
+--- a/reproduction/original/SI_YangMills_reproduce_all.py
++++ b/reproduction/SI_YangMills_reproduce_all.py
+@@ -1,5 +1,4 @@
+ ﻿#!/usr/bin/env python3
+-# CONFIDENTIAL — DO NOT SHARE · DO NOT COPY · DO NOT REPRODUCE
+ """
+ SI_YangMills_reproduce_all.py
+ =============================

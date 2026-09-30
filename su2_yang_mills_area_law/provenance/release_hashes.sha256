@@ -1,0 +1,5 @@
+# SHA-256 of RELEASE artifacts derived from the originals in source_hashes.sha256.
+# Derivations are documented in provenance/FILES.md. No release PDF exists yet
+# (manuscript sources unavailable).
+3b98fd4af076287f223ae1b04c434c1224d9135150739e2c1b0078259300d09e  reproduction/SI_YangMills_reproduce_all.py
+33ead725ebb29b24774e25e909e4f44ba799260bcbb2d3b6cdf7c512abb04637  reproduction/patches/0001-release-copy-remove-confidentiality-notice.patch

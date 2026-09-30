@@ -1,0 +1,28 @@
+{
+ "command": "python3 reproduction/SI_YangMills_reproduce_all.py --full --json results/full/report.json",
+ "interpreter": "<PYTHON_PREFIX>/bin/python",
+ "cwd": "<REPO>",
+ "mode": "full",
+ "sections": null,
+ "start_utc": "2026-09-30T01:58:15+00:00",
+ "end_utc": "2026-09-30T02:00:01+00:00",
+ "wall_seconds": 105.847,
+ "exit_status": 1,
+ "timed_out": false,
+ "timeout_seconds": null,
+ "summary_line": "SUMMARY: 121 PASS, 1 FAIL, 2 INFO   (105.6s total)",
+ "script": "reproduction/SI_YangMills_reproduce_all.py",
+ "script_sha256": "3b98fd4af076287f223ae1b04c434c1224d9135150739e2c1b0078259300d09e",
+ "python": "3.11.15",
+ "python_implementation": "CPython",
+ "platform": "Linux x86_64",
+ "cpu_count": 4,
+ "packages": {
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "mpmath": "1.4.1"
+ },
+ "log": "stdout.log",
+ "report": "report.json",
+ "path_substitutions_applied": {}
+}

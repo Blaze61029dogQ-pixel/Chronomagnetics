@@ -1,0 +1,14 @@
+# Environment used for the recorded runs in results/ (2026-09-30)
+python: 3.11.15 CPython
+platform: Linux x86_64; glibc 2.39; cpu_count 4
+numpy: 2.4.6
+scipy: 1.17.1
+mpmath: 1.4.1
+installation: python3 -m venv <env>; <env>/bin/pip install numpy scipy mpmath (pip resolved the versions above)
+pip freeze:
+  mpmath==1.4.1
+  numpy==2.4.6
+  scipy==1.17.1
+git: 2.43.0
+sha256sum: GNU coreutils 9.4
+patch: GNU patch 2.7.6

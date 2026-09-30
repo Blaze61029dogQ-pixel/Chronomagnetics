@@ -1,0 +1,1121 @@
+{
+ "mode": "full",
+ "results": [
+  {
+   "section": "S1",
+   "id": "1.1",
+   "desc": "Neumann constant |B4|^1/2/|S3|^1/2 = 1/2 (no sqrt2 defect)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.5",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.2",
+   "desc": "E_sigma[n2^2] = 1/4 (= Var_sigma(v.n); Theorem B attainment)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.25",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.3",
+   "desc": "E_sigma[n1^2 n2^2] = 1/24",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.041666666666666666667",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.4",
+   "desc": "||U1(t)|| = ||U2(t)|| = 1 (zonal Chebyshev-U normalisation)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.4b",
+   "desc": "law of t is normalised: int (2/pi) sqrt(1-t^2) dt = 1 (radical audit)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "1.0",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.5",
+   "desc": "closed forms f', f'', f''' (Bessel recurrences) vs numerical diff",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "4.93e-32",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.6",
+   "desc": "Prop 3.3 closed forms (beta1,beta2,|n2F|^2,alpha1,alpha2,|(t-a)F|^2) vs quadrature",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "4.68e-31",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.7",
+   "desc": "F_B: c0..c3 = 0 and c4..c8 exact rationals as in Lemma 3.4",
+   "tier": "CERT",
+   "status": "PASS",
+   "value": "['1/1152', '7/92160', '1/368640', '17/371589120', '1/9909043200']",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.8",
+   "desc": "F_B: c9 < 0 (first negative coefficient)",
+   "tier": "CERT",
+   "status": "PASS",
+   "value": "-1.314869686823096e-11",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.9",
+   "desc": "F_B: sum_{9<=k<=80} |c_k| 16^{k-4}",
+   "tier": "CERT",
+   "status": "PASS",
+   "value": "2.1438097929853266e-05",
+   "expected": "2.1438e-5"
+  },
+  {
+   "section": "S1",
+   "id": "1.10",
+   "desc": "F_B tail k>=81: majorant bounded in EXACT RATIONALS (elementary Bessel bound, e<2.7183)",
+   "tier": "CERT",
+   "status": "PASS",
+   "value": "5.384e-43",
+   "expected": "<= 5.4e-43"
+  },
+  {
+   "section": "S1",
+   "id": "1.11",
+   "desc": "F_B/r^8 > 8.466e-4 on (0,4]  (Lemma 3.4; exact rational margin)",
+   "tier": "CERT",
+   "status": "PASS",
+   "value": "8.466174576257e-04",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.12",
+   "desc": "D_A: d0=0, d1=3/8, d2=9/64, d3=143/5760; odd powers vanish",
+   "tier": "CERT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.13",
+   "desc": "D_A: all exact coefficients d_k >= 0 for 1 <= k <= 189",
+   "tier": "CERT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.14",
+   "desc": "D_A: exact sum_{71..189} |d_k|16^{k-1} (draft's '4.7e-3' is not reproducible)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "2.0771e-85",
+   "expected": "2.08e-85"
+  },
+  {
+   "section": "S1",
+   "id": "1.15",
+   "desc": "D_A tail k>=190: majorant bounded in EXACT RATIONALS, divided by r^2",
+   "tier": "CERT",
+   "status": "PASS",
+   "value": "9.111e-99",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.16",
+   "desc": "D_A/r^2 >= 3/8 - tail > 0.3749 on (0,4]  (Lemma 3.4; exact rational)",
+   "tier": "CERT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.17",
+   "desc": "grid min F_B/r^8 = 8.6806e-4 at r=0.005 (above certificate)",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "0.0008680574544",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.18",
+   "desc": "grid min D_A/r^2 = 0.3750035 at r=0.005 (above certificate)",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "0.3750035156",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.20",
+   "desc": "general N: |B^N|^1/2/|S^{N-1}|^1/2 = N^-1/2, so Neumann bound = 1/N at zero field (Levin conj. sharp)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.21",
+   "desc": "exact Neumann-flow bound < 1/4 and decreasing for r in [0.5,30] (Levin conj. N=4 beyond window; NUM)",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "0.2500, 0.2493, 0.2454, 0.2408, 0.2339, 0.2255, 0.2215",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.22",
+   "desc": "Thm 3.8 (Levin conj. N=4): interval certificate Lambda^2<1/16 on [4,262.45] (58 cells) + tail",
+   "tier": "CERT",
+   "status": "PASS",
+   "value": "max cell <= 0.062363, tail <= 0.045694 (outward-rounded)",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.23",
+   "desc": "Remark 3.9: for N=5 the Neumann-flow B >= beta1+beta2/2 exceeds 1/5 at r=0.3 (method fails for N>=5)",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "0.20025233",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.25",
+   "desc": "Thm 3.9 certificate file present next to this script",
+   "tier": "CERT",
+   "status": "FAIL",
+   "value": "levin_N3_certificate.py missing",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.24",
+   "desc": "Paper 2 Cor. (Chatterjee): one-block smoothing |dF| <= 2 n_k bW ||f|| |dw| (80 random vMF blocks, discontinuous f)",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "max ratio 0.1379",
+   "expected": null
+  },
+  {
+   "section": "S1",
+   "id": "1.19",
+   "desc": "Corollary 3.6: (1/2)sqrt(max(A,B)) < 1/4 at sample r in (0,4]",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "0.249999422547828",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.1-0.100",
+   "desc": "BE: staggered config attains Ric+Hess V = 2-12K at K=0.1000",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.800000000000",
+   "expected": "0.800000000000"
+  },
+  {
+   "section": "S2",
+   "id": "2.2-0.100",
+   "desc": "BE: random configs/environments stay above 2-12K",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "1.505213",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.1-0.167",
+   "desc": "BE: staggered config attains Ric+Hess V = 2-12K at K=0.1667",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "-0.000000000000",
+   "expected": "0.000000000000"
+  },
+  {
+   "section": "S2",
+   "id": "2.2-0.167",
+   "desc": "BE: random configs/environments stay above 2-12K",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "1.187656",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.1-0.250",
+   "desc": "BE: staggered config attains Ric+Hess V = 2-12K at K=0.2500",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "-1.000000000000",
+   "expected": "-1.000000000000"
+  },
+  {
+   "section": "S2",
+   "id": "2.2-0.250",
+   "desc": "BE: random configs/environments stay above 2-12K",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "0.586174",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.3b",
+   "desc": "Levin (1980) baselines: slab 4/(6 sqrt5) = 2/(3 sqrt5), links 4/(18 sqrt5) = 2/(9 sqrt5); ours improve both by sqrt5",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.2981424, 0.099380799",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.3",
+   "desc": "CNS25b condition (N+2)/2-1-4N beta(d-1)>0 at N=2,d=4 <=> beta_W<1/6",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.4",
+   "desc": "K_TV = root of 6 L1(K) = I1(K)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.3962909568818440132141",
+   "expected": "0.39629095688184401321"
+  },
+  {
+   "section": "S2",
+   "id": "2.5",
+   "desc": "L1/I1 = 1/6 at K_TV",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.6",
+   "desc": "TV(mu_eta, mu_-eta) = L1(K)/I1(K) (quadrature, three K)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "1.23e-32",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.7",
+   "desc": "L1/I1 increasing on (0,3] (grid consistency; proof in 2.7b)",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.7b",
+   "desc": "monotonicity proof: Poisson form of L1/I1, derivative decomposition, both terms >= 0",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "9.86e-32, 4.93e-32",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.8",
+   "desc": "chordal-W1 attainment: a(|delta|)/|delta| -> 1/4 at eta=0 (C_xy >= K/4)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.25",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.10",
+   "desc": "Thm C(iv): infrared-bound threshold K_IR = 4 G_Z3(0) = 1.0109 (Watson closed form); >= numerical K_c 0.936",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "1.01092403943",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.11",
+   "desc": "Royer (1986) Thm 3.6 baseline: 2/sqrt(pi^2/3-5/2) = 2.2504 reproduces his N=4 table value 2.25",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "2.250363624",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.12",
+   "desc": "Royer-derivable ranges: slab 1/(3s) = 0.37506, links 1/(9s) = 0.12502; ours exceed by 2s = 1.7775",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.37506060, 0.125020201, factor 1.777491",
+   "expected": null
+  },
+  {
+   "section": "S2",
+   "id": "2.9",
+   "desc": "row sum 6K/4 = 1 at K = 2/3 = n/z (O(4) mean-field point)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S3",
+   "id": "3.1",
+   "desc": "Prop D(b): E_0|v.n| = 4/(3 pi)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.42441318157838756205",
+   "expected": null
+  },
+  {
+   "section": "S3",
+   "id": "3.2",
+   "desc": "Prop D(c): transverse MAD E|n2| nonincreasing in r on [0,10]",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "0.42441318157838756205",
+   "expected": null
+  },
+  {
+   "section": "S3",
+   "id": "3.3-0.05",
+   "desc": "MAD max over theta at r=0.05 (quoted in addendum v1.5)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.424386659701183",
+   "expected": "0.424386659701183"
+  },
+  {
+   "section": "S3",
+   "id": "3.3-0.5",
+   "desc": "MAD max over theta at r=0.5 (quoted in addendum v1.5)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.421799431922554",
+   "expected": "0.421799431922554"
+  },
+  {
+   "section": "S3",
+   "id": "3.3-2",
+   "desc": "MAD max over theta at r=2 (quoted in addendum v1.5)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.389976705624786",
+   "expected": "0.389976705624786"
+  },
+  {
+   "section": "S3",
+   "id": "3.3-10",
+   "desc": "MAD max over theta at r=10 (quoted in addendum v1.5)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.236246547591046",
+   "expected": "0.236246547591046"
+  },
+  {
+   "section": "S3",
+   "id": "3.4",
+   "desc": "Conjecture D evidence: grid max < 4/(3pi) and always at theta=90 deg",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S3",
+   "id": "3.5",
+   "desc": "unconditional TV range: 6 * (1/2 * 2K * 1/2) = 3K < 1 <=> K < 1/3",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S3",
+   "id": "3.7",
+   "desc": "Prop D(d): longitudinal curvature = 13/(120 pi)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.0344835709913",
+   "expected": "0.0344835710032"
+  },
+  {
+   "section": "S3",
+   "id": "3.8",
+   "desc": "Prop D(d): transverse curvature = 1/(30 pi) = -Cov_0(sqrt(1-x^2), x^2)/4",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.0106103295378",
+   "expected": "0.0106103295395"
+  },
+  {
+   "section": "S3",
+   "id": "3.6",
+   "desc": "conditional TV range: 6 * (1/2 * 2K * 4/(3pi)) = 8K/pi = 1 at K = pi/8",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.392699",
+   "expected": null
+  },
+  {
+   "section": "S4",
+   "id": "4.1",
+   "desc": "Tr(phi(S1)^-1 phi(S2)) / (S1.S2) = 2 (5 random pairs)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "[2.0, 2.0, 2.0, 2.0, 2.0]",
+   "expected": null
+  },
+  {
+   "section": "S4",
+   "id": "4.2",
+   "desc": "vertical-plaquette action = (S,Delta S) + 2(nu-1)|Lambda0| (not half of it)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "3.0551874302149",
+   "expected": "3.0551874302149"
+  },
+  {
+   "section": "S4",
+   "id": "4.3",
+   "desc": "consequence: DF argument supports beta_W < 1/(2(nu-1)) = 1/6 at nu=4",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.1",
+   "desc": "each link has exactly 18 plaquette-neighbours in Z^4 (6 staples, 3 links each)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "18",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.2",
+   "desc": "Lemma 2.5: neighbours have l_inf midpoint distance <= 1",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.3",
+   "desc": "alpha = 18 * beta_W/4 = 9 beta_W/2; threshold 2/9; ratio to SZZ 1/12 is 8/3",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.4",
+   "desc": "audit: min dist_C over link pairs >= ||c_p-c_p'||_inf - 1 for all 10753 plaquettes within l_inf 3",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.5",
+   "desc": "audit: the '-1' is attained (pairs with dist_C = ||c_p-c_p'||_inf - 1 exist)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "12 tight plaquettes",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.4b",
+   "desc": "Lemma 2.5: dist_C(l,l') >= ||m_l - m_l'||_inf (BFS, all links within l_inf 3)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.6",
+   "desc": "plaquette constant D^2 * 4 * 4 = 64 (D = 2 chordal diameter)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.7",
+   "desc": "left/right quaternion multiplication is a chordal isometry",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "8.88e-16",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.8-43-0.3",
+   "desc": "consistency (not used in proofs): covariance estimate on exact system (4, 3, 0.3), max|Cov|/bound (alpha=0.3798)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.040585795033",
+   "expected": "0.040585795033"
+  },
+  {
+   "section": "S5",
+   "id": "5.8-53-0.5",
+   "desc": "consistency (not used in proofs): covariance estimate on exact system (5, 3, 0.5), max|Cov|/bound (alpha=0.6475)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.029458250584",
+   "expected": "0.029458250584"
+  },
+  {
+   "section": "S5",
+   "id": "5.8-44-0.4",
+   "desc": "consistency (not used in proofs): covariance estimate on exact system (4, 4, 0.4), max|Cov|/bound (alpha=0.7599)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.005089421731",
+   "expected": "0.005089421731"
+  },
+  {
+   "section": "S5",
+   "id": "5.8-52-0.6",
+   "desc": "consistency (not used in proofs): covariance estimate on exact system (5, 2, 0.6), max|Cov|/bound (alpha=0.8337)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.126262229195",
+   "expected": "0.126262229195"
+  },
+  {
+   "section": "S5",
+   "id": "5.8-63-0.35",
+   "desc": "consistency (not used in proofs): covariance estimate on exact system (6, 3, 0.35), max|Cov|/bound (alpha=0.4496)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.039978863046",
+   "expected": "0.039978863046"
+  },
+  {
+   "section": "S5",
+   "id": "5.9-52-0.85",
+   "desc": "consistency (not used in proofs): near-critical exact system (5, 2, 0.85)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "alpha=0.9354090706 ratio=0.0643213408",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.9-52-1.0",
+   "desc": "consistency (not used in proofs): near-critical exact system (5, 2, 1.0)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "alpha=0.9640275801 ratio=0.0393436533",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.9-43-0.9",
+   "desc": "consistency (not used in proofs): near-critical exact system (4, 3, 0.9)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "alpha=0.9887840760 ratio=0.0072731159",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.9-62-0.9",
+   "desc": "consistency (not used in proofs): near-critical exact system (6, 2, 0.9)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "alpha=0.9468060128 ratio=0.0613041809",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.10",
+   "desc": "consistency: heat-bath generator is mu-reversible (proved: tower property)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "2.17e-19",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.11",
+   "desc": "consistency: Cov = -int E[g L P_t f] dt, exact spectral integration (proved: Prop 2.5 step c)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "rel err 5.65e-15",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.11b",
+   "desc": "same identity by time quadrature (6001 nodes, as in check123.py)",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "rel err 4.20e-06",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.12",
+   "desc": "consistency: propagation bound (proved: Lemma 2.4/2.5), ratio <= 1",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "0.5091",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.13",
+   "desc": "consistency: e^{-t(I-C)} entrywise nonnegative (proved: Metzler matrix)",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": "0.2175",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.20",
+   "desc": "plaquette block: 60 exterior incidences, 44 distinct links (28 single, 16 double) [audit]",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "60, 44, {1: 28, 2: 16}",
+   "expected": null
+  },
+  {
+   "section": "S5",
+   "id": "5.21",
+   "desc": "Cor. 5.5: proved block ceiling 0.25887 (28 single @ 1/4+a/4, 16 double @ 1/2); conditional 0.25096",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.2588701356256244, 0.2509623052607262",
+   "expected": null
+  },
+  {
+   "section": "S6",
+   "id": "6.1",
+   "desc": "lever 1: sup averaged L at beta_W=2/9 -> implied threshold 0.2222684",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.2222683841613224",
+   "expected": "0.2222683841613224"
+  },
+  {
+   "section": "S6",
+   "id": "6.2",
+   "desc": "geodesic metric: Cov(theta, cos theta) = -8/(9 pi) and 8/(9 pi) > 1/4",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "-0.282942121052258",
+   "expected": null
+  },
+  {
+   "section": "S6",
+   "id": "6.3",
+   "desc": "inner-Dobrushin identity: (n_out b/4)/(1 - n_in b/4) = 1 at b = 2/9 for every n_in",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S6",
+   "id": "6.4",
+   "desc": "plaquette block at beta_W=0.3: a, lower and upper bounds on L_V(0)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.074720322596553702444 [0.26868008064913842561, 0.27008108669782380753]",
+   "expected": null
+  },
+  {
+   "section": "S6",
+   "id": "6.5",
+   "desc": "inner-Dobrushin value at 0.3: (1/4)/(1-3*0.3/4) = 0.32258...",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S6",
+   "id": "6.6",
+   "desc": "block ceiling 15 b (1/4 + a/4) = 1",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.2509623052607262413122",
+   "expected": null
+  },
+  {
+   "section": "S6",
+   "id": "6.7",
+   "desc": "zero-field lower end 15 b (1/4 + a/4 + b a/16) = 1",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.2500952152983506551526",
+   "expected": null
+  },
+  {
+   "section": "S6",
+   "id": "6.8",
+   "desc": "gains over 2/9: 12.54% .. 12.93%",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "12.542847 .. 12.933037",
+   "expected": null
+  },
+  {
+   "section": "S6",
+   "id": "6.9",
+   "desc": "MC pair model: Cov(q1,q1)=1/4 and Cov(P1,q1)=a/4 within 5 s.e.",
+   "tier": "MC",
+   "status": "PASS",
+   "value": "0.25009\u00b10.00015, 0.01887\u00b10.00012 (exact 0.01868)",
+   "expected": null
+  },
+  {
+   "section": "S7",
+   "id": "7.1",
+   "desc": "character coefficients c_j = 2(2j+1) I_{2j+1}(b)/b (quadrature)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "2.3e-41",
+   "expected": null
+  },
+  {
+   "section": "S7",
+   "id": "7.2",
+   "desc": "c_j > 0 (T >= 0, injectivity on H_phys)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S7",
+   "id": "7.3",
+   "desc": "completeness sum_j c_j d_j = e^b",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "6.89e-41",
+   "expected": null
+  },
+  {
+   "section": "S7",
+   "id": "7.4",
+   "desc": "2D: exact gap -2 ln(I2/I1) >= bound -ln(3b/2) on (0, 0.66]; I2/I1 <= b/4",
+   "tier": "NUM",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S7",
+   "id": "7.5",
+   "desc": "at beta_W=0.2: m >= -ln(0.9) = 0.1054; strong-coupling glueball -4 ln(I2/I1) = 11.99",
+   "tier": "REG",
+   "status": "PASS",
+   "value": null,
+   "expected": null
+  },
+  {
+   "section": "S7",
+   "id": "7.6",
+   "desc": "mass bound m >= -log(9 beta_W/2) table",
+   "tier": "INFO",
+   "status": "INFO",
+   "value": "0.05:1.4916549; 0.10:0.7985077; 0.15:0.39304259; 0.20:0.10536052; 0.22:0.010050336",
+   "expected": null
+  },
+  {
+   "section": "S8",
+   "id": "8.1-N2",
+   "desc": "Haar SU(2): N * lambda_max(Cov of real coordinates) = 1.0 (tol 0.013; estimator biased upward)",
+   "tier": "MC",
+   "status": "PASS",
+   "value": "1.0032",
+   "expected": null
+  },
+  {
+   "section": "S8",
+   "id": "8.0-N2",
+   "desc": "exact Haar covariance (Prop 6.1): N*lambda_max = 1.0; MC entrywise deviation within 6/sqrt(M)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "dev=0.00050",
+   "expected": null
+  },
+  {
+   "section": "S8",
+   "id": "8.2-N2",
+   "desc": "SU(2) has no such constraint: max|E[U_ij U_kl]| = 1/2 (E[U11 U22] = E|a|^2)",
+   "tier": "MC",
+   "status": "PASS",
+   "value": "0.5002",
+   "expected": null
+  },
+  {
+   "section": "S8",
+   "id": "8.1-N3",
+   "desc": "Haar SU(3): N * lambda_max(Cov of real coordinates) = 0.5 (tol 0.020; estimator biased upward)",
+   "tier": "MC",
+   "status": "PASS",
+   "value": "0.5071",
+   "expected": null
+  },
+  {
+   "section": "S8",
+   "id": "8.0-N3",
+   "desc": "exact Haar covariance (Prop 6.1): N*lambda_max = 0.5; MC entrywise deviation within 6/sqrt(M)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "dev=0.00073",
+   "expected": null
+  },
+  {
+   "section": "S8",
+   "id": "8.2-N3",
+   "desc": "centre invariance: max|E[U_ij U_kl]| = 0 for SU(3) (within 6/sqrt(M))",
+   "tier": "MC",
+   "status": "PASS",
+   "value": "0.00150",
+   "expected": null
+  },
+  {
+   "section": "S8",
+   "id": "8.1-N4",
+   "desc": "Haar SU(4): N * lambda_max(Cov of real coordinates) = 0.5 (tol 0.027; estimator biased upward)",
+   "tier": "MC",
+   "status": "PASS",
+   "value": "0.5078",
+   "expected": null
+  },
+  {
+   "section": "S8",
+   "id": "8.0-N4",
+   "desc": "exact Haar covariance (Prop 6.1): N*lambda_max = 0.5; MC entrywise deviation within 6/sqrt(M)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "dev=0.00066",
+   "expected": null
+  },
+  {
+   "section": "S8",
+   "id": "8.2-N4",
+   "desc": "centre invariance: max|E[U_ij U_kl]| = 0 for SU(4) (within 6/sqrt(M))",
+   "tier": "MC",
+   "status": "PASS",
+   "value": "0.00083",
+   "expected": null
+  },
+  {
+   "section": "S7",
+   "id": "7.10",
+   "desc": "Paper 2 Lemma T7: site- and link-plane RP Gram matrices PSD (exact Z2 enumeration); negative controls fail",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "min eig (i) -1.1e-06, (ii) -3.8e-07; controls -1.00, -1.80",
+   "expected": null
+  },
+  {
+   "section": "S9",
+   "id": "9.1",
+   "desc": "|[Y,Z]| = 2|Y||Z| for orthonormal imaginary unit quaternions (unit S^3)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "2.0",
+   "expected": null
+  },
+  {
+   "section": "S9",
+   "id": "9.2",
+   "desc": "Poincare on unit S^3 with lambda_1 = 3 is attained by n1: Var = (1/3)E|grad n1|^2",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "0.25 = 0.25",
+   "expected": null
+  },
+  {
+   "section": "S9",
+   "id": "9.3",
+   "desc": "geodesic <= (pi/2) chordal on S^3 (max ratio at antipodes)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "1.5707963267949",
+   "expected": null
+  },
+  {
+   "section": "S9",
+   "id": "9.4",
+   "desc": "Lemma A calibration on pure Wilson: 6 pi b e^{12 b} = 1",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.0348994857687",
+   "expected": "0.03489948577"
+  },
+  {
+   "section": "S9",
+   "id": "9.5",
+   "desc": "ratio of sharp 2/9 to Lemma-A threshold",
+   "tier": "INFO",
+   "status": "INFO",
+   "value": "6.3675",
+   "expected": null
+  },
+  {
+   "section": "S9",
+   "id": "9.6-3.5-0.5",
+   "desc": "2D exact decimation: alpha at l=3.5, a=0.5 (g=1)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.25782648",
+   "expected": "0.257826"
+  },
+  {
+   "section": "S9",
+   "id": "9.6-3.5-0.25",
+   "desc": "2D exact decimation: alpha at l=3.5, a=0.25 (g=1)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.29302953",
+   "expected": "0.29303"
+  },
+  {
+   "section": "S9",
+   "id": "9.6-3.5-0.125",
+   "desc": "2D exact decimation: alpha at l=3.5, a=0.125 (g=1)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.3025598",
+   "expected": "0.30256"
+  },
+  {
+   "section": "S9",
+   "id": "9.6-3.0-0.5",
+   "desc": "2D exact decimation: alpha at l=3.0, a=0.5 (g=1)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "1.3823331",
+   "expected": "1.38233"
+  },
+  {
+   "section": "S9",
+   "id": "9.6-3.0-0.25",
+   "desc": "2D exact decimation: alpha at l=3.0, a=0.25 (g=1)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "1.5771686",
+   "expected": "1.57717"
+  },
+  {
+   "section": "S9",
+   "id": "9.6-3.0-0.125",
+   "desc": "2D exact decimation: alpha at l=3.0, a=0.125 (g=1)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "1.6305891",
+   "expected": "1.63059"
+  },
+  {
+   "section": "S9",
+   "id": "9.7-3.5",
+   "desc": "continuum heat-kernel alpha at l=3.5",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.3058023068",
+   "expected": "0.30580231"
+  },
+  {
+   "section": "S9",
+   "id": "9.7-3.0",
+   "desc": "continuum heat-kernel alpha at l=3.0",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "1.648829328",
+   "expected": "1.6488293"
+  },
+  {
+   "section": "S9",
+   "id": "9.8",
+   "desc": "critical physical scale l* (alpha_cont = 1)",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "3.137403218",
+   "expected": "3.1374032"
+  },
+  {
+   "section": "S10",
+   "id": "10.1",
+   "desc": "b1/(2 b0^2) = 51/121 (exact, pi-independent)",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "51/121",
+   "expected": null
+  },
+  {
+   "section": "S10",
+   "id": "10.2",
+   "desc": "1/(8 b0) = 3 pi^2/11 (a Lambda ~ exp(-(3pi^2/11) beta_W))",
+   "tier": "EXACT",
+   "status": "PASS",
+   "value": "2.691710291",
+   "expected": null
+  },
+  {
+   "section": "S10",
+   "id": "10.3",
+   "desc": "b0 value",
+   "tier": "REG",
+   "status": "PASS",
+   "value": "0.04643887584",
+   "expected": null
+  }
+ ]
+}

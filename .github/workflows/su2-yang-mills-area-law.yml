@@ -1,0 +1,86 @@
+# SPDX-License-Identifier: MIT
+# CI for su2_yang_mills_area_law/ (the subfolder's own .github/ is not read by
+# GitHub when it is not the repository root). Runs only when that folder or
+# this file changes.
+name: su2-yang-mills-area-law
+
+on:
+  push:
+    paths:
+      - "su2_yang_mills_area_law/**"
+      - ".github/workflows/su2-yang-mills-area-law.yml"
+  pull_request:
+    paths:
+      - "su2_yang_mills_area_law/**"
+      - ".github/workflows/su2-yang-mills-area-law.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: su2_yang_mills_area_law
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: su2_yang_mills_area_law/requirements.txt
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Integrity checks and tests
+        run: make check PYTHON=python
+
+  # Quick scientific reproduction. It fails whenever any check FAILs. As of
+  # 2026-09-30 it is EXPECTED TO FAIL on check S1/1.25 because
+  # levin_N3_certificate.py (Theorem 3.9) is not in the repository. The
+  # failure is not suppressed.
+  quick-reproduction:
+    needs: integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: su2_yang_mills_area_law/requirements.txt
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Quick reproduction
+        run: python reproduction/run_reproduction.py --outdir ci-output/quick
+      - name: Upload run record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: su2-quick-reproduction
+          path: su2_yang_mills_area_law/ci-output/quick
+
+  # Full reproduction with the papers' grids. Manual trigger only.
+  full-reproduction:
+    if: github.event_name == 'workflow_dispatch'
+    needs: integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: su2_yang_mills_area_law/requirements.txt
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Full reproduction
+        run: python reproduction/run_reproduction.py --full --outdir ci-output/full
+      - name: Upload run record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: su2-full-reproduction
+          path: su2_yang_mills_area_law/ci-output/full
