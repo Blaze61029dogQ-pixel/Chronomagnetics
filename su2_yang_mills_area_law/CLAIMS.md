@@ -84,7 +84,7 @@ missing, so the Theorem 3.9 certificate did not run (see below).
 
 | Claim | Location | Evidence type | Script checks |
 |---|---|---|---|
-| Levin's √5/4 with [7] gives β_W < 2/(3√5) ≈ 0.298 | Abstract; §1.2; Remark 1.1 | ANALYTIC (derived); "not found recorded" | 2.3b: 0.2981424. PASS |
+| Levin's √5/4 with [7] gives β_W < 2/(3√5) ≈ 0.298 | Abstract; §1.2 table | ANALYTIC (derived); "not found recorded" | 2.3b: 0.2981424. PASS |
 | Royer's geodesic bound: L_R ≤ ½√(π²/3 − 5/2); β_W < 1/(3√(π²/3 − 5/2)) | Remark 1.1 | ANALYTIC (derived from [16]); "not found recorded" | 2.11 (2/√(π²/3 − 5/2) = 2.250363624), 2.12 (slab range 0.37506060; link range 0.125020201; factor 1.777491). PASS. **Discrepancy:** Remark 1.1 prints "≈ 0.37507" for the slab range. The script's value and an independent evaluation both give 0.3750606…, which rounds to 0.37506. The manuscript is not changed here |
 | Single-site geodesic criteria capped at 9π/8 < 4 (Cov(θ, cos θ) = −8/(9π)) | Remark 1.1 | ANALYTIC | 6.2: −0.282942121052258. PASS |
 

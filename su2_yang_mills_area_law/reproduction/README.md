@@ -18,7 +18,7 @@ patch --binary -s -o - original/SI_YangMills_reproduce_all.py \
 
 ## The script
 
-`SI_YangMills_reproduce_all.py` (1005 lines in the original) runs checks in
+`SI_YangMills_reproduce_all.py` (1006 lines in the original, 1005 in the release copy) runs checks in
 ten sections. Its options are `--full` (the papers' grids), `--sections`
 (e.g. `S1,S5`) and `--json PATH`. It exits with status 1 if any check FAILs.
 

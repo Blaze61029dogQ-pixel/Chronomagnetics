@@ -16,13 +16,14 @@ check:
 	$(PYTHON) -m unittest discover -s tests -v
 	sha256sum -c --quiet MANIFEST.sha256
 
-## reproduce: quick run of the SI script (writes results/quick/; fails if any check FAILs)
+## reproduce: quick run of the SI script (writes ci-output/quick/, which is ignored;
+##            the committed results/ are not touched; fails if any check FAILs)
 reproduce:
-	$(PYTHON) reproduction/run_reproduction.py
+	$(PYTHON) reproduction/run_reproduction.py --outdir ci-output/quick
 
-## full: full run with the papers' grids (writes results/full/; fails if any check FAILs)
+## full: full run with the papers' grids (writes ci-output/full/; fails if any check FAILs)
 full:
-	$(PYTHON) reproduction/run_reproduction.py --full
+	$(PYTHON) reproduction/run_reproduction.py --full --outdir ci-output/full
 
 ## hashes: regenerate MANIFEST.sha256 (review the diff before committing)
 hashes:

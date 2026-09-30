@@ -67,7 +67,7 @@ belongs to the cited authors.
 | Geodesic Lipschitz-variance bound C(3) < π²/3 − 5/2 | Royer [16] |
 | Infrared bound and Gaussian domination | Fröhlich–Simon–Spencer [10] |
 | Numerical critical coupling K_c = 0.9360(1) of the 3D O(4) model | Kanaya–Kaya [11] |
-| Area law for β_W < 1/6 by the Bakry–Émery method | Cao–Nissim–Sheffield [1, 2], building on Shen–Zhu–Zhu [17] |
+| Area law for β_W < 1/6 by the Bakry–Émery method | Cao–Nissim–Sheffield [2], building on Shen–Zhu–Zhu [17] |
 | Background on probabilistic approaches to confinement | Chatterjee [3, 4] |
 
 **Claims originating in Paper 1** (the author's own results, as stated by

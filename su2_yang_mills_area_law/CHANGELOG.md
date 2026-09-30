@@ -41,7 +41,8 @@ Changed:
 - `tools/verify_repository.py`: checks every original and release hash;
   scans JSON, log, patch and BibTeX files for hygiene.
 - `README.md`, `CLAIMS.md`, `REPRODUCIBILITY.md`,
-  `.github/RELEASE_CHECKLIST.md`: updated to the verified state.
+  `.github/RELEASE_CHECKLIST.md`: updated to the recorded state (bibliography search-corroborated only;
+  Theorem 3.9 certificate missing; no release).
 
 Not done (inputs missing):
 - Release PDFs without confidentiality notices (no manuscript sources).

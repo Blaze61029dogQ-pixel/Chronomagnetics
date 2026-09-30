@@ -72,8 +72,9 @@ models with coupling K = β_W and arbitrary SO(4) environments:
 
 **Levin's conjecture.** Theorem 3.8 proves it for N = 4 at all fields, using
 Corollary 3.6 for |g| ≤ 4 and an interval-arithmetic certificate on
-[4, 262.45]. Theorem 3.9 proves it for N = 3, using exact series for
-r ≤ 7/2 and an interval certificate on [3.3, 103.53]. Corollary 3.7 gives
+[4, 262.45]. The manuscript states that Theorem 3.9 proves it for N = 3, using exact series for
+r ≤ 7/2 and an interval certificate on [3.3, 103.53]. That certificate is not in this repository and was not
+reproduced (check S1/1.25). Corollary 3.7 gives
 uniqueness for sup_a Σ_b ‖J_ab‖_op < 4. Remark 3.10 notes that the method as
 it stands cannot settle N ≥ 5.
 
@@ -87,8 +88,9 @@ full range asserted without proof by Durhuus and Fröhlich in 1980". The
 largest range previously established with a complete argument is
 β_W < 1/6 (Cao–Nissim–Sheffield 2025). The ranges derivable from Levin's and
 Royer's constants (≈ 0.298 and ≈ 0.375) are described as "not found
-recorded". That is a literature-search statement. To the author's knowledge
-it is accurate. This repository makes no stronger priority claim, and a
+recorded" ("We have not found either combination recorded"). That is a
+literature-search statement, which this repository has not independently
+verified. The repository makes no stronger priority claim, and a
 passing numerical check is not evidence of novelty.
 
 ## Scope: lattice results versus the continuum problem
@@ -141,17 +143,25 @@ Requirements: CPython ≥ 3.11 and the pinned packages in `requirements.txt`
 ```sh
 make setup          # python3 -m venv .venv && pip install -r requirements.txt
 make check          # integrity checks + tests (exit 0 expected)
-make reproduce      # quick run -> results/quick/   (currently fails: S1/1.25)
-make full           # full run  -> results/full/    (currently fails: S1/1.25)
+make reproduce      # quick run -> ci-output/quick/  (currently fails: S1/1.25)
+make full           # full run  -> ci-output/full/   (currently fails: S1/1.25)
 ```
 
 Equivalent direct commands, from the repository root:
 
 ```sh
-python3 reproduction/run_reproduction.py            # quick
-python3 reproduction/run_reproduction.py --full     # the papers' grids
-python3 reproduction/SI_YangMills_reproduce_all.py --sections S1,S4 --full --json out.json
+python3 reproduction/run_reproduction.py --outdir ci-output/quick          # quick
+python3 reproduction/run_reproduction.py --full --outdir ci-output/full    # the papers' grids
+python3 reproduction/SI_YangMills_reproduce_all.py --sections S1,S4 --full
 ```
+
+`make reproduce`, `make full` and the commands above write only to the
+ignored `ci-output/` directory. Running the wrapper **without** `--outdir`
+overwrites the committed reference records in `results/`. Their timings then
+change, so run `make hashes` before `make check` if you intend to replace
+the records. Any other new file in the repository (for example a `--json`
+output) also makes the manifest check fail until it is removed or `make
+hashes` is run.
 
 The script's options are `--full`, `--sections S1,…,S10` and `--json PATH`.
 It exits with status 1 if any check FAILs. The wrapper passes that status

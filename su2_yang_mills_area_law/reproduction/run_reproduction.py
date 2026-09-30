@@ -102,6 +102,9 @@ def main(argv=None):
         cmd += ["--sections", args.sections]
     cmd += ["--json", report_rel]
 
+    stale = outdir_abs / "report.json"
+    if stale.exists():
+        stale.unlink()  # never record a previous run's report as this run's
     env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUNBUFFERED="1")
     start, t0 = utc_now(), time.monotonic()
     lines, fired = [], []

@@ -16,7 +16,7 @@ works they cite (see "Citation" in [`README.md`](README.md) and
 | `reproduction/run_reproduction.py` | Run wrapper written for this repository. |
 | `tools/verify_repository.py` | Repository integrity checker. |
 | `tests/test_repository.py` | Integrity and consistency tests. |
-| `Makefile`, `pyproject.toml`, `requirements.txt` | Build and environment configuration. |
+| `Makefile`, `pyproject.toml`, `requirements.txt`, `.gitattributes`, `.gitignore` | Build, environment and repository configuration. |
 | `.github/workflows/*.yml` | CI configuration. |
 
 ## Not covered by the MIT License

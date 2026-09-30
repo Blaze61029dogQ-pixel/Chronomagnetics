@@ -53,6 +53,11 @@ The checker and tests verify that:
 
 ## 2. Quick reproduction (`make reproduce`)
 
+`make reproduce` and `make full` write to the ignored `ci-output/`
+directory. The commands below, without `--outdir`, regenerate the committed
+reference records in `results/`. Timings change on every run, so afterwards
+run `make hashes` before `make check`.
+
 ```sh
 python3 reproduction/run_reproduction.py
 ```
@@ -101,7 +106,7 @@ only in timing lines.
 ## 5. Individual sections
 
 ```sh
-python3 reproduction/SI_YangMills_reproduce_all.py --sections S1 --full --json s1.json   # Lemma 3.4, Thm 3.8 certificates
+python3 reproduction/SI_YangMills_reproduce_all.py --sections S1 --full               # Lemma 3.4, Thm 3.8 certificates
 python3 reproduction/SI_YangMills_reproduce_all.py --sections S2,S3,S4                  # Theorem C, Prop. 6.1 / Conj. 6.2, Remark 7.1
 ```
 

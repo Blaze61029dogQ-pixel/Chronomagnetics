@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 James M. Lockwood
 """Repository integrity checks (standard library only).
 
 These checks cover the repository, not the mathematics. They verify that:

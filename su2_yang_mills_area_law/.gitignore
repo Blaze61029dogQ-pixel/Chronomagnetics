@@ -25,7 +25,7 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Scratch numerical output. Reference results belong in results/reference/
+# Scratch numerical output. Recorded reference runs live in results/
 # and are NOT ignored.
 scratch/
 tmp/

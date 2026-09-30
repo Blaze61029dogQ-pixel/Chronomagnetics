@@ -15,6 +15,8 @@ authors:
     given-names: James M.
     affiliation: Spectrality Institute
 repository-code: "https://github.com/Blaze61029dogQ-pixel/Chronomagnetics/tree/claude/su2-yang-mills-repo-1tb9ll/su2_yang_mills_area_law"
+# The MIT licence covers the repository's code only; the manuscripts, the SI
+# document, the original script and the documentation are not MIT-licensed.
 license: MIT
 abstract: >-
   Manuscript, supplementary progress document and reproduction script for a
@@ -60,4 +62,4 @@ references:
     year: 2026
     month: 9
     url: "https://github.com/Blaze61029dogQ-pixel/Chronomagnetics/blob/claude/su2-yang-mills-repo-1tb9ll/su2_yang_mills_area_law/supplementary/original/SI_YangMills_Tracks1-2_v0.1.pdf"
-    notes: "SI Yang–Mills Tracks 1–2, draft v0.1, 28 September 2026. Unpublished."
+    notes: "SI Yang–Mills Tracks 1–2, draft v0.1, 28 September 2026. Unpublished. '(verified)' and '(open)' in the title are the document's own status labels, not independent verification."
