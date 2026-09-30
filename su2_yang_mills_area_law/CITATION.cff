@@ -1,0 +1,65 @@
+cff-version: 1.2.0
+message: >-
+  If you use this repository, please cite the manuscript given under
+  preferred-citation, and the repository with the git commit you used. The
+  repository is unreleased and has no DOI. The code is MIT-licensed; the
+  manuscripts are not (see LICENSING.md).
+type: software
+title: >-
+  su2-yang-mills-area-law: manuscript and reproducibility materials for
+  "Area law for four-dimensional SU(2) lattice Yang–Mills theory at
+  beta_W < 2/3, and the limits of single-site mixing criteria"
+version: draft-2026-09-28
+authors:
+  - family-names: Lockwood
+    given-names: James M.
+    affiliation: Spectrality Institute
+repository-code: "https://github.com/Blaze61029dogQ-pixel/Chronomagnetics/tree/claude/su2-yang-mills-repo-1tb9ll/su2_yang_mills_area_law"
+# The MIT licence covers the repository's code only; the manuscripts, the SI
+# document, the original script and the documentation are not MIT-licensed.
+license: MIT
+abstract: >-
+  Manuscript, supplementary progress document and reproduction script for a
+  Wilson-loop area law in four-dimensional SU(2) lattice Yang–Mills theory
+  with Wilson action, at fixed lattice spacing, for beta_W < 2/3. The argument
+  uses the Durhuus–Fröhlich slab reduction, a Wasserstein form of Dobrushin
+  uniqueness, and a 1/4 Wasserstein Lipschitz bound for von Mises–Fisher laws
+  on S^3. The manuscript also studies the limits of single-site mixing
+  criteria. It makes no claim about the continuum limit or the continuum
+  mass-gap problem. The MIT License covers the repository's code only.
+keywords:
+  - lattice gauge theory
+  - Yang–Mills
+  - SU(2)
+  - area law
+  - Dobrushin uniqueness
+  - Wasserstein distance
+  - von Mises–Fisher distribution
+preferred-citation:
+  type: unpublished
+  title: "Area law for four-dimensional SU(2) lattice Yang–Mills theory at beta_W < 2/3, and the limits of single-site mixing criteria"
+  authors:
+    - family-names: Lockwood
+      given-names: James M.
+      affiliation: Spectrality Institute
+  year: 2026
+  month: 9
+  url: "https://github.com/Blaze61029dogQ-pixel/Chronomagnetics/blob/claude/su2-yang-mills-repo-1tb9ll/su2_yang_mills_area_law/paper/original/Paper1_AreaLaw_SU2_2026-09-28.pdf"
+  notes: "Draft, 28 September 2026. Unpublished manuscript; no DOI or arXiv identifier."
+references:
+  - type: unpublished
+    title: "A direct Wasserstein–Dobrushin approach to four-dimensional SU(2) lattice Yang–Mills theory: uniqueness, explicit clustering and a transfer-matrix gap for beta_W < 2/9"
+    authors:
+      - family-names: Lockwood
+        given-names: James M.
+    notes: "Companion paper (draft), cited as reference [13] in the manuscript. Not included in this repository; no date or URL available."
+  - type: unpublished
+    title: "Yang–Mills, Tracks 1 and 2: area law at beta_W < 2/3 (verified) and a direct Dobrushin mass-gap threshold beta_W < 2/9 (open). Progress document with consistency and reproducibility record"
+    authors:
+      - family-names: Lockwood
+        given-names: J. M.
+        affiliation: Spectrality Institute
+    year: 2026
+    month: 9
+    url: "https://github.com/Blaze61029dogQ-pixel/Chronomagnetics/blob/claude/su2-yang-mills-repo-1tb9ll/su2_yang_mills_area_law/supplementary/original/SI_YangMills_Tracks1-2_v0.1.pdf"
+    notes: "SI Yang–Mills Tracks 1–2, draft v0.1, 28 September 2026. Unpublished. '(verified)' and '(open)' in the title are the document's own status labels, not independent verification."

@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Environments and secrets
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Scratch numerical output. Recorded reference runs live in results/
+# and are NOT ignored.
+scratch/
+tmp/
+*.tmp
+*.log
+# Recorded reference runs are committed (see results/README.md).
+!results/**/stdout.log
+ci-output/

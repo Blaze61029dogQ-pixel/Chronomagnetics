@@ -1,0 +1,8 @@
+# Runtime dependencies of reproduction/SI_YangMills_reproduce_all.py, taken from
+# its imports (numpy, scipy.linalg.expm, mpmath) and pinned to the versions
+# used for the recorded runs in results/ (CPython 3.11.15, Linux x86_64,
+# 2026-09-30). The integrity checker, run wrapper and tests use only the
+# Python standard library.
+numpy==2.4.6
+scipy==1.17.1
+mpmath==1.4.1

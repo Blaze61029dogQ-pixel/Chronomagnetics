@@ -1,0 +1,5 @@
+# SHA-256 of ORIGINAL artifacts exactly as imported (historical record; never updated
+# when release copies change). Supplied names and import dates: provenance/FILES.md.
+8c4b17317495ff791c3c8af2d0e5ad131e9115cf0c18ca332d1145dc853af256  paper/original/Paper1_AreaLaw_SU2_2026-09-28.pdf
+fab5b718e5ff02728e0e8588525e3ca8fefd445fb1ffa82103e4fe05b85f0496  supplementary/original/SI_YangMills_Tracks1-2_v0.1.pdf
+c682c895d51ce0acc09f260d4eede38e98be765c18268d1378e53d4be40dcb88  reproduction/original/SI_YangMills_reproduce_all.py

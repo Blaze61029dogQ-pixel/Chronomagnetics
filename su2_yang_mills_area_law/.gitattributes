@@ -1,0 +1,13 @@
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+*.jpg binary
+*.sha256 text eol=lf
+Makefile text eol=lf
+# Byte-exact script copies (UTF-8 BOM and CRLF line endings from the Google
+# Docs text/plain export) and the patch between them. Excluded from EOL
+# normalisation so that the committed bytes keep the SHA-256 values recorded
+# in provenance/.
+reproduction/original/SI_YangMills_reproduce_all.py -text
+reproduction/SI_YangMills_reproduce_all.py -text
+reproduction/patches/*.patch -text
